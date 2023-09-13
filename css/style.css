@@ -1,0 +1,1411 @@
+/*
+paleta de colores oscura
+rgba(10,10,10,255)
+#292929
+#18181a
+rgb(32, 253, 220)
+#15f4ee
+#FF3131
+#FFFF33
+#48fb47
+*/
+
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: border-box !important;
+}
+
+html {
+  font-size: 16px;
+  text-size-adjust: 100% !important;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  width: 100% !important;
+  min-height: 100vh !important;
+  text-rendering: optimizeLegibility !important; /* hacer q el texto sea mas legible */
+  overflow-x: hidden;
+}
+
+html,
+body {
+  background-color: rgb(24, 26, 27);
+
+  color: #fff;
+  line-height: 1.2;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 200;
+
+  position: relative;
+  z-index: -999; /* el <html> y <body> estan por detras de todo */
+}
+
+/* -------------------- Eliminar color de fondo azul cuando se hace click en los enlaces <a> -------------------- */
+
+/* https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* -------------------- Variables (custom properties) -------------------- */
+
+:root {
+  /* -------------------- Utopia Fluid Responsive Design -------------------- */
+  /* @link https://utopia.fyi/type/calculator?c=320,17,1.2,1500,20,1.333,8,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step--1: clamp(0.89rem, calc(0.87rem + 0.07vw), 0.94rem);
+  --step-0: clamp(1.06rem, calc(1.01rem + 0.25vw), 1.25rem);
+  --step-1: clamp(1.28rem, calc(1.17rem + 0.53vw), 1.67rem);
+  --step-2: clamp(1.53rem, calc(1.34rem + 0.94vw), 2.22rem);
+  --step-3: clamp(1.84rem, calc(1.53rem + 1.52vw), 2.96rem);
+  --step-4: clamp(2.2rem, calc(1.73rem + 2.36vw), 3.95rem);
+  --step-5: clamp(2.64rem, calc(1.93rem + 3.55vw), 5.26rem);
+  --step-6: clamp(3.17rem, calc(2.13rem + 5.21vw), 7.01rem);
+  --step-7: clamp(3.81rem, calc(2.3rem + 7.51vw), 9.35rem);
+  --step-8: clamp(4.57rem, calc(2.43rem + 10.7vw), 12.46rem);
+
+  /* -------------------- Menu de navegacion -------------------- */
+  --td: 150ms;
+  --te: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* -------------------- Contenido multimedia (embebido) Responsive -------------------- */
+/* https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4090s */
+
+img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: cover;
+}
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+  max-width: min(90vw, 83.25rem);
+  margin: 0 auto;
+}
+
+/* -------------------- z-index -------------------- */
+
+/*
+z-index:   selector CSS               descripcion
+-999       html, body                 el <html> y <body> estan por detras de todo
+
+                    ** BACKGROUND VIDEO **
+-10        .header-video,             Videos, estan despues del <html> y <body> y por detras del texto
+           .background_video_mobile,
+           .background_video_desktop
+1          .header-content            texto yo soy ingeniero de sistemas y desarrollador frontend
+
+                    ** MENU DE NAVEGACION **
+-1         .menu__link::before,       color de fondo al poner mouse en texto
+           .menu__link::after
+
+1          .menu                      etiqueta <menu>
+1          .menu__link                etiqueta <a>
+
+2          .nav-main                  etiqueta <nav> q es el contenedor del menu
+
+-4         [id="main-navigation-toggle"]:checked ~ .nav-main .menu__item:nth-child(4)   Contactame
+-3         [id="main-navigation-toggle"]:checked ~ .nav-main .menu__item:nth-child(3)   Proyectos
+-2         [id="main-navigation-toggle"]:checked ~ .nav-main .menu__item:nth-child(2)   Conocimientos
+-1         [id="main-navigation-toggle"]:checked ~ .nav-main .menu__item:nth-child(1)   Sobre mi
+
+999        [id="main-navigation-toggle"] ~ label   boton del menu, esta por encima de todo
+*/
+
+/* -------------------- Menu de navegacion -------------------- */
+
+/*
+Este codigo lo saq de aqui
+y lo modifiq para mejorarlo:
+https://freefrontend.com/css-cards/
+https://codepen.io/hexagoncircle/pen/OJLMgYY
+*/
+
+/* <nav> */
+.nav-main {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #18181a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  z-index: 2;
+  left: -100%;
+
+  transition: left 0s calc(var(--td) * 2), transform 0s calc(var(--td) * 2);
+}
+
+.nav-main::before,
+.nav-main::after {
+  display: block;
+  width: 100%;
+  height: 50vh;
+
+  content: '';
+  background-color: #18181a;
+
+  position: absolute;
+  left: 0;
+
+  transform: translateX(-110%);
+  transform-origin: 0 50%;
+  transition: transform calc(var(--td) * 2) var(--td) var(--te);
+}
+
+.nav-main::before {
+  top: 0;
+}
+
+.nav-main::after {
+  bottom: 0;
+}
+
+/* <li> */
+.nav-main .menu__item {
+  opacity: 0;
+
+  transform: translateX(-1rem);
+  transition: opacity var(--td) var(--te), transform var(--td) var(--te);
+}
+
+/* <input type="checkbox"> */
+[id='main-navigation-toggle'] {
+  background-color: #fff;
+  opacity: 0;
+
+  position: fixed;
+  top: -100%;
+}
+
+/* <label for="main-navigation-toggle"> */
+[id='main-navigation-toggle'] ~ label {
+  cursor: pointer;
+
+  position: fixed;
+  z-index: 999; /* el boton del menu esta por encima de todo */
+
+  /* el boton del menu esta separado por la misma distancia */
+  top: 1.6875rem;
+  right: 2.1875rem;
+}
+
+/*
+Boton del menu, <span> q esta dentro del <label>
+
+<label for="main-navigation-toggle">
+    <span></span>
+</label>
+*/
+[id='main-navigation-toggle'] ~ label span {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+
+  position: relative;
+
+  transition: transform calc(var(--td) * 3) var(--te);
+}
+
+[id='main-navigation-toggle'] ~ label span::before,
+[id='main-navigation-toggle'] ~ label span::after {
+  width: calc(100% - 0.3125rem);
+  height: 0.25rem;
+  margin: auto;
+
+  border: 0.0625rem solid rgb(32, 253, 220);
+  background-color: rgb(32, 253, 220);
+
+  content: '';
+
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transition: transform calc(var(--td) * 3) var(--te);
+}
+
+/* Separar lineas para q queden dos lineas paralelas */
+[id='main-navigation-toggle'] ~ label span::before {
+  transform: rotate(0) translateY(-100%);
+}
+
+[id='main-navigation-toggle'] ~ label span::after {
+  transform: rotate(0) translateY(100%);
+}
+
+/* Animacion al dar click en boton,
+pasar de dos lineas paralelas
+a una forma de equis X */
+
+/* Girar lineas */
+[id='main-navigation-toggle']:checked ~ label span {
+  transform: rotate(5turn);
+}
+
+/* inclinar lineas para darles forma de equis X */
+[id='main-navigation-toggle']:checked ~ label span::before {
+  transform: rotate(45deg);
+}
+
+[id='main-navigation-toggle']:checked ~ label span::after {
+  transform: rotate(-45deg);
+}
+
+/* <nav>
+Hacer q aparezca el menu despues de darle click al boton del menu */
+[id='main-navigation-toggle']:checked ~ .nav-main {
+  left: 0;
+  transition: transform 0s;
+}
+
+[id='main-navigation-toggle']:checked ~ .nav-main::before,
+[id='main-navigation-toggle']:checked ~ .nav-main::after {
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+
+[id='main-navigation-toggle']:checked ~ .nav-main::after {
+  transition-delay: calc(var(--td) / 2);
+}
+
+[id='main-navigation-toggle']:checked ~ .nav-main .menu__item {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity calc(var(--td) * 2) var(--te), transform calc(var(--td) * 2) var(--te);
+}
+
+/* Sobre mi */
+[id='main-navigation-toggle']:checked ~ .nav-main .menu__item:nth-child(1) {
+  transition-delay: calc(var(--td) * 2 * (1 * 0.25));
+  z-index: -1;
+}
+
+/* Conocimientos */
+[id='main-navigation-toggle']:checked ~ .nav-main .menu__item:nth-child(2) {
+  transition-delay: calc(var(--td) * 2 * (2 * 0.25));
+  z-index: -2;
+}
+
+/* Proyectos */
+[id='main-navigation-toggle']:checked ~ .nav-main .menu__item:nth-child(3) {
+  transition-delay: calc(var(--td) * 2 * (3 * 0.25));
+  z-index: -3;
+}
+
+/* Contactame */
+[id='main-navigation-toggle']:checked ~ .nav-main .menu__item:nth-child(4) {
+  transition-delay: calc(var(--td) * 2 * (4 * 0.25));
+  z-index: -4;
+}
+
+/* <menu> */
+.menu {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+/* <li> */
+.menu__item {
+  display: block;
+  position: relative;
+}
+
+.menu__item:hover .menu__link::before,
+.menu__item:hover .menu__link::after {
+  animation: blink 1s var(--td) steps(1, end) forwards infinite;
+  transform: translateX(calc(100% - 0.5rem));
+  transition-duration: calc(var(--td) * 3);
+}
+
+/* <a>
+Sobre mi, Conocimientos, Proyectos, Contactame */
+.menu__item:hover .menu__link::after {
+  transition-delay: calc(var(--td) / 2);
+}
+
+.menu__link {
+  display: inline-block;
+  padding: 0.5rem 1rem 0.125rem;
+
+  font-family: 'Courier New', Courier, monospace, Consolas;
+  font-weight: normal;
+  font-size: var(--step-5);
+  text-decoration: none;
+  color: rgb(32, 253, 220);
+
+  overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+
+  transition: color var(--td) var(--te), opacity var(--td) var(--te), transform var(--td) var(--te);
+}
+
+.menu__link:hover {
+  font-weight: 900;
+}
+
+.menu__link::before,
+.menu__link::after {
+  width: 100%;
+  height: 50%;
+
+  background-color: #f5f5f5;
+
+  content: '';
+
+  position: absolute;
+  z-index: -1;
+  left: 0;
+
+  transform: translateX(-110%);
+  transform-origin: 0 50%;
+  transition: transform 0s var(--te);
+}
+
+.menu__link::before {
+  top: 0;
+}
+
+.menu__link::after {
+  bottom: 0;
+}
+
+.menu:not(:focus-within):not(:hover) .menu__item .menu__link {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.menu__item {
+  --pull: 30%;
+}
+
+.menu__item .menu__link {
+  opacity: 0.25;
+
+  transition-duration: calc(var(--td) * 3);
+  transform: translate(0, calc(var(--pull) * -1));
+}
+
+.menu__item:hover > .menu__link {
+  opacity: 1;
+
+  transform: translate(0, 0);
+}
+
+.menu__item:hover > .menu__link:hover {
+  color: #fff;
+  transition-delay: 0s;
+}
+
+.menu__item:hover ~ .menu__item > .menu__link {
+  transition-duration: calc(var(--td) * 3);
+  transform: translate(0, var(--pull));
+}
+
+@keyframes blink {
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* -------------------- video de fondo background-video y encabezado <header> -------------------- */
+
+/*
+Tutorial de Fazt:
+https://youtu.be/bwHxGzHjLTU
+https://github.com/FaztWeb/html-video-background
+*/
+
+.header {
+  width: 100%;
+  height: 100vh;
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-video,
+.background_video_mobile,
+.background_video_desktop {
+  display: block;
+  width: 100%;
+  height: 100vh;
+
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+}
+
+.header-content {
+  width: 100%;
+  height: 100vh;
+
+  text-align: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+  align-items: center;     /* centrar VERTICALMENTE ↕ */
+
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.header-content h1 {
+  opacity: 0.7;
+  font-weight: 800;
+
+  /* desde 0 hasta 479px */
+  font-size: var(--step-5);
+}
+
+/*
+Efecto de maquina de escribir
+Yo soy ... ingeniero de sistemas desarrollador frontend
+https://css-tricks.com/snippets/css/typewriter-effect/
+https://codepen.io/hi-im-si/pen/ALgzqo
+*/
+.typewrite {
+  display: block;
+  cursor: text;
+  text-decoration-line: none;
+  line-height: 1.9;
+  color: #fff;
+}
+
+/*
+Boton Contactame
+https://youtu.be/c-4wFMGFuCg
+*/
+.boton_contactame {
+  border: 0.1875rem solid #fff;
+  cursor: pointer;
+  max-width: 12ch;
+  margin-top: 5vh;
+  padding: 0.9375rem 1.875rem 0.9375rem 1.875rem;
+  border-radius: 0.625rem;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration-line: none;
+  transition: 0.3s ease all;
+
+  position: relative;
+  z-index: 999;
+
+  color: #000;
+  opacity: 0.7;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: var(--step-3);
+  font-weight: 500;
+}
+
+@media screen and (hover: hover) and (pointer: fine) {
+  .boton_contactame:hover {
+    padding-left: 10.625rem;
+    padding-right: 10.625rem;
+
+    position: relative;
+    bottom: 0.5rem;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    opacity: 1;
+    font-weight: 800;
+  }
+}
+
+@media screen and (pointer: coarse), (pointer: none), (hover: none) {
+  .boton_contactame:active {
+    padding-left: 10.625rem;
+    padding-right: 10.625rem;
+
+    position: relative;
+    bottom: 0.5rem;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    opacity: 1;
+    font-weight: 800;
+  }
+}
+
+.boton_contactame span {
+  position: relative;
+  transition: 0.8s ease all;
+}
+
+.boton_contactame svg {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  fill: none;
+}
+
+.boton_contactame rect {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625rem;
+
+  stroke: #fff;
+  stroke-width: 0.625rem;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1100;
+
+  transition: 1s ease all;
+}
+
+@media screen and (hover: hover) and (pointer: fine) {
+  .boton_contactame:hover rect {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media screen and (pointer: coarse), (pointer: none), (hover: none) {
+  .boton_contactame:active rect {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* -------------------- Subtitulos <h2> -------------------- */
+
+h2 {
+  hyphens: auto;
+  font-weight: 500;
+  font-size: var(--step-3);
+}
+
+.h2_experiencia,
+.h2_conocimientos,
+.h2_proyectos {
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+
+  text-align: center;
+}
+
+/* -------------------- contenido principal <main> -------------------- */
+
+main {
+  margin-top: 3.125rem;
+}
+
+/* -------------------- Sobre mi -------------------- */
+
+#sobre_mi {
+  font-size: var(--step-0);
+
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+/* Dispositivos X-Small (telefonos verticales, desde 0 hasta 575px) */
+.sobre_mi_figure,
+.sobre_mi_section {
+  flex: 0 0 100%;
+}
+
+.h2_sobre_mi {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  text-align: center;
+}
+
+.sobre_mi_p {
+  text-align: justify;
+}
+
+/*
+Boton hoja de vida
+https://youtu.be/c-4wFMGFuCg
+*/
+.boton_hoja_de_vida {
+  max-width: 14.375rem;
+  height: 5rem;
+
+  margin-top: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  box-shadow: rgb(0 0 0 / 35%) 15px 15px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+
+  color: rgba(2, 199, 176, 255);
+  border: thick solid rgba(2, 199, 176, 255);
+  border-radius: 1.25rem;
+
+  cursor: pointer;
+
+  font-weight: 500;
+  transition: 0.3s ease all;
+
+  position: relative;
+  overflow: hidden;
+
+  text-decoration-line: none;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton_hoja_de_vida span {
+  position: absolute;
+  transition: 0.4s ease-in-out all;
+}
+
+.boton_hoja_de_vida .icono {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 1;
+  left: -2.5rem;
+
+  transition: 0.2s ease-in-out all;
+  opacity: 0;
+}
+
+.boton_hoja_de_vida svg {
+  color: #fff;
+
+  width: 2.1875rem;
+  height: 2.1875rem;
+}
+
+@media screen and (hover: hover) and (pointer: fine) {
+  .boton_hoja_de_vida:hover {
+    color: #fff;
+    font-weight: 800;
+    background-color: rgba(2, 199, 176, 255);
+  }
+
+  .boton_hoja_de_vida:hover .icono {
+    left: calc(100% - 3.125rem);
+    opacity: 1;
+  }
+
+  .boton_hoja_de_vida:hover span {
+    left: 1.25rem;
+  }
+}
+
+@media screen and (pointer: coarse), (pointer: none), (hover: none) {
+  .boton_hoja_de_vida:active {
+    color: #fff;
+    font-weight: 800;
+    background-color: rgba(2, 199, 176, 255);
+  }
+
+  .boton_hoja_de_vida:active .icono {
+    left: calc(100% - 3.125rem);
+    opacity: 1;
+  }
+
+  .boton_hoja_de_vida:active span {
+    left: 1.25rem;
+  }
+}
+
+/* mi_foto.jpg */
+.sobre_mi_figure {
+  text-align: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre_mi_img {
+  border-radius: 1.25rem;
+  border-top: 0;
+  outline: 0.0063rem solid #fff;
+
+  box-shadow: rgb(0 0 0 / 35%) 15px 15px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+}
+
+.sobre_mi_figcaption {
+  margin-bottom: 1rem;
+
+  font-weight: 500;
+  font-size: var(--step-3);
+}
+
+/* -------------------- contenedores (padres) de las CARDS -------------------- */
+
+.experiencia_contenedor_card,
+.conocimientos_contenedor_card,
+.proyectos_contenedor_card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------------------- CARDS: Experiencia -------------------- */
+
+.experiencia_contenedor_card {
+  gap: 30px 7%;
+}
+
+.experiencia_card {
+  color: #fff;
+  text-decoration-line: none;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 21.25rem;
+  column-gap: .9375rem;
+}
+
+.experiencia_contenedor_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_bancolombia {
+  max-width: 5.9375rem;
+}
+
+.img_different {
+  max-width: 5.625rem;
+}
+
+.experiencia_texto {
+  width: 100%;
+}
+
+.h4_experiencia {
+  font-size: var(--step-1);
+  font-weight: bold;
+  text-align: center;
+}
+
+.p_experiencia_cargo,
+.p_experiencia_fecha {
+  font-size: var(--step-0);
+  font-weight: 500;
+}
+
+.p_experiencia_fecha {
+  font-style: italic;
+}
+
+/* -------------------- CARDS: Conocimientos -------------------- */
+
+.conocimientos_contenedor_card {
+  gap: 2.1875rem 0.625rem;
+}
+
+.conocimientos_card {
+  border-radius: 0.625rem;
+  padding: 2% 1% 2% 1%;
+
+  /* (100% ancho del <div class="page_wrap">) / (1 columna de Flex Items) = 100% */
+  flex: 0 0 100%;
+}
+
+.conocimientos_card_picture,
+.conocimientos_card_picture img {
+  height: 14rem;
+}
+
+.conocimientos_card_picture img {
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/*
+botones de las cards de Conocimientos
+https://uiverse.io/detail/cssbuttons-io/stale-rattlesnake-87
+*/
+.conocimientos_card_boton {
+  max-width: 14.375rem;
+  padding: 1.5%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  color: #fff;
+  font-size: var(--step-1);
+  text-decoration-line: none;
+
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #fff;
+
+  box-shadow: rgb(0 0 0 / 35%) 15px 15px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (hover: hover) and (pointer: fine) {
+  .conocimientos_card:hover {
+    outline: 0.0625rem solid #fff;
+  }
+
+  .conocimientos_card_boton:hover {
+    border-radius: 0;
+    border: 0;
+    outline: 0.0625rem solid #fff;
+    outline-offset: -0.375rem;
+
+    background-color: #000;
+    box-shadow: 0 15px 20px rgb(32, 253, 220);
+
+    font-weight: 700;
+
+    transform: translateY(-0.5rem);
+  }
+}
+
+@media screen and (pointer: coarse), (pointer: none), (hover: none) {
+  .conocimientos_card:active {
+    outline: 0.0625rem solid #fff;
+  }
+
+  .conocimientos_card_boton:active {
+    border-radius: 0;
+    border: 0;
+    outline: 0.0625rem solid #fff;
+    outline-offset: -0.375rem;
+
+    background-color: #000;
+    box-shadow: 0 15px 20px rgb(32, 253, 220);
+
+    font-weight: 700;
+
+    transform: translateY(-0.5rem);
+  }
+}
+
+/* -------------------- CARDS: Proyectos -------------------- */
+/* https://jacekjeznach.com/ */
+
+.proyectos_contenedor_card {
+  gap: 3.125rem 1.5625rem;
+}
+
+.proyectos_card {
+  /* la card "Rick and Morty API"
+    es la card con mayor alto
+    cuando encojo al maximo el ancho del viewport,
+    cuando esto pasa la card mide de alto 292px = 18.25rem */
+  display: block;
+  min-height: 18.25rem;
+  padding: 1.875rem 1.875rem 1.5625rem 1.875rem;
+  text-decoration-line: none;
+
+  background-color: rgb(22, 24, 25);
+  background-image: url('/assets/image/fondo_transparente.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+  box-shadow: inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+
+  border-right: 0.01px solid rgb(0 0 0 / 20%);
+  border-bottom: 0.01px solid rgb(0 0 0 / 20%);
+  border-left: 0.01px solid rgb(0 0 0 / 20%);
+
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0.625rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 0 100%;   /* ancho viewport desde 0 hasta 767px */
+  row-gap: .625rem; /* separar el texto */
+}
+
+a.rojo {
+  border-top: 2px solid #ff3131;
+}
+
+a.amarillo {
+  border-top: 2px solid #ffff33;
+}
+
+a.azul {
+  border-top: 2px solid #15f4ee;
+}
+
+a.verde {
+  border-top: 2px solid #48fb47;
+}
+
+.proyectos_tecnologia {
+  margin-right: auto; /* empujar a la izquierda ← el texto (HTML, CSS, JS...) con nombres de las tecnologias (margen automatico margin: auto; en Flexbox) */
+  font-size: var(--step-0);
+  font-weight: 0;
+}
+
+h3.rojo {
+  color: #ff3131;
+}
+
+h3.amarillo {
+  color: #ffff33;
+}
+
+h3.azul {
+  color: #15f4ee;
+}
+
+h3.verde {
+  color: #48fb47;
+}
+
+.proyectos_nombre {
+  color: #fff;
+  text-align: center;
+  font-size: var(--step-2);
+  font-weight: 700;
+}
+
+/* Cambiar el color del texto
+https://stackoverflow.com/questions/16782498/looping-animation-of-text-color-change-using-css3 */
+h4.rojo {
+  animation: rojo 4s infinite;
+}
+@keyframes rojo {
+  50% {
+    color: #ff3131a2;
+  }
+  100% {
+    color: #ff3131;
+  }
+}
+
+h4.amarillo {
+  animation: amarillo 4s infinite;
+}
+@keyframes amarillo {
+  50% {
+    color: #ffff33a0;
+  }
+  100% {
+    color: #ffff33;
+  }
+}
+
+h4.azul {
+  animation: azul 4s infinite;
+}
+@keyframes azul {
+  50% {
+    color: #15f4eda7;
+  }
+  100% {
+    color: #15f4ee;
+  }
+}
+
+h4.verde {
+  animation: verde 4s infinite;
+}
+@keyframes verde {
+  50% {
+    color: #47fb47a6;
+  }
+  100% {
+    color: #48fb47;
+  }
+}
+
+.proyectos_descripcion {
+  margin-right: auto; /* empujar a la izquierda ← el texto con la descripcion del proyecto (margen automatico margin: auto; en Flexbox) */
+  color: #fff;
+  font-size: var(--step-0);
+}
+
+/* -------------------- Contactame -------------------- */
+
+#contactame.contactame_column {
+  min-height: 100vh;
+  max-width: 105rem; /* 105rem = 1680px Breakpoint del ancho de los monitores (desktop), esta es la medida de pantalla (viewport) con mayor ancho */
+
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+
+  text-align: center;
+
+  background-image: url('/assets/image/fondo_transparente.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.h2_contactame {
+  margin-bottom: 0.9375rem;
+}
+
+.contactame_row_y_column {
+  display: flex;
+  flex-flow: column nowrap; /* desde 0 hasta 575px */
+  justify-content: center;
+  align-items: center;
+  gap: 25px 4%;
+}
+
+/*
+1) flex-grow: 0;      NO crescas, todos los Flex Items tienen el mismo ancho
+2) flex-shrink: 1;    SI reduzcas, los Flex Items SI pueden encoger (reducir) su tamaño
+3) flex-basis: 100%;  Los Flex Items <div class="flex_0_1_100">
+                      siempre ocupan por completo 100%
+                      el ancho del su padre <div class="contactame_row_y_column">
+
+4) Le puse la clase .contactame_row_y_column { ... }
+porq en en el Media Querie
+
+@media screen and (min-width: 36em) {         AQUI ESTOY USANDO BREAKPOINT DE BOOTSTRAP 5
+    .contactame_row_y_column { flex-flow: row nowrap; }  ancho viewport >= 576px = 36em hasta infinito
+}
+
+cambio la direccion flex-direction:
+de los Flex Items de fila a columna
+dependiendo del ancho del viewport */
+.flex_0_1_100 {
+  flex: 0 1 100%;
+}
+
+.contactame_gmail_a,
+.contactame_whatsapp_a {
+  display: inline-block;
+
+  font-size: var(--step-0);
+  font-weight: 800;
+  color: #fff;
+  text-decoration-line: none;
+}
+
+.contactame_gmail_a > img,
+.contactame_whatsapp_a > img {
+  margin-bottom: 1rem;
+  height: 7.5rem; /* Hacer q los logos de Gmail y WhatsApp tengan el mismo alto, 120px = 7.5rem es el alto de logo_gmail.png */
+
+  object-fit: contain;
+}
+
+/* Insertar Salto de Línea (Renglon) para q no se Desborde el Texto */
+.contactame_gmail_a address,
+.contactame_whatsapp_a address {
+  word-break: break-all;
+}
+
+/* -------------------- pie de pagina <footer> -------------------- */
+/* aqui estoy usando CSS FLEXBOX ANIDADO */
+
+footer {
+  padding: 1.5%;
+  max-width: 105rem;
+
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: var(--step-0);
+
+  background-color: #292929;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: .625rem;
+}
+
+/* (100% ancho del <footer>) / (2 columnas de Flex Items) = 50% */
+.footer_p_0_1_50 {
+  flex: 0 1 50%;
+}
+.footer_div_0_1_50 {
+  flex: 0 1 50%;
+}
+
+.footer_column {
+  /* empujar a la derecha logo_github.png y texto q dice ver codigo portafolio */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.footer_a,
+.footer_p {
+  text-align: center;
+}
+
+.footer_a {
+  color: #fff;
+  text-decoration-line: none;
+}
+
+.footer_img {
+  max-width: 6.25rem;
+}
+
+/* --------------------
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- Video Responsive -------------------- */
+/* https://stackoverflow.com/questions/66824131/media-max-width-or-min-width-for-video */
+
+@media screen and (min-width: 30em) {
+  /* ancho viewport >= 480px = 30em hasta infinito */
+  .background_video_desktop {
+    display: block;
+    height: 100vh;
+    width: 100%;
+
+    object-fit: cover !important;
+  }
+
+  .background_video_mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  /* ancho viewport <= 480px = 30em hasta 0 */
+  .header-content h1,
+  .boton_contactame {
+    color: #fff;
+    opacity: 1;
+  }
+
+  .boton_contactame rect {
+    stroke: #000;
+  }
+
+  .background_video_desktop {
+    display: none;
+  }
+
+  .background_video_mobile {
+    display: block;
+    height: 100vh;
+    width: 100%;
+
+    object-fit: cover !important;
+  }
+}
+
+/* -------------------- Sobre mi -------------------- */
+
+/* https://www.youtube.com/watch?v=KoLOOETh0f4&t=793s */
+@media screen and (min-width: 36em) {
+  /* Small desde 576px = 36em hasta infinito */
+  .sobre_mi_figure,
+  .sobre_mi_section {
+    flex: 0 0 50%;
+  }
+}
+
+/* icono_progrmador.png */
+@media screen and (min-width: 20em) {
+  /* ancho viewport desde 320px = 20em hasta 479px */
+  .sobre_mi_img {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  /* ancho viewport desde 480px = 30em hasta 499px */
+  .sobre_mi_img {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 31.25em) {
+  /* ancho viewport desde 500px = 31.25em hasta 575px */
+  .sobre_mi_img {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 36em) {
+  /* ancho viewport desde 576px = 36em hasta 799px */
+  .sobre_mi_img {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  /* ancho viewport desde 800px = 50em hasta 1039px */
+  .sobre_mi_img {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  /* ancho viewport desde 1040px = 65em hasta */
+  .sobre_mi_img {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  /* ancho viewport >= 1280px = 80em hasta infinito */
+  .sobre_mi_img {
+    max-width: 45%;
+  }
+}
+
+/* -------------------- Experiencia -------------------- */
+
+@media screen and (min-width: 20em) {
+  .experiencia_card { 
+    flex-flow: row nowrap;
+    text-align: left;
+  }
+
+  .h4_experiencia {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 50.8125em) {
+  .experiencia_contenedor_card {
+    justify-content: space-evenly;
+  }
+}
+
+/* -------------------- CARDS: Conocimientos -------------------- */
+
+@media screen and (min-width: 30em) { /* ancho viewport desde 480px = 30em hasta 639px */
+  .conocimientos_card {
+    /* (100% ancho del <div class="page_wrap">) / (3 columnas de Flex Items) = 33.3333333333%
+       (33.3333333333%) - (10px de la propiedad column-gap: ) */
+    flex: 0 0 calc(33.3333333333% - 0.625rem);
+  }
+}
+
+@media screen and (min-width: 40em) { /* ancho viewport desde 640px = 40em hasta 767px */
+  .conocimientos_card {
+    /* (100% ancho del <div class="page_wrap">) / (4 columnas de Flex Items) = 25%
+       (33.3333333333%) - (10px de la propiedad column-gap: ) */
+    flex: 0 0 calc(25% - 0.625rem);
+  }
+}
+
+@media screen and (min-width: 48em) { /* ancho viewport desde 768px = 48em hasta 1023px */
+  .conocimientos_card {
+    /* (100% ancho del <div class="page_wrap">) / (5 columnas de Flex Items) = 20%
+       (20%) - (10px de la propiedad column-gap: ) */
+    flex: 0 0 calc(20% - 0.625rem);
+  }
+}
+
+@media screen and (min-width: 64em) { /* ancho viewport >= 1024px = 34em hasta infinito */
+  .conocimientos_card {
+    /* (100% ancho del <div class="page_wrap">) / (6 columnas de Flex Items) = 16.6666666667%
+       (16.6666666667%) - (10px de la propiedad column-gap: ) */
+    flex: 0 0 calc(16.6666666667% - 0.625rem);
+  }
+}
+
+/* -------------------- CARDS: Proyectos -------------------- */
+/* Breakpoints de Bootstrap 5:
+https://getbootstrap.com/docs/5.2/layout/breakpoints/#available-breakpoints */
+
+@media screen and (min-width: 48em) {
+  /* ancho viewport desde 768px = 48em hasta 991px */
+  .proyectos_card {
+    flex: 0 0 calc(50% - 1.5625rem);
+  }
+}
+
+@media screen and (min-width: 62em) {
+  /* ancho viewport >= 992px = 62em hasta infinito */
+  .proyectos_card {
+    flex: 0 0 calc(33.3333333333% - 1.5625rem);
+  }
+}
+
+/* -------------------- Contactame -------------------- */
+
+/* Breakpoint de Bootstrap 5 */
+@media screen and (min-width: 36em) {
+  /* ancho viewport >= 576px = 36em hasta infinito */
+  .contactame_row_y_column {
+    flex-flow: row nowrap;
+  }
+}

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- estilos CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+
+    <!--
+        font-family: Mukta Google Fonts
+        https://fonts.google.com/specimen/Mukta
+        ExtraLight 200
+        Medium     500
+        Bold       700
+        ExtraBold  800
+        -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;500;700;800&display=swap"
+      rel="stylesheet"
+    >
+
+    <!--
+        Favicon
+        https://youtu.be/1KwfE5NrKU0
+        https://www.favicon-generator.org/
+        -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/image/favicon/apple-icon-57x57.png" >
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/image/favicon/apple-icon-57x57.png" >
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/image/favicon/apple-icon-57x57.png" >
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/image/favicon/apple-icon-57x57.png" >
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/image/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/image/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/image/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/image/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/image/favicon/apple-icon-57x57.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    >
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Portafolio</title>
+  </head>
+
+  <body>
+    <!-- Encabezado <header> -->
+    <header class="header">
+      <input
+        type="checkbox"
+        id="main-navigation-toggle"
+        class="btn btn--close"
+        title="Toggle main navigation"
+      >
+      <label for="main-navigation-toggle" onclick="mostrar();">
+        <span></span>
+      </label>
+
+      <!-- Menu de navegacion -->
+      <nav id="main-navigation" class="nav-main">
+        <menu class="menu">
+          <li class="menu__item">
+            <a class="menu__link" href="#sobre_mi" onclick="ocultar();"> Sobre mí </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#experiencia" onclick="ocultar();"> Experiencia </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#conocimientos" onclick="ocultar();"> Conocimientos </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#proyectos" onclick="ocultar();"> Proyectos </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#contactame" onclick="ocultar();"> Contáctame </a>
+          </li>
+        </menu>
+      </nav>
+
+      <!-- video de fondo background-video -->
+      <div class="header-video">
+        <video
+          autoplay
+          loop
+          playsinline
+          muted
+          class="background_video_mobile"
+          src="assets/video/background_video_mobile.mp4"
+        ></video>
+
+        <video
+          autoplay
+          loop
+          playsinline
+          muted
+          class="background_video_desktop"
+          src="assets/video/background_video_desktop.mp4"
+        ></video>
+      </div>
+
+      <div class="header-content">
+        <!--
+                Efecto de maquina de escribir
+                Yo soy ... ingeniero de sistemas desarrollador frontend
+                https://css-tricks.com/snippets/css/typewriter-effect/
+                https://codepen.io/hi-im-si/pen/ALgzqo
+                -->
+        <h1>
+          Yo soy...
+          <a
+            href=""
+            class="typewrite"
+            data-period="2000"
+            data-type='["ingeniero de sistemas", "desarrollador frontend"]'
+          >
+            <span class="wrap"></span>
+          </a>
+        </h1>
+
+        <!-- Boton Contactame -->
+        <a href="#contactame" class="boton_contactame">
+          <span>Contactame</span>
+          <svg>
+            <rect x="0" y="0" fill="none"></rect>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- contenido principal <main> -->
+    <main>
+      <div class="page_wrap">
+
+        <!-- Sobre mi -->
+        <article id="sobre_mi">
+          <figure class="sobre_mi_figure">
+            <figcaption class="sobre_mi_figcaption">Daniel Pineda Mora</figcaption>
+            <img
+              src="assets/image/icono_progrmador.png"
+              alt="icono_progrmador.png"
+              class="sobre_mi_img"
+            >
+          </figure>
+
+          <section class="sobre_mi_section">
+            <h2 class="h2_sobre_mi">Sobre mí</h2>
+            <p class="sobre_mi_p">
+              Soy ingeniero de sistemas, pero no solo me he quedado con lo que me enseña la
+              universidad 🎓 debido a que en mi tiempo libre estudio desarrollo frontend porque ¡amo
+              ❤️ programar!, es mi pasión 😀, aunque en un futuro quiero ser full stack, soy
+              disciplinado 📚, amable con los demás 🤝 y practico calistenia 💪.
+            </p>
+            <!-- Boton descargar hoja de vida -->
+            <a
+              href="https://drive.google.com/file/d/1dWRdVAxrNLd5P9XBDj5quOU8_TOqMFUE/view?usp=sharing"
+              target="_blank"
+              class="boton_hoja_de_vida"
+            >
+              <div class="icono">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </div>
+              <span>HOJA DE VIDA</span>
+            </a>
+          </section>
+        </article>
+
+        <!-- Experiencia -->
+        <section id="experiencia">
+          <h2 class="h2_experiencia">Experiencia</h2>
+
+          <article class="experiencia_contenedor_card">
+            <a href="https://www.bancolombia.com/personas" target="_blank" class="experiencia_card">
+              <div class="experiencia_contenedor_img img_bancolombia">
+                <picture>
+                  <img src="assets/image/logo/bancolombia.png" alt="bancolombia.png" >
+                </picture>
+              </div>
+              <div class="experiencia_texto">
+                <h4 class="h4_experiencia">Bancolombia</h4>
+                <p class="p_experiencia_cargo">Automatización y gestión de datos en Python y SQL</p>
+                <p class="p_experiencia_fecha">Enero - Julio 2022</p>
+              </div>
+            </a>
+
+            <a href="https://www.differentroads.es/" target="_blank" class="experiencia_card">
+              <div class="experiencia_contenedor_img img_different">
+                <picture>
+                  <img src="assets/image/logo/different_roads.png" alt="different_roads.png" >
+                </picture>
+              </div>
+              <div class="experiencia_texto">
+                <h4 class="h4_experiencia">Different Roads</h4>
+                <p class="p_experiencia_cargo">Desarrollador frontend</p>
+                <p class="p_experiencia_fecha">Febrero - Agosto 2023</p>
+              </div>
+            </a>
+          </article>
+        </section>
+
+        <!-- CARDS: Conocimientos -->
+        <section id="conocimientos">
+          <h2 class="h2_conocimientos">Conocimientos</h2>
+
+          <div class="conocimientos_contenedor_card">
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/git.png" alt="git.png" >
+              </picture>
+              <a
+                href="https://www.udemy.com/course/git-github/"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>Git</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/github.png" alt="github.png" >
+              </picture>
+
+              <a
+                href="https://github.com/DanielPinedaM/"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>GitHub</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/html.png" alt="html.png" >
+              </picture>
+              <a
+                href="https://youtu.be/-oK6zL01fNM"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>HTML 5</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/css.png" alt="css.png" >
+              </picture>
+              <a
+                href="https://youtu.be/udGrXWeJp1Y"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>CSS 3</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/sass.png" alt="sass.png" >
+              </picture>
+              <a
+                href="https://youtu.be/BtiiM3jeb_c"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>Sass</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/tailwind.png" alt="tailwind.png" >
+              </picture>
+              <a
+                href="https://youtu.be/h5HQVHTpeHs"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>Tailwind</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/javascript.png" alt="javascript.png" >
+              </picture>
+              <a
+                href="https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>JavaScript</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/typescript.png" alt="typescript.png" >
+              </picture>
+              <a
+                href="https://www.udemy.com/course/typescript-guia-completa/"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>TypeScript</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/next.png" alt="next.png" >
+              </picture>
+              <a
+                href="https://www.udemy.com/course/nextjs-fh/"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>Next JS</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/react.png" alt="react.png" >
+              </picture>
+              <a
+                href="https://www.udemy.com/course/react-cero-experto/"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>React</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/react_hook_form.png" alt="react_hook_form.png" >
+              </picture>
+              <a
+                href="https://youtu.be/1MxevPIZgVc"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>React Hook Form</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/react_router.png" alt="react_router.png" >
+              </picture>
+              <a
+                href="https://youtu.be/9w33u7hBWyk"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>React Router</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/vite.png" alt="vite.png" >
+              </picture>
+
+              <a
+                href="https://youtu.be/UX4gvort2TU"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>Vite</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/eslint.png" alt="eslint.png" >
+              </picture>
+
+              <a
+                href="https://airbnb.io/javascript"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>ESLint</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/vscode.png" alt="vscode.png" >
+              </picture>
+
+              <a
+                href="https://youtu.be/KpgVF0mXOUs"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>VS Code</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/sql.png" alt="sql.png" >
+              </picture>
+
+              <a
+                href="https://www.w3schools.com/sql/"
+                target="_blank"
+                class="conocimientos_card_boton"
+              >
+                <h3>SQL</h3>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- CARDS: Proyectos -->
+        <section id="proyectos">
+          <h2 class="h2_proyectos">Proyectos</h2>
+
+          <div class="proyectos_contenedor_card">
+            <a
+              href="https://danielpinedam.github.io/gamer/"
+              target="_blank"
+              class="proyectos_card rojo"
+            >
+              <h3 class="proyectos_tecnologia rojo">HTML 5 Y CSS 3</h3>
+              <h4 class="rojo proyectos_nombre">Gamer</h4>
+              <p class="proyectos_descripcion">
+                Diseño de una página web para vender computadores (carrito de compras).
+              </p>
+            </a>
+
+            <a
+              href="https://danielpinedam.github.io/react-api-buscar-peliculas/"
+              target="_blank"
+              class="proyectos_card azul"
+            >
+              <h3 class="proyectos_tecnologia azul">REACT</h3>
+              <h4 class="azul proyectos_nombre">Películas</h4>
+              <p class="proyectos_descripcion">Buscar carátulas de películas.</p>
+            </a>
+
+            <a
+              href="https://danielpinedam.github.io/react-rick-and-morty-api/"
+              target="_blank"
+              class="proyectos_card verde"
+            >
+              <h3 class="proyectos_tecnologia verde">REACT</h3>
+              <h4 class="verde proyectos_nombre">Rick and Morty API</h4>
+              <p class="proyectos_descripcion">
+                Ver los personajes de la caricatura Rick and Morty
+              </p>
+            </a>
+          </div>
+        </section>
+
+        <!-- Contactame -->
+        <section id="contactame" class="contactame_column">
+          <div>
+            <h2 class="h2_contactame">Contáctame</h2>
+
+            <div class="contactame_row_y_column">
+              <div class="flex_0_1_100">
+                <a
+                  href="https://mail.google.com/"
+                  target="_blank"
+                  class="contactame_gmail_a dispositivo_escritorio"
+                >
+                  <img src="assets/image/logo/gmail.png" alt="gmail.png">
+                  <address>pineda.daniel700@gmail.com</address>
+                </a>
+              </div>
+              <div class="flex_0_1_100">
+                <!--
+                Generador de enlaces de WhatsApp
+                https://vilmanunez.com/crear-enlace-whatsapp/
+                -->
+                <a
+                  href="https://api.whatsapp.com/send?phone=573053145758&text=Hola%20vi%20tu%20portafolio%20y%20me%20gustaria%20hablarte"
+                  target="_blank"
+                  class="contactame_whatsapp_a"
+                >
+                  <img src="assets/image/logo/whatsapp.png" alt="whatsapp.png">
+                  <address>+57 305 314 57 58</address>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- pie de pagina <footer> -->
+    <footer>
+      <p class="footer_p_0_1_50">Hecho con ❤️</p>
+
+      <div class="footer_div_0_1_50">
+        <div class="footer_column">
+          <a
+            href="https://github.com/DanielPinedaM/DanielPinedaM.github.io"
+            target="_blank"
+            class="footer_a"
+          >
+            <img
+              src="assets/image/logo/github.png"
+              alt="github.png"
+              class="footer_img"
+              loading="lazy"
+            >
+            <p class="footer_p">Ver código portafolio</p>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+<!--
+    <script src="js/maquina_escribir.js"></script>
+    <script src="js/menu.js"></script>
+-->
+  </body>
+</html>
