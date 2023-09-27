@@ -31,7 +31,8 @@ html {
 
 body {
   width: 100% !important;
-  min-height: 100vh !important;
+  min-height: 100vh;
+  min-height: 100dvh;
   text-rendering: optimizeLegibility !important; /* hacer q el texto sea mas legible */
   overflow-x: hidden;
 }
@@ -140,6 +141,7 @@ https://codepen.io/hexagoncircle/pen/OJLMgYY
 .nav-main {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
 
   background-color: #18181a;
 
@@ -159,6 +161,7 @@ https://codepen.io/hexagoncircle/pen/OJLMgYY
   display: block;
   width: 100%;
   height: 50vh;
+  height: 50dvh;
 
   content: '';
   background-color: #18181a;
@@ -444,6 +447,7 @@ https://github.com/FaztWeb/html-video-background
 .header {
   width: 100%;
   height: 100vh;
+  height: 100dvh;
 
   color: #fff;
 
@@ -458,6 +462,7 @@ https://github.com/FaztWeb/html-video-background
   display: block;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
 
   position: absolute;
   z-index: -10;
@@ -470,6 +475,7 @@ https://github.com/FaztWeb/html-video-background
 .header-content {
   width: 100%;
   height: 100vh;
+  height: 100dvh;
 
   text-align: center;
 
@@ -517,6 +523,7 @@ https://youtu.be/c-4wFMGFuCg
   cursor: pointer;
   max-width: 12ch;
   margin-top: 5vh;
+  margin-top: 5dvh;
   padding: 0.9375rem 1.875rem 0.9375rem 1.875rem;
   border-radius: 0.625rem;
 
@@ -1087,6 +1094,7 @@ h4.verde {
 
 #contactame.contactame_column {
   min-height: 100vh;
+  min-height: 100dvh;
   max-width: 105rem; /* 105rem = 1680px Breakpoint del ancho de los monitores (desktop), esta es la medida de pantalla (viewport) con mayor ancho */
 
   margin-left: auto;
@@ -1233,6 +1241,7 @@ footer {
   .background_video_desktop {
     display: block;
     height: 100vh;
+    height: 100dvh;
     width: 100%;
 
     object-fit: cover !important;
@@ -1262,6 +1271,7 @@ footer {
   .background_video_mobile {
     display: block;
     height: 100vh;
+    height: 100dvh;
     width: 100%;
 
     object-fit: cover !important;
