@@ -150,9 +150,6 @@
         <!-- Boton Contactame -->
         <a href="#contactame" class="boton_contactame">
           <span>Contáctame</span>
-          <svg>
-            <rect x="0" y="0" fill="none"></rect>
-          </svg>
         </a>
       </div>
     </header>
@@ -465,14 +462,26 @@
 
           <div class="proyectos_contenedor_card">
             <a
+              href="https://github.com/DanielPinedaM/producto"
+              target="_blank"
+              class="proyectos_card amarillo"
+            >
+              <h3 class="proyectos_tecnologia amarillo">NextJS + TypeScript + MySQL + Tailwind</h3>
+              <h4 class="amarillo proyectos_nombre">Producto</h4>
+              <p class="proyectos_descripcion">
+                Aplicación web Full Stack para guardar, listar, actualizar y eliminar (CRUD) imágenes y texto
+              </p>
+            </a>
+
+            <a
               href="https://danielpinedam.github.io/gamer/"
               target="_blank"
               class="proyectos_card rojo"
             >
-              <h3 class="proyectos_tecnologia rojo">HTML 5 Y CSS 3</h3>
+              <h3 class="proyectos_tecnologia rojo">HTML 5 + CSS 3</h3>
               <h4 class="rojo proyectos_nombre">Gamer</h4>
               <p class="proyectos_descripcion">
-                Diseño de una página web para vender computadores (carrito de compras).
+                Diseño Responsive de una página web para vender computadores (carrito de compras)
               </p>
             </a>
 
@@ -481,9 +490,9 @@
               target="_blank"
               class="proyectos_card azul"
             >
-              <h3 class="proyectos_tecnologia azul">REACT</h3>
+              <h3 class="proyectos_tecnologia azul">ReactJS + Vite</h3>
               <h4 class="azul proyectos_nombre">Películas</h4>
-              <p class="proyectos_descripcion">Buscar carátulas de películas.</p>
+              <p class="proyectos_descripcion">Buscar carátulas de películas mientras que se escribe</p>
             </a>
 
             <a
@@ -491,10 +500,10 @@
               target="_blank"
               class="proyectos_card verde"
             >
-              <h3 class="proyectos_tecnologia verde">REACT</h3>
-              <h4 class="verde proyectos_nombre">Rick and Morty API</h4>
+              <h3 class="proyectos_tecnologia verde">ReactJS + Vite</h3>
+              <h4 class="verde proyectos_nombre">Rick and Morty</h4>
               <p class="proyectos_descripcion">
-                Ver los personajes de la caricatura Rick and Morty
+                Ver los personajes de la caricatura Rick and Morty consumiendo API
               </p>
             </a>
           </div>
@@ -560,9 +569,19 @@
     </footer>
 
     <!-- JavaScript -->
+    <!-- importar JS externo -->
 <!--
     <script src="js/maquina_escribir.js"></script>
     <script src="js/menu.js"></script>
+-->
+<!-- minificado -->
+<!--
+    <script>
+      var TxtType=function(t,e,i){this.toRotate=e,this.el=t,this.loopNum=0,this.period=parseInt(i,10)||2e3,this.txt="",this.tick()};TxtType.prototype.tick=function(){var t=this.loopNum%this.toRotate.length,e=this.toRotate[t];this.isDeleting?this.txt=e.substring(0,this.txt.length-1):this.txt=e.substring(0,this.txt.length+1),this.el.innerHTML='<span class="wrap">'+this.txt+"</span>";var i=this,s=200-100*Math.random();this.isDeleting&&(s/=2),this.isDeleting||this.txt!==e?this.isDeleting&&""===this.txt&&(this.isDeleting=!1,this.loopNum++,s=500):(s=this.period,this.isDeleting=!0),setTimeout(function(){i.tick()},s)},window.onload=function(){for(var t=document.getElementsByClassName("typewrite"),e=0;e<t.length;e++){var i=t[e].getAttribute("data-type"),s=t[e].getAttribute("data-period");i&&new TxtType(t[e],JSON.parse(i),s)}var n=document.createElement("style");n.type="text/css",n.innerHTML=".typewrite > .wrap { border-right: 0.08em solid #fff; }",document.body.appendChild(n)};
+    </script>
+    <script>
+      function mostrar(){var n=document.createElement("style");n.innerHTML="\n    .nav-main { display: flex; }\n\n    .nav-main::before,\n    .nav-main::after { display: block; }\n    ",document.head.appendChild(n)}function ocultar(){var n=document.createElement("style");document.getElementById("main-navigation-toggle").checked=!1,n.innerHTML="\n    .nav-main,\n    .nav-main::before,\n    .nav-main::after { display: none; }\n    ",document.head.appendChild(n)}
+    </script>
 -->
   </body>
 </html>
