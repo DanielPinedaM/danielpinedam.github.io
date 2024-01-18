@@ -50,6 +50,14 @@ body {
   z-index: -999; /* el <html> y <body> estan por detras de todo */
 }
 
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p, h5, h6 {
+  text-wrap: pretty;
+}
+
 /* -------------------- Eliminar color de fondo azul cuando se hace click en los enlaces <a> -------------------- */
 
 /* https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
