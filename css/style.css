@@ -784,7 +784,7 @@ https://youtu.be/c-4wFMGFuCg
 /* -------------------- CARDS: Conocimientos -------------------- */
 
 .conocimientos_contenedor_card {
-  gap: 2.1875rem 0.625rem;
+  gap: .1875rem 0.625rem;
 }
 
 .conocimientos_card {
@@ -1288,11 +1288,23 @@ footer {
 
 /* -------------------- CARDS: Conocimientos -------------------- */
 
+@media screen and (min-width: 20em) { /* ancho viewport desde 320px = 20em hasta 479px */
+  .conocimientos_card {
+    /* (100% ancho del <div class="page_wrap">) / (2 columnas de Flex Items) = 50%
+       (50%) - (10px de la propiedad column-gap: ) */
+    flex: 0 0 calc(50% - 0.625rem);
+  }
+}
+
 @media screen and (min-width: 30em) { /* ancho viewport desde 480px = 30em hasta 639px */
   .conocimientos_card {
     /* (100% ancho del <div class="page_wrap">) / (3 columnas de Flex Items) = 33.3333333333%
        (33.3333333333%) - (10px de la propiedad column-gap: ) */
     flex: 0 0 calc(33.3333333333% - 0.625rem);
+  }
+
+  .conocimientos_contenedor_card {
+    row-gap: 0;
   }
 }
 
@@ -1314,9 +1326,9 @@ footer {
 
 @media screen and (min-width: 64em) { /* ancho viewport >= 1024px = 34em hasta infinito */
   .conocimientos_card {
-    /* (100% ancho del <div class="page_wrap">) / (6 columnas de Flex Items) = 16.6666666667%
-       (16.6666666667%) - (10px de la propiedad column-gap: ) */
-    flex: 0 0 calc(16.6666666667% - 0.625rem);
+    /* (100% ancho del <div class="page_wrap">) / (7 columnas de Flex Items) = 14.2857142857%
+       (14.2857142857%) - (10px de la propiedad column-gap: ) */
+    flex: 0 0 calc(14.2857142857% - 0.625rem);
   }
 }
 
