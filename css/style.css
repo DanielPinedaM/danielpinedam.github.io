@@ -779,6 +779,7 @@ https://youtu.be/c-4wFMGFuCg
 
 .p_experiencia_fecha {
   font-style: italic;
+  font-size: var(--step--1);
 }
 
 /* -------------------- CARDS: Conocimientos -------------------- */
