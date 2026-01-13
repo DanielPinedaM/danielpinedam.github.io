@@ -50,11 +50,20 @@ body {
   z-index: -999; /* el <html> y <body> estan por detras de todo */
 }
 
-h1, h2, h3, h4 {
+/*
+Mejorar proporsion de los saltos de linea del texto
+https://www.youtube.com/watch?v=66ky3Dopcq0&t=282s */
+
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
-p, h5, h6 {
+p,
+h5,
+h6 {
   text-wrap: pretty;
 }
 
@@ -593,9 +602,9 @@ main {
   text-align: center;
 }
 
-.sobre_mi_p {
+/* .sobre_mi_p {
   text-align: justify;
-}
+} */
 
 /*
 Boton hoja de vida
