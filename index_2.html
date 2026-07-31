@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de ingeniero de sistemas y desarrollador frontend en búsqueda de empleo"
+    />
+    <meta name="author" content="Daniel Pineda Mora" />
+    <meta
+      name="keywords"
+      content="UI UX, user interface, interfaz de usuario, diseño de interfaz de usuario, user experience, experiencia del usuario, experiencia de usuario, diseño web, diseñador web, responsive, responsive design, responsive web design, maquetador web, maquetación web, código, código fuente, desarrollador, desarrollador de software, software, desarrollador web, web, desarrollador frontend, desarrollador front end, desarrollador Front-end, desarrollador backend, desarrollador Back-End, desarrollador back end, desarrollador full stack, busco empleo, busco trabajo, remoto, presencial, híbrido, alternancia, Medellín, Colombia, LATAM, Latinoamérica, Técnico en Programación de Software, técnico, tecnológico, tecnólogo, universidad, ingeniería, ingeniero, ingeniero de sistemas, ingeniería de sistemas, ingeniero de software, ingeniería de software, experiencia, programación, programador, Git, GitHub, HTML 5, HTML, CSS 3, CSS, Sass, Tailwind, Tailwind CSS, JavaScript, javascript, java script, TypeScript, typescript, type script, Angular, NextJS, Next js, Next, React, ReactJS, React js, React Hook Form, React Router, Vite, ESLint, VS Code, Visual Studio Code, SQL, MySQL, MySQL Workbench, SQL Server, PostgreSQL, Oracle Database, Oracle DB, bases de datos, base de datos, bases de datos relacionales, base de datos relacional, bases de datos no relacionales, base de datos no relacional, NoSQL, Redux Toolkit NodeJS, node js, ExpressJS, express js, AWS S3, CRUD"
+    />
+
+    <!-- estilos CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!--
+    <style>
+      
+    </style>
+    -->
+
+    <!--
+        font-family: Mukta Google Fonts
+        https://fonts.google.com/specimen/Mukta
+        ExtraLight 200
+        Medium     500
+        Bold       700
+        ExtraBold  800
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+        Favicon
+        https://youtu.be/1KwfE5NrKU0
+        https://www.favicon-generator.org/
+        -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Portafolio</title>
+  </head>
+
+  <body>
+    <!-- Encabezado <header> -->
+    <header class="header">
+      <input
+        type="checkbox"
+        id="main-navigation-toggle"
+        class="btn btn--close"
+        title="Toggle main navigation"
+      />
+      <label for="main-navigation-toggle" onclick="mostrar()">
+        <span></span>
+      </label>
+
+      <!-- Menu de navegacion -->
+      <nav id="main-navigation" class="nav-main">
+        <menu class="menu">
+          <li class="menu__item">
+            <a
+              class="menu__link"
+              href="#perfil_profesional"
+              onclick="ocultar()"
+            >
+              Perfil Profesional
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#experiencia" onclick="ocultar()">
+              Experiencia
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#conocimientos" onclick="ocultar()">
+              Conocimientos
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#proyectos" onclick="ocultar()">
+              Proyectos
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__link" href="#contactame" onclick="ocultar()">
+              Contáctame
+            </a>
+          </li>
+        </menu>
+      </nav>
+
+      <!-- video de fondo background-video -->
+      <div class="header-video">
+        <video
+          autoplay
+          loop
+          playsinline
+          muted
+          class="background_video_mobile"
+          src="assets/video/background_video_mobile.mp4"
+        ></video>
+
+        <video
+          autoplay
+          loop
+          playsinline
+          muted
+          class="background_video_desktop"
+          src="assets/video/background_video_desktop.mp4"
+        ></video>
+      </div>
+
+      <div class="header-content">
+        <!--
+                Efecto de maquina de escribir
+                Yo soy ... ingeniero de sistemas, desarrollador frontend y móvil
+                https://css-tricks.com/snippets/css/typewriter-effect/
+                https://codepen.io/hi-im-si/pen/ALgzqo
+         -->
+        <h1>
+          Yo soy...
+          <a
+            href=""
+            class="typewrite"
+            data-period="2000"
+            data-type='["ingeniero de sistemas", "desarrollador frontend y móvil"]'
+          >
+            <span class="wrap"></span>
+          </a>
+        </h1>
+
+        <!-- Boton Contactame -->
+        <a href="#contactame" class="boton_contactame">
+          <span>Contáctame</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- contenido principal <main> -->
+    <main>
+      <div class="page_wrap">
+        <!-- Perfil Profesional -->
+        <article id="perfil_profesional">
+          <figure class="perfil_profesional_figure">
+            <figcaption class="perfil_profesional_figcaption">
+              Daniel Pineda Mora
+            </figcaption>
+            <img
+              src="assets/image/icono_progrmador.png"
+              alt="icono de prorgamador"
+              class="perfil_profesional_img"
+            />
+          </figure>
+
+          <section class="perfil_profesional_section">
+            <h2 class="h2_perfil_profesional">Perfil Profesional</h2>
+            <p class="perfil_profesional_p">
+              Ingeniero de Sistemas con más de 4 años de experiencia en
+              tecnologías frontend (Angular, React, Next.js e Ionic). Trabajo en
+              aplicaciones web y móviles desde su definición técnica hasta su
+              construcción y publicación, con foco en la experiencia del
+              usuario.
+            </p>
+            <!-- Boton descargar hoja de vida -->
+            <a
+              href="https://drive.google.com/file/d/1HTiVMhrJ_rOob6I-IozS2YJbHTdGWN2Q/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="boton_hoja_de_vida"
+            >
+              <div class="icono">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-right-short"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </div>
+              <span>HOJA DE VIDA</span>
+            </a>
+          </section>
+        </article>
+
+        <!-- Experiencia -->
+        <section id="experiencia">
+          <h2 class="h2_experiencia">Experiencia</h2>
+
+          <article class="experiencia_contenedor_card">
+            <a
+              href="https://www.tasstech.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="experiencia_card"
+            >
+              <div class="experiencia_contenedor_img img_tass">
+                <picture>
+                  <img
+                    src="assets/image/logo/TASS/TASS-1.png"
+                    alt="logo de Telemetry And Security Systems (TASS COL)"
+                  />
+                </picture>
+              </div>
+              <div class="experiencia_texto">
+                <h4 class="h4_experiencia">TASS COL</h4>
+                <p class="p_experiencia_cargo">
+                  Desarrollador Frontend y Móvil
+                </p>
+                <p class="p_experiencia_fecha">Octubre 2023 - Julio 2026</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.differentroads.es/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="experiencia_card"
+            >
+              <div class="experiencia_contenedor_img img_different">
+                <picture>
+                  <img
+                    src="assets/image/logo/different_roads.png"
+                    alt="logo de Different Roads"
+                  />
+                </picture>
+              </div>
+              <div class="experiencia_texto">
+                <h4 class="h4_experiencia">Different Roads</h4>
+                <p class="p_experiencia_cargo">Desarrollador frontend</p>
+                <p class="p_experiencia_fecha">Junio 2022 - Septiembre 2023</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.bancolombia.com/personas"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="experiencia_card"
+            >
+              <div class="experiencia_contenedor_img img_bancolombia">
+                <picture>
+                  <img
+                    src="assets/image/logo/bancolombia.png"
+                    alt="logo de Bancolombia"
+                  />
+                </picture>
+              </div>
+              <div class="experiencia_texto">
+                <h4 class="h4_experiencia">Bancolombia</h4>
+                <p class="p_experiencia_cargo">
+                  Desarrollador de Automatización
+                </p>
+                <p class="p_experiencia_fecha">Octubre 2021 - Mayo 2022</p>
+              </div>
+            </a>
+          </article>
+        </section>
+
+        <!-- CARDS: Conocimientos -->
+        <section id="conocimientos">
+          <h2 class="h2_conocimientos">Conocimientos</h2>
+
+          <div class="conocimientos_contenedor_card">
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/git.png" alt="logo de Git" />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/git-github/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Git</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/github.png" alt="logo de GitHub" />
+              </picture>
+
+              <a
+                href="https://github.com/DanielPinedaM/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>GitHub</h3>
+              </a>
+            </div>
+
+            <!--
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/node_js.png" alt="logo de Node JS" />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/nodejs-de-cero-a-experto/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>NodeJS</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/express_js.png" alt="logo de Express JS" />
+              </picture>
+              <a
+                href="https://youtu.be/JmJ1WUoUIK4?si=IfwFhTEdzkEhcbrI"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>ExpressJS</h3>
+              </a>
+            </div>
+            -->
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/html.png" alt="logo de HTML" />
+              </picture>
+              <a
+                href="https://youtu.be/-oK6zL01fNM"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>HTML 5</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/css.png" alt="logo de CSS" />
+              </picture>
+              <a
+                href="https://youtu.be/K3xmRF8ab1o?si=TnCSUFSA5nbuh4_a"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>CSS 3</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/sass.png" alt="logo de Sass" />
+              </picture>
+              <a
+                href="https://sass-lang.com/documentation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Sass</h3>
+                <h3>scss</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/tailwind.png"
+                  alt="logo de Tailwind"
+                />
+              </picture>
+              <a
+                href="https://youtu.be/R5EXap3vNDA?si=PUKQuP89JsRNuL7c"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Tailwind</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/bootstrap.webp"
+                  alt="logo de Bootstrap"
+                />
+              </picture>
+              <a
+                href="https://youtu.be/ng8ur8KNrpU?si=s6HhfgqoDqi4qy6l"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Bootstrap</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/ui_ux.png"
+                  alt="logo de Bootstrap"
+                />
+              </picture>
+              <a
+                href="https://youtu.be/udGrXWeJp1Y?si=-mJYkp1ECQIWlFbA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>UI / UX</h3>
+                <h3>Maquetación Web</h3>
+                <h3>Responsive</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/javascript.png"
+                  alt="logo de JavaScript"
+                />
+              </picture>
+              <a
+                href="https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>JavaScript</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/typescript.png"
+                  alt="logo de TypeScript"
+                />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/typescript-guia-completa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>TypeScript</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/ionic.webp" alt="logo de Ionic" />
+              </picture>
+              <a
+                href="https://ionicframework.com/docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Ionic</h3>
+                <h3>Cordova</h3>
+                <h3>Capacitor</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/angular.png"
+                  alt="logo de Angular"
+                />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/angular-fernando-herrera/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Angular</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/RxJS.png" alt="logo de RxJS" />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/angular-fernando-herrera/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>RxJS</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/react.png" alt="logo de React JS" />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/react-cero-experto/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>React</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/next.png" alt="logo de Next JS" />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/nextjs-fh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Next JS</h3>
+              </a>
+            </div>
+
+            <!--
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/react.png" alt="React Native" />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/react-native-fh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>React Native</h3>
+              </a>
+            </div>
+            -->
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/zustand.svg"
+                  alt="logo de Zustand"
+                />
+              </picture>
+              <a
+                href="https://youtu.be/pAHPHivDbuE?si=Pl7C8YTYpzBi_tjR"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Zustand</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/claude_code.webp"
+                  alt="logo de Claude Code"
+                />
+              </picture>
+              <a
+                href="https://www.udemy.com/course/claude-code-guia-completa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Claude Code (IA)</h3>
+              </a>
+            </div>
+
+            <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img
+                  src="assets/image/logo/API.png"
+                  alt="logo de Claude Code"
+                />
+              </picture>
+              <a
+                href="https://youtu.be/i8sr--1D13Y?si=L4NEHHrhPZKD28nP"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>Consumo de APIs REST</h3>
+              </a>
+            </div>
+
+            <!-- <div class="conocimientos_card">
+              <picture class="conocimientos_card_picture">
+                <img src="assets/image/logo/sql.png" alt="logo de SQL" />
+              </picture>
+
+              <a
+                href="https://www.youtube.com/playlist?list=PLvq-jIkSeTUbxupWtqWZI-agsR-b3S9_5"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="conocimientos_card_boton"
+              >
+                <h3>SQL</h3>
+              </a>
+            </div> -->
+          </div>
+        </section>
+
+        <!-- CARDS: Proyectos -->
+        <section id="proyectos">
+          <h2 class="h2_proyectos">Proyectos</h2>
+
+          <div class="proyectos_contenedor_card">
+            <a
+              href="https://github.com/DanielPinedaM/arquitectura-base-Angular"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proyectos_card rojo"
+            >
+              <h3 class="proyectos_tecnologia rojo">Angular</h3>
+              <h4 class="rojo proyectos_nombre">Estructura Base Angular</h4>
+              <p class="proyectos_descripcion">
+                Base reutilizable para acelerar el desarrollo de aplicaciones
+                empresariales
+              </p>
+            </a>
+
+            <a
+              href="https://github.com/DanielPinedaM/arquitectura-base-Next-JS"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proyectos_card azul"
+            >
+              <h3 class="proyectos_tecnologia azul">React / Next.js</h3>
+              <h4 class="azul proyectos_nombre">Estructura Base React / Next.js</h4>
+              <p class="proyectos_descripcion">
+                Estructura lista para crear aplicaciones web modernas siguiendo
+                estándares y buenas prácticas de desarrollo
+              </p>
+            </a>
+
+            <a
+              href="https://danielpinedam.github.io/react-api-buscar-peliculas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proyectos_card amarillo"
+            >
+              <h3 class="proyectos_tecnologia amarillo">React</h3>
+              <h4 class="amarillo proyectos_nombre">Buscador de Películas</h4>
+              <p class="proyectos_descripcion">
+                Aplicación web que busca y muestra películas en tiempo real
+                mientras el usuario escribe
+              </p>
+            </a>
+
+            <a
+              href="https://danielpinedam.github.io/react-rick-and-morty-api/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proyectos_card verde"
+            >
+              <h3 class="proyectos_tecnologia verde">React</h3>
+              <h4 class="verde proyectos_nombre">Rick and Morty</h4>
+              <p class="proyectos_descripcion">
+                Aplicación web que consulta y muestra información de personajes
+                mediante el consumo de una API
+              </p>
+            </a>
+          </div>
+        </section>
+
+        <!-- Contactame -->
+        <section id="contactame" class="contactame_column">
+          <div>
+            <h2 class="h2_contactame">Contáctame</h2>
+
+            <div class="contactame_row_y_column">
+              <div class="flex_0_1_100">
+                <a
+                  href="https://mail.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contactame_gmail_a dispositivo_escritorio"
+                >
+                  <img src="assets/image/logo/gmail.png" alt="logo de Gmail" />
+                  <address>pineda.daniel700@gmail.com</address>
+                </a>
+              </div>
+              <div class="flex_0_1_100">
+                <!--
+                Generador de enlaces de WhatsApp
+                https://vilmanunez.com/crear-enlace-whatsapp/
+                -->
+                <a
+                  href="https://api.whatsapp.com/send?phone=573053145758&text=Hola%20vi%20tu%20portafolio%20y%20me%20gustaria%20hablarte"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contactame_whatsapp_a"
+                >
+                  <img
+                    src="assets/image/logo/whatsapp.png"
+                    alt="logo de WhatsApp.png"
+                  />
+                  <address>+57 305 314 57 58</address>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- pie de pagina <footer> -->
+    <footer>
+      <p class="footer_p_0_1_50">Hecho con ❤️</p>
+
+      <div class="footer_div_0_1_50">
+        <div class="footer_column">
+          <a
+            href="https://github.com/DanielPinedaM/DanielPinedaM.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer_a"
+          >
+            <img
+              src="assets/image/logo/github.png"
+              alt="logo de GitHub"
+              class="footer_img"
+              loading="lazy"
+            />
+            <p class="footer_p">Ver código portafolio</p>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- importar JS externo -->
+    <!--
+    <script src="js/maquina_escribir.js"></script>
+    <script src="js/menu.js"></script>
+    -->
+
+    <!-- minificado -->
+    <script>
+      var TxtType=function(t,e,i){this.toRotate=e,this.el=t,this.loopNum=0,this.period=parseInt(i,10)||2e3,this.txt="",this.tick()};TxtType.prototype.tick=function(){var t=this.loopNum%this.toRotate.length,e=this.toRotate[t];this.isDeleting?this.txt=e.substring(0,this.txt.length-1):this.txt=e.substring(0,this.txt.length+1),this.el.innerHTML='<span class="wrap">'+this.txt+"</span>";var i=this,s=200-100*Math.random();this.isDeleting&&(s/=2),this.isDeleting||this.txt!==e?this.isDeleting&&""===this.txt&&(this.isDeleting=!1,this.loopNum++,s=500):(s=this.period,this.isDeleting=!0),setTimeout(function(){i.tick()},s)},window.onload=function(){for(var t=document.getElementsByClassName("typewrite"),e=0;e<t.length;e++){var i=t[e].getAttribute("data-type"),s=t[e].getAttribute("data-period");i&&new TxtType(t[e],JSON.parse(i),s)}var n=document.createElement("style");n.type="text/css",n.innerHTML=".typewrite > .wrap { border-right: 0.08em solid #fff; }",document.body.appendChild(n)};
+    </script>
+    <script>
+      function mostrar(){var n=document.createElement("style");n.innerHTML="\n    .nav-main { display: flex; }\n\n    .nav-main::before,\n    .nav-main::after { display: block; }\n    ",document.head.appendChild(n)}function ocultar(){var n=document.createElement("style");document.getElementById("main-navigation-toggle").checked=!1,n.innerHTML="\n    .nav-main,\n    .nav-main::before,\n    .nav-main::after { display: none; }\n    ",document.head.appendChild(n)}
+    </script>
+  </body>
+</html>
