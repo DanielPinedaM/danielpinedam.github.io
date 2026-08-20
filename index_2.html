@@ -739,7 +739,9 @@
               class="proyectos_card azul"
             >
               <h3 class="proyectos_tecnologia azul">React / Next.js</h3>
-              <h4 class="azul proyectos_nombre">Estructura Base React / Next.js</h4>
+              <h4 class="azul proyectos_nombre">
+                Estructura Base React / Next.js
+              </h4>
               <p class="proyectos_descripcion">
                 Estructura lista para crear aplicaciones web modernas siguiendo
                 estándares y buenas prácticas de desarrollo
@@ -850,10 +852,64 @@
 
     <!-- minificado -->
     <script>
-      var TxtType=function(t,e,i){this.toRotate=e,this.el=t,this.loopNum=0,this.period=parseInt(i,10)||2e3,this.txt="",this.tick()};TxtType.prototype.tick=function(){var t=this.loopNum%this.toRotate.length,e=this.toRotate[t];this.isDeleting?this.txt=e.substring(0,this.txt.length-1):this.txt=e.substring(0,this.txt.length+1),this.el.innerHTML='<span class="wrap">'+this.txt+"</span>";var i=this,s=200-100*Math.random();this.isDeleting&&(s/=2),this.isDeleting||this.txt!==e?this.isDeleting&&""===this.txt&&(this.isDeleting=!1,this.loopNum++,s=500):(s=this.period,this.isDeleting=!0),setTimeout(function(){i.tick()},s)},window.onload=function(){for(var t=document.getElementsByClassName("typewrite"),e=0;e<t.length;e++){var i=t[e].getAttribute("data-type"),s=t[e].getAttribute("data-period");i&&new TxtType(t[e],JSON.parse(i),s)}var n=document.createElement("style");n.type="text/css",n.innerHTML=".typewrite > .wrap { border-right: 0.08em solid #fff; }",document.body.appendChild(n)};
+      var TxtType = function (t, e, i) {
+        ((this.toRotate = e),
+          (this.el = t),
+          (this.loopNum = 0),
+          (this.period = parseInt(i, 10) || 2e3),
+          (this.txt = ""),
+          this.tick());
+      };
+      ((TxtType.prototype.tick = function () {
+        var t = this.loopNum % this.toRotate.length,
+          e = this.toRotate[t];
+        (this.isDeleting
+          ? (this.txt = e.substring(0, this.txt.length - 1))
+          : (this.txt = e.substring(0, this.txt.length + 1)),
+          (this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>"));
+        var i = this,
+          s = 200 - 100 * Math.random();
+        (this.isDeleting && (s /= 2),
+          this.isDeleting || this.txt !== e
+            ? this.isDeleting &&
+              "" === this.txt &&
+              ((this.isDeleting = !1), this.loopNum++, (s = 500))
+            : ((s = this.period), (this.isDeleting = !0)),
+          setTimeout(function () {
+            i.tick();
+          }, s));
+      }),
+        (window.onload = function () {
+          for (
+            var t = document.getElementsByClassName("typewrite"), e = 0;
+            e < t.length;
+            e++
+          ) {
+            var i = t[e].getAttribute("data-type"),
+              s = t[e].getAttribute("data-period");
+            i && new TxtType(t[e], JSON.parse(i), s);
+          }
+          var n = document.createElement("style");
+          ((n.type = "text/css"),
+            (n.innerHTML =
+              ".typewrite > .wrap { border-right: 0.08em solid #fff; }"),
+            document.body.appendChild(n));
+        }));
     </script>
     <script>
-      function mostrar(){var n=document.createElement("style");n.innerHTML="\n    .nav-main { display: flex; }\n\n    .nav-main::before,\n    .nav-main::after { display: block; }\n    ",document.head.appendChild(n)}function ocultar(){var n=document.createElement("style");document.getElementById("main-navigation-toggle").checked=!1,n.innerHTML="\n    .nav-main,\n    .nav-main::before,\n    .nav-main::after { display: none; }\n    ",document.head.appendChild(n)}
+      function mostrar() {
+        var n = document.createElement("style");
+        ((n.innerHTML =
+          "\n    .nav-main { display: flex; }\n\n    .nav-main::before,\n    .nav-main::after { display: block; }\n    "),
+          document.head.appendChild(n));
+      }
+      function ocultar() {
+        var n = document.createElement("style");
+        ((document.getElementById("main-navigation-toggle").checked = !1),
+          (n.innerHTML =
+            "\n    .nav-main,\n    .nav-main::before,\n    .nav-main::after { display: none; }\n    "),
+          document.head.appendChild(n));
+      }
     </script>
   </body>
 </html>
