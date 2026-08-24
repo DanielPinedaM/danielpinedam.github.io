@@ -8,6 +8,143 @@ custom propierties de Tailwind */
   *********************************** */
 
   /*
+  Superficies del TEMA OSCURO - son los colores originales del portafolio en HTML, CSS y JavaScript */
+  --color-night: oklch(21.604% 0.0037 228.98); /* #181a1b - fondo de la pagina */
+  --color-night-card: oklch(20.728% 0.0037 228.99); /* #161819 - card de proyectos y contactame */
+  --color-night-menu: oklch(20.989% 0.0039 286.06); /* #18181a - fondo del menu de navegacion */
+  --color-night-footer: oklch(28.094% 0 89.88); /* #292929 - pie de pagina */
+
+  /*
+  Superficies del TEMA CLARO - equivalen a las del tema oscuro pero invertidas */
+  --color-day: oklch(100% 0 89.88); /* #ffffff - fondo de la pagina */
+  --color-day-card: oklch(96.743% 0.0013 286.38); /* #f4f4f5 - card de proyectos y contactame */
+  --color-day-menu: oklch(98.51% 0 89.88); /* #fafafa - fondo del menu de navegacion */
+  --color-day-footer: oklch(93.705% 0 89.88); /* #eaeaea - pie de pagina */
+
+  /*
+  Acentos del TEMA OSCURO - neon sobre fondo oscuro */
+  --color-neon-cyan: oklch(89.137% 0.16 178.41); /* #20fddc - menu, boton hamburguesa */
+  --color-neon-teal: oklch(74.375% 0.1342 180.54); /* #02c7b0 - boton hoja de vida */
+  --color-neon-red: oklch(64.74% 0.2384 27.11); /* #ff3131 - proyecto Angular */
+  --color-neon-blue: oklch(87.452% 0.1485 191.58); /* #15f4ee - proyecto React / Next.js */
+  --color-neon-yellow: oklch(96.907% 0.2005 109.62); /* #ffff33 - proyecto Buscador de Peliculas */
+  --color-neon-green: oklch(86.628% 0.2601 142.85); /* #48fb47 - proyecto Rick and Morty */
+  --color-neon-bar: oklch(97.015% 0 89.88); /* #f5f5f5 - barra que recorre el enlace del menu */
+
+  /*
+  Acentos del TEMA CLARO - mismo tono que los neon pero con menor luminosidad
+  para que todos superen el minimo legible de 4.5:1 sobre fondo blanco */
+  --color-ink-cyan: oklch(53.527% 0.0955 180.63); /* #067f70 - 4.91:1 */
+  --color-ink-teal: oklch(51.696% 0.0923 180.99); /* #04796b - 5.31:1 */
+  --color-ink-red: oklch(52.743% 0.1991 27.54); /* #c41e1e - 5.91:1 */
+  --color-ink-blue: oklch(53.039% 0.0892 190.78); /* #0b7c78 - 5.04:1 */
+  --color-ink-yellow: oklch(52.353% 0.1084 98.81); /* #7a6a00 - 5.40:1 */
+  --color-ink-green: oklch(50.708% 0.1557 142.74); /* #1b7a1a - 5.46:1 */
+
+  /*
+  ***********************
+  * Tipografia          *
+  *********************** */
+
+  /*
+  font-family: Mukta Google Fonts
+  https://fonts.google.com/specimen/Mukta
+  ExtraLight 200 - Medium 500 - Bold 700 - ExtraBold 800 */
+  --font-mukta: 'Mukta', sans-serif;
+
+  /* fuente monoespaciada de los enlaces del menu de navegacion */
+  --font-menu: 'Courier New', Courier, monospace, Consolas;
+
+  /* fuente por defecto de toda la pagina web */
+  --default-font-family: var(--font-mukta);
+
+  /*
+  Los mismos tamanos de texto que ya calcula preflight.css,
+  expuestos como utilidades de Tailwind (text-step-0, text-step-3, ...)
+  para poder aplicarlos a etiquetas HTML que por defecto tienen otro tamano */
+  --text-meta: var(--step--1);
+  --text-step-0: var(--step-0);
+  --text-step-1: var(--step-1);
+  --text-step-2: var(--step-2);
+  --text-step-3: var(--step-3);
+  --text-step-4: var(--step-4);
+
+  /*
+  Utopia Fluid Responsive Design
+
+  Tamano que NO esta en preflight.css porque es mas grande que el --step-4.
+  Equivale al --step-5 del portafolio en HTML, CSS y JavaScript, con dvw en vez de vw
+
+  Calculado con estos parametros:
+  viewport minimo 320px - texto base 17px - escala 1.2
+  viewport maximo 1500px - texto base 20px - escala 1.333
+  https://utopia.fyi/type/calculator?c=320,17,1.2,1500,20,1.333,8,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
+
+  ┌───────────────────────────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+  │ token ⬇️ / media query ➡️ │ @320  │ @480  │ @768  │ @1024 │ @1280 │ @1500 │ @1920 │
+  ├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+  │ --text-hero               │ 42.30 │ 47.98 │ 58.20 │ 67.29 │ 76.38 │ 84.19 │ 84.19 │
+  ├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+  │ --text-menu               │ 42.30 │ 47.98 │ 58.20 │ 67.29 │ 76.38 │ 84.19 │ 84.19 │
+  └───────────────────────────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘ */
+
+  /* texto "Yo soy... ingeniero de sistemas, desarrollador frontend y movil" del <header> */
+  --text-hero: clamp(2.64rem, calc(1.93rem + 3.55dvw), 5.26rem);
+
+  /* enlaces del menu de navegacion */
+  --text-menu: clamp(2.64rem, calc(1.93rem + 3.55dvw), 5.26rem);
+
+  /*
+  ***********************
+  * Sombras             *
+  *********************** */
+
+  /* foto del perfil, boton hoja de vida y botones de las card de conocimientos */
+  --shadow-card:
+    rgb(0 0 0 / 35%) 15px 15px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+
+  /* card de proyectos */
+  --shadow-project:
+    inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
+    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+
+  /*
+  ***********************
+  * Animaciones         *
+  *********************** */
+
+  /* parpadeo de la barra que recorre el enlace del menu de navegacion */
+  --animate-blink: blink 1s 150ms steps(1, end) forwards infinite;
+
+  @keyframes blink {
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* latido del nombre de cada proyecto */
+  --animate-project-title: project-title 4s infinite;
+
+  @keyframes project-title {
+    50% {
+      opacity: 0.63;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /*
+  ***********************
+  * Curvas de animacion *
+  *********************** */
+
+  /* curva del menu de navegacion */
+  --ease-menu: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  /*
   *******************************************************************************
   * Breakpoints para media queries (Responsive)                                 *
   * https://tailwindcss.com/docs/responsive-design#removing-default-breakpoints *
