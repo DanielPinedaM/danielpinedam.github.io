@@ -1,0 +1,790 @@
+/*
+Reset CSS basado en Tailwind 4
+https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css
+*/
+
+/*
+selector universal
+
+1. Evita que el padding y el borde afecten el ancho del elemento.
+   (https://github.com/mozdevs/cssremedy/issues/4)
+2. Elimina los márgenes y rellenos predeterminados.
+3. Restablece todos los bordes.
+*/
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+/*
+  1. Usar un line-height consistente y sensato en todos los navegadores.
+  2. Evitar el ajuste del tamaño de la fuente al cambiar la orientación en iOS.
+  3. Usar un tamaño de tabulación más legible.
+  4. Usar por defecto la font-family `sans` configurada por el usuario.
+  5. Usar por defecto los font-feature-settings `sans` configurados por el usuario.
+  6. Usar por defecto los font-variation-settings `sans` configurados por el usuario.
+  7. Deshabilitar el resaltado al tocar (tap highlight) en iOS.
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  font-family: --theme(
+    --default-font-family,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    'Noto Sans',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji'
+  );
+  font-feature-settings: --theme(--default-font-feature-settings, normal);
+  font-variation-settings: --theme(--default-font-variation-settings, normal);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+etiquetas padre contenedoras de toda la web
+*/
+
+html {
+  font-size: 16px; /* 1rem = 16px */
+  text-size-adjust: 100% !important;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  display: block;
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  /* area segura en mobile */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+
+  text-rendering: optimizeSpeed !important;
+
+  overflow-x: hidden;
+
+  /* suavizar texto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Tema oscuro y claro
+*/
+
+:root {
+  /* tema claro */
+  color-scheme: light;
+
+  --background: oklch(100% 0 0);
+  --foreground: oklch(0% 0 0);
+}
+
+:root.dark {
+  /* tema oscuro */
+  color-scheme: dark;
+
+  --background: oklch(2.75381% 0 0);
+  --foreground: oklch(100% 0 0);
+}
+
+html,
+body {
+  /* color fondo de toda la pagina web */
+  background-color: var(--background);
+}
+
+body {
+  /* color por defecto de todos los textos de la pagina web */
+  color: var(--foreground);
+}
+
+/*
+  1. Agregar la altura correcta en Firefox.
+  2. Corregir la herencia del color del borde en Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  3. Restablecer el estilo de borde por defecto a un borde sólido de 1px.
+*/
+
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+
+/*
+  Agregar la decoración de texto correcta en Chrome, Edge y Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+  Eliminar el tamaño y el grosor de fuente por defecto de los encabezados.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+/*
+  Restablecer los enlaces para aplicarles estilos de forma explícita (opt-in) en vez de tener que sobrescribir los nativos (opt-out).
+*/
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+
+  /* Eliminar color de fondo azul cuando se hace click en los enlaces <a>
+  https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/*
+  Agregar el grosor de fuente correcto en Edge y Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+  1. Usar por defecto la font-family `mono` configurada por el usuario.
+  2. Usar por defecto los font-feature-settings `mono` configurados por el usuario.
+  3. Usar por defecto los font-variation-settings `mono` configurados por el usuario.
+  4. Corregir el tamaño de fuente irregular en `em` en todos los navegadores.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: --theme(
+    --default-mono-font-family,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Liberation Mono',
+    'Courier New',
+    monospace
+  );
+  font-feature-settings: --theme(--default-mono-font-feature-settings, normal);
+  font-variation-settings: --theme(--default-mono-font-variation-settings, normal);
+}
+
+/*
+  Evitar que los elementos `sub` y `sup` afecten el line-height en todos los navegadores.
+*/
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+  tabla - <table>
+
+  1. Eliminar la indentación del texto en el contenido de la tabla en Chrome y Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Corregir la herencia del color del borde de la tabla en Chrome y Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Eliminar por defecto los espacios entre los bordes de la tabla.
+*/
+
+table {
+  width: 100%;
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  Usar el estilo de focus moderno de Firefox en todos los elementos enfocables.
+*/
+
+:-moz-focusring:where(:not(iframe)) {
+  outline: auto;
+}
+
+/*
+  Agregar la alineación vertical correcta en Chrome y Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+  Agregar el display correcto en Chrome y Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+  Quitar por defecto los estilos de las listas.
+*/
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/*
+  1. Aplicar por defecto `display: block` a los elementos reemplazados. (https://github.com/mozdevs/cssremedy/issues/14)
+
+  2. Agregar `vertical-align: middle` para alinear por defecto los elementos reemplazados de forma más sensata. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+      Esto puede provocar un error de lint mal planteado en algunas herramientas, pero se incluye a propósito.
+*/
+
+img,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object,
+picture {
+  display: block;
+  vertical-align: middle;
+}
+
+/*
+  1. Multimedia Responsive https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4090s
+
+  2. Limitar las imágenes y los videos al ancho del padre y conservar su relación de aspecto intrínseca. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video,
+audio,
+canvas,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* SVGs globales - NO afectar a botones con clase .btn */
+svg:not(.btn svg) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/*
+Ajustar imagen y video ampliándolo y conservando su calidad. Es probable que la imagen y video si se recorte
+*/
+
+img,
+video {
+  object-fit: cover;
+}
+
+/*
+  1. Heredar los estilos de fuente en todos los navegadores.
+  2. Eliminar el border-radius en todos los navegadores.
+  3. Eliminar el color de fondo en todos los navegadores.
+  4. Garantizar una opacidad consistente en los estados deshabilitados en todos los navegadores.
+*/
+
+button,
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  font-family: inherit;
+  font-stretch: inherit;
+  font-width: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  border-radius: 0;
+  background-color: transparent;
+  opacity: 1;
+}
+
+/*
+  Restaurar el grosor de fuente por defecto.
+*/
+
+:where(select:is([multiple], [size])) optgroup {
+  font-weight: bolder;
+}
+
+/*
+  Restaurar la indentación.
+*/
+
+:where(select:is([multiple], [size])) optgroup option {
+  padding-inline-start: 20px;
+}
+
+/*
+  Restaurar el espacio después del botón.
+*/
+
+::file-selector-button {
+  margin-inline-end: 4px;
+}
+
+/*
+  Restablecer la opacidad por defecto del placeholder en Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+*/
+
+::placeholder {
+  opacity: 1;
+}
+
+/*
+  Definir el color por defecto del placeholder como una versión semitransparente del color de texto actual, en los navegadores
+  que no fallan al usar `color-mix(…)` con `currentcolor`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)
+*/
+
+@supports (not (-webkit-appearance: -apple-pay-button)) /* No es Safari */ or
+  (contain-intrinsic-size: 1px) /* Safari 17 o superior */ {
+  ::placeholder {
+    color: color-mix(in oklab, currentcolor 50%, transparent);
+  }
+}
+
+/*
+  Evitar por defecto que los textarea se redimensionen horizontalmente.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+  Eliminar el padding interno en Chrome y Safari en macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+  1. Garantizar que los input de fecha y hora tengan la misma altura cuando están vacíos en Safari de iOS.
+  2. Garantizar que se pueda cambiar la alineación del texto en los input de fecha y hora en Safari de iOS.
+*/
+
+::-webkit-date-and-time-value {
+  min-height: 1lh;
+  text-align: inherit;
+}
+
+/*
+  Evitar que cambie la altura de los input de fecha y hora en Safari de macOS cuando el input tiene `display: block`.
+*/
+
+::-webkit-datetime-edit {
+  display: inline-flex;
+}
+
+/*
+  Eliminar el padding sobrante de los pseudo-elementos de los input de fecha y hora para garantizar una altura consistente entre navegadores.
+*/
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-minute-field,
+::-webkit-datetime-edit-second-field,
+::-webkit-datetime-edit-millisecond-field,
+::-webkit-datetime-edit-meridiem-field {
+  padding-block: 0;
+}
+
+/*
+  Centrar el marcador del dropdown que se muestra en los input asociados a un `<datalist>` en Chrome. (https://github.com/tailwindlabs/tailwindcss/issues/18499)
+*/
+
+::-webkit-calendar-picker-indicator {
+  line-height: 1;
+}
+
+/*
+  Eliminar los estilos adicionales de `:invalid` en Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+  Corregir la imposibilidad de estilar el border-radius en Safari de iOS.
+*/
+
+button,
+input:where([type='button'], [type='reset'], [type='submit']),
+::file-selector-button {
+  appearance: button;
+}
+
+/*
+  Corregir el estilo del cursor de los botones de incremento y decremento en Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+  Mantener ocultos por defecto los elementos que tienen el atributo HTML hidden.
+*/
+
+[hidden]:where(:not([hidden='until-found'])) {
+  display: none !important;
+}
+
+/*
+Mejorar proporsion de los saltos de linea del texto
+https://www.youtube.com/watch?v=66ky3Dopcq0&t=282s
+*/
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+h5,
+h6 {
+  text-wrap: pretty;
+}
+
+/*
+Texto
+*/
+
+/* titulos */
+h1, h2, h3, h4, h5, h6,
+
+/* texto general */
+p,
+span,
+b,
+strong,
+i,
+em,
+small,
+mark,
+abbr,
+cite,
+dfn,
+q,
+blockquote,
+time,
+
+/* enlaces */
+a,
+
+/* listas */
+li,
+dt,
+dd,
+
+/* contenido técnico */
+code,
+pre,
+kbd,
+samp,
+var,
+
+/* formularios */
+label,
+input,
+textarea,
+select,
+option,
+optgroup,
+legend,
+
+/* tabla */
+table,
+thead,
+tbody,
+tfoot,
+caption,
+th,
+td {
+  /*
+  alineacion uniforme de los numeros
+  todos los numeros tienen el mismo ancho para q ocupen el mismo espacio
+  solo es compatible con fuentes OpenType
+  https://css-tricks.com/almanac/properties/f/font-variant-numeric/
+  https://practice.typekit.com/lesson/caring-about-opentype-features/ */
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+cursor de elementos HTML activados
+*/
+
+button:enabled,
+input[type='button']:enabled,
+input[type='submit']:enabled,
+input[type='reset']:enabled,
+input[type='image']:enabled,
+input[type='range']:enabled,
+input[type='color']:enabled,
+input[type='file']:enabled::file-selector-button,
+input[type='file']:enabled {
+  cursor: pointer;
+}
+
+/*
+cursor de elementos HTML desactivados
+*/
+
+button:disabled,
+fieldset:disabled,
+optgroup:disabled,
+option:disabled,
+select:disabled,
+textarea:disabled,
+input:disabled,
+input[type='file']:disabled::file-selector-button,
+input[type='file']:disabled,
+input:read-only,
+textarea:read-only {
+  cursor: not-allowed;
+}
+
+/*
+Utopia Fluid Responsive Design
+
+Texto Responsive usando las media queries de Tailwind q estan en src\styles\global\css\theme\tailwind\theme.css
+
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=18750s
+https://utopia.fyi/type/calculator
+
+┌───────────────────────────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│ step ⬇️ / media query ➡️ │ @360  │ @480  │ @640  │ @768  │ @1024 │ @1280 │ @1536 │ @1920 │ @2560 │
+├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ --step-4 h1               │ 33.18 │ 33.18 │ 34.37 │ 35.33 │ 37.25 │ 39.16 │ 41.08 │ 43.95 │ 43.95 │
+├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ --step-3 h2               │ 27.65 │ 27.65 │ 28.48 │ 29.15 │ 30.48 │ 31.82 │ 33.15 │ 35.16 │ 35.16 │
+├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ --step-2 h3               │ 23.04 │ 23.04 │ 23.61 │ 24.06 │ 24.96 │ 25.87 │ 26.77 │ 28.12 │ 28.12 │
+├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ --step-1 h4               │ 19.20 │ 19.20 │ 19.57 │ 19.86 │ 20.45 │ 21.03 │ 21.62 │ 22.50 │ 22.50 │
+├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ --step-0 base             │ 16.00 │ 16.00 │ 16.22 │ 16.40 │ 16.76 │ 17.11 │ 17.47 │ 18.00 │ 18.00 │
+├───────────────────────────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ --step--1                 │ 13.33 │ 13.33 │ 13.45 │ 13.55 │ 13.74 │ 13.93 │ 14.12 │ 14.40 │ 14.40 │
+└───────────────────────────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+*/
+
+:root {
+  --step-4: clamp(2.0736rem, calc(1.8493rem + 0.7478dvw), 2.7466rem);
+  --step-3: clamp(1.728rem, calc(1.5716rem + 0.5214dvw), 2.1973rem);
+  --step-2: clamp(1.44rem, calc(1.3341rem + 0.3531dvw), 1.7578rem);
+  --step-1: clamp(1.2rem, calc(1.1312rem + 0.2292dvw), 1.4063rem);
+  --step-0: clamp(1rem, calc(0.9583rem + 0.1389dvw), 1.125rem);
+  --step--1: clamp(0.8333rem, calc(0.8111rem + 0.0741dvw), 0.9rem);
+}
+
+/* tamaño base equivalente a 16px responsive */
+
+/* titulos */
+h5,
+h6,
+hgroup,
+
+/* texto general */
+p,
+span,
+b,
+strong,
+i,
+em,
+mark,
+abbr,
+cite,
+dfn,
+q,
+blockquote,
+time,
+address,
+output,
+del,
+ins,
+s,
+u,
+bdi,
+bdo,
+data,
+ruby,
+rt,
+rp,
+
+/* enlaces */
+a,
+
+/* listas */
+ul,
+ol,
+menu,
+li,
+dl,
+dt,
+dd,
+
+/* contenido técnico */
+code,
+pre,
+kbd,
+samp,
+var,
+
+/* formularios */
+form,
+fieldset,
+label,
+legend,
+input,
+textarea,
+select,
+button,
+.btn,
+option,
+optgroup,
+::file-selector-button,
+meter,
+progress,
+
+/* tabla */
+table,
+thead,
+tbody,
+tfoot,
+caption,
+tr,
+th,
+td,
+
+/* contenedores de seccion */
+div,
+main,
+search,
+article,
+section,
+header,
+footer,
+nav,
+aside,
+
+/* elementos interactivos */
+details,
+summary,
+dialog,
+
+/* multimedia */
+figure,
+figcaption,
+
+/* scripting */
+noscript {
+  font-size: var(--step-0);
+}
+
+/* texto secundario - un step por debajo del tamaño base */
+
+small,
+sub,
+sup {
+  font-size: var(--step--1);
+}
+
+/* jerarquia de titulos - cada titulo baja un step hasta llegar al tamaño base en h5 y h6 */
+
+h1 {
+  font-size: var(--step-4);
+
+  span {
+    font-size: var(--step-4);
+  }
+}
+
+h2 {
+  font-size: var(--step-3);
+
+  span {
+    font-size: var(--step-3);
+  }
+}
+
+h3 {
+  font-size: var(--step-2);
+
+  span {
+    font-size: var(--step-2);
+  }
+}
+
+h4 {
+  font-size: var(--step-1);
+
+  span {
+    font-size: var(--step-1);
+  }
+}
