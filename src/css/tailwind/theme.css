@@ -13,6 +13,7 @@ custom propierties de Tailwind */
   --color-night-card: oklch(20.728% 0.0037 228.99); /* #161819 - card de proyectos y contactame */
   --color-night-menu: oklch(20.989% 0.0039 286.06); /* #18181a - fondo del menu de navegacion */
   --color-night-footer: oklch(28.094% 0 89.88); /* #292929 - pie de pagina */
+  --color-night-scrollbar: oklch(80.73% 0 0); /* #c0c0c0 - barra de scroll - 9.59:1 sobre --color-night */
 
   /*
   Superficies del TEMA CLARO - equivalen a las del tema oscuro pero invertidas */
@@ -20,6 +21,7 @@ custom propierties de Tailwind */
   --color-day-card: oklch(96.743% 0.0013 286.38); /* #f4f4f5 - card de proyectos y contactame */
   --color-day-menu: oklch(98.51% 0 89.88); /* #fafafa - fondo del menu de navegacion */
   --color-day-footer: oklch(93.705% 0 89.88); /* #eaeaea - pie de pagina */
+  --color-day-scrollbar: oklch(40.87% 0 0); /* #4a4a4a - barra de scroll - 8.88:1 sobre --color-day */
 
   /*
   Acentos del TEMA OSCURO - neon sobre fondo oscuro */

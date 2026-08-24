@@ -1,0 +1,44 @@
+/*
+*******************
+* Barra de scroll *
+******************* */
+
+/*
+El color del thumb NO se puede maquetar con el prefijo dark: de Tailwind porque
+::-webkit-scrollbar-thumb es un pseudo-elemento que Tailwind no genera y que deja
+de coincidir al envolverlo en el :where(.dark, .dark *) de esa variante.
+Se resuelve con una custom property que cambia de valor segun la clase .dark */
+:root {
+  --scrollbar-thumb: var(--color-day-scrollbar);
+
+  &:is(.dark) {
+    --scrollbar-thumb: var(--color-night-scrollbar);
+  }
+}
+
+*::-webkit-scrollbar {
+  display: block;
+  height: 5px;
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border-right: none;
+  border-left: none;
+}
+
+*::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 1.25rem;
+}
+
+*::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 1.25rem;
+}
