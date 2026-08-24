@@ -1,10 +1,5 @@
 import { PROFILE } from '@/constants/profile.const';
 
-/*
-Perfil profesional
-
-Foto a la izquierda y texto con el boton Hoja de Vida a la derecha.
-Desde 640px se parten en dos columnas del 50% */
 const ProfessionalProfile = () => (
   <article
     id="perfil_profesional"
@@ -25,9 +20,6 @@ const ProfessionalProfile = () => (
 
       <p>{PROFILE.description}</p>
 
-      {/*
-      Boton descargar hoja de vida
-      https://youtu.be/c-4wFMGFuCg */}
       <a
         href={PROFILE.resumeUrl}
         target="_blank"
@@ -35,9 +27,6 @@ const ProfessionalProfile = () => (
         className="group relative mx-auto mt-[1.2rem] flex h-20 max-w-[14.375rem] cursor-pointer items-center justify-center overflow-hidden rounded-[1.25rem] border-[5px] border-solid border-ink-teal text-center font-medium text-ink-teal shadow-card transition-all duration-300 ease-[ease] hover:bg-ink-teal hover:font-extrabold hover:text-white active:bg-ink-teal active:font-extrabold active:text-white dark:border-neon-teal dark:text-neon-teal dark:hover:bg-neon-teal dark:active:bg-neon-teal"
       >
         <div className="absolute left-[-2.5rem] z-[1] flex items-center justify-center opacity-0 transition-all duration-200 ease-in-out group-hover:left-[calc(100%-3.125rem)] group-hover:opacity-100 group-active:left-[calc(100%-3.125rem)] group-active:opacity-100">
-          {/*
-          icono de flecha de Bootstrap Icons
-          https://icons.getbootstrap.com/icons/arrow-right-short/ */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"

@@ -1,5 +1,3 @@
-/*
-Perfil profesional */
 export const PROFILE: Record<
   'name' | 'photo' | 'alt' | 'title' | 'description' | 'resumeLabel' | 'resumeUrl',
   string
@@ -15,8 +13,6 @@ export const PROFILE: Record<
     'https://drive.google.com/file/d/1NuBATwtw34FaLn5wAGfHLMFo9xbdu9he/view?usp=drive_link',
 };
 
-/*
-Pie de pagina <footer> */
 export const FOOTER: Record<'madeWith' | 'label' | 'logo' | 'alt' | 'url', string> = {
   madeWith: 'Hecho con ❤️',
   label: 'Ver código portafolio',

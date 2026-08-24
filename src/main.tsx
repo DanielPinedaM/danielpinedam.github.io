@@ -6,9 +6,6 @@ import '@/css/global.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/*
-    tema oscuro y claro
-    https://www.npmjs.com/package/next-themes */}
     <ThemeProvider
       attribute="class"
       defaultTheme="light"

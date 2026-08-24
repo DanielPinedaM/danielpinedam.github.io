@@ -1,10 +1,5 @@
 import { FOOTER } from '@/constants/profile.const';
 
-/*
-Pie de pagina <footer>
-
-Usa CSS Flexbox anidado: el texto ocupa la mitad izquierda
-y el enlace a GitHub la mitad derecha */
 const Footer = () => (
   <footer className="mx-auto mb-4 flex max-w-[105rem] flex-row flex-wrap items-center justify-center gap-y-[0.625rem] bg-day-footer p-[1.5%] text-step-0 dark:bg-night-footer">
     <p className="flex-[0_1_50%]">{FOOTER.madeWith}</p>

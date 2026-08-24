@@ -1,10 +1,5 @@
 import { useTheme } from 'next-themes';
 
-/*
-Boton que cambia entre tema oscuro y claro
-
-El icono de luna cambia de color segun el tema seleccionado:
-verde azulado oscuro en tema claro y cian neon en tema oscuro */
 const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -20,9 +15,6 @@ const ThemeToggle = () => {
       aria-pressed={isDark}
       className="fixed top-[1.6875rem] right-[5.1875rem] z-[999] flex size-8 items-center justify-center"
     >
-      {/*
-      icono de luna de Bootstrap Icons
-      https://icons.getbootstrap.com/icons/moon-fill/ */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
