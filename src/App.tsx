@@ -1,18 +1,16 @@
-import Contact from '@/components/Contact';
-import Experience from '@/components/Experience';
+import Contact from '@/components/contact/Contact';
+import Experience from '@/components/experience/Experience';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ProfessionalProfile from '@/components/ProfessionalProfile';
-import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
+import Projects from '@/components/projects/Projects';
+import Skills from '@/components/skills/Skills';
 
 const App = () => (
-  /* contenedor padre de toda la pagina web */
   <div className="mx-auto max-w-[1920px] bg-day font-extralight leading-[1.2] dark:bg-night">
     <Header />
 
     <main className="mt-[3.125rem]">
-      {/* centrar el contenido principal de la pagina web (Responsive) */}
       <div className="mx-auto max-w-[min(90dvw,83.25rem)]">
         <ProfessionalProfile />
         <Experience />

@@ -1,13 +1,8 @@
 import type { TExperience } from '@/types/portfolio.types';
 
-/*
-Experiencia laboral
-
-El logo de TASS COL es blanco, asi que sobre el fondo del tema claro es invisible.
-Por eso tiene dos variantes de la misma marca: la blanca para el tema oscuro
-y la negra para el tema claro. Los otros dos logos se ven bien en los dos temas */
 export const EXPERIENCE: TExperience[] = [
   {
+    id: 1,
     company: 'TASS COL',
     role: 'Desarrollador Frontend y Móvil',
     date: 'Octubre 2023 - Julio 2026',
@@ -18,6 +13,7 @@ export const EXPERIENCE: TExperience[] = [
     logoWidth: 'max-w-[5.625rem]',
   },
   {
+    id: 2,
     company: 'Different Roads',
     role: 'Desarrollador frontend',
     date: 'Junio 2022 - Septiembre 2023',
@@ -28,6 +24,7 @@ export const EXPERIENCE: TExperience[] = [
     logoWidth: 'max-w-[5.625rem]',
   },
   {
+    id: 3,
     company: 'Bancolombia',
     role: 'Desarrollador de Automatización',
     date: 'Octubre 2021 - Mayo 2022',

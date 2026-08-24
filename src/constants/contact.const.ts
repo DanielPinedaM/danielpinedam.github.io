@@ -1,18 +1,15 @@
 import type { TContact } from '@/types/portfolio.types';
 
-/*
-Formas de contacto
-
-El enlace de WhatsApp se genero aqui:
-https://vilmanunez.com/crear-enlace-whatsapp/ */
 export const CONTACT: TContact[] = [
   {
+    id: 1,
     label: 'pineda.daniel700@gmail.com',
     logo: '/assets/image/logo/contactame/gmail.png',
     alt: 'logo de Gmail',
     url: 'https://mail.google.com/',
   },
   {
+    id: 2,
     label: '+57 305 314 57 58',
     logo: '/assets/image/logo/contactame/whatsapp.png',
     alt: 'logo de WhatsApp',

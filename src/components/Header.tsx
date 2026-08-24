@@ -1,24 +1,17 @@
 import { useEffect, useState } from 'react';
-import Menu from '@/components/Menu';
+import Menu from '@/components/menu/Menu';
 import MenuButton from '@/components/MenuButton';
 import ThemeToggle from '@/components/ThemeToggle';
 import { HERO, HERO_VIDEO } from '@/constants/hero.const';
 import { useTypewriter } from '@/hooks/useTypewriter';
 
-/*
-Encabezado <header>
+const VIDEO: string = 'absolute top-0 left-0 h-dvh w-full object-cover';
 
-Ocupa toda la pantalla, tiene un video de fondo, el titulo con el efecto
-de maquina de escribir y el boton Contactame
-
-Tutorial de Fazt:
-https://youtu.be/bwHxGzHjLTU */
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const typedText: string = useTypewriter(HERO.words, HERO.period);
 
-  /* cerrar el menu con la tecla Escape */
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent): void => {
       if (event.key === 'Escape') {
@@ -31,9 +24,6 @@ const Header = () => {
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, []);
 
-  /* clases comunes de los dos videos de fondo */
-  const video = 'absolute top-0 left-0 h-dvh w-full object-cover';
-
   return (
     <header className="relative flex h-dvh w-full items-center justify-center text-white">
       <MenuButton
@@ -45,11 +35,6 @@ const Header = () => {
 
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
-      {/*
-      video de fondo - uno para celular y otro para computador
-
-      bg-night es el color de respaldo mientras el video carga: el texto del
-      <header> siempre es blanco, asi que el fondo tiene que ser oscuro en los dos temas */}
       <div className="absolute top-0 left-0 -z-10 block h-dvh w-full overflow-hidden bg-night">
         <video
           autoPlay
@@ -57,7 +42,7 @@ const Header = () => {
           playsInline
           muted
           src={HERO_VIDEO.mobile}
-          className={`${video} block xsm:hidden`}
+          className={`${VIDEO} block xsm:hidden`}
         />
 
         <video
@@ -66,7 +51,7 @@ const Header = () => {
           playsInline
           muted
           src={HERO_VIDEO.desktop}
-          className={`${video} hidden xsm:block`}
+          className={`${VIDEO} hidden xsm:block`}
         />
       </div>
 
@@ -80,7 +65,6 @@ const Header = () => {
           </span>
         </h1>
 
-        {/* boton Contactame */}
         <a
           href={HERO.ctaHref}
           className="relative z-[999] mt-[5dvh] cursor-pointer rounded-[0.625rem] border-[0.1875rem] border-solid border-white px-[1.875rem] py-[0.9375rem] text-step-3 font-medium text-white opacity-100 active:top-[0.4688rem] xsm:text-black xsm:opacity-70"

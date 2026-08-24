@@ -1,12 +1,8 @@
 import type { TProject } from '@/types/portfolio.types';
 
-/*
-Proyectos
-
-"accentBorder" es el borde superior de la card y "accentText" el color del texto.
-El primer color es el del tema claro y el que lleva el prefijo dark: es el del tema oscuro */
 export const PROJECTS: TProject[] = [
   {
+    id: 1,
     technology: 'Angular',
     name: 'Estructura Base Angular',
     description:
@@ -16,6 +12,7 @@ export const PROJECTS: TProject[] = [
     accentText: 'text-ink-red dark:text-neon-red',
   },
   {
+    id: 2,
     technology: 'React / Next.js',
     name: 'Estructura Base React / Next.js',
     description:
@@ -25,6 +22,7 @@ export const PROJECTS: TProject[] = [
     accentText: 'text-ink-blue dark:text-neon-blue',
   },
   {
+    id: 3,
     technology: 'React',
     name: 'Buscador de Películas',
     description:
@@ -34,6 +32,7 @@ export const PROJECTS: TProject[] = [
     accentText: 'text-ink-yellow dark:text-neon-yellow',
   },
   {
+    id: 4,
     technology: 'React',
     name: 'Rick and Morty',
     description:

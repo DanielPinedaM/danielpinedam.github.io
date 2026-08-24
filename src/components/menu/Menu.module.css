@@ -1,0 +1,25 @@
+.menu {
+  --pull: 30%;
+
+  & a {
+    opacity: 0.25;
+    transform: translateY(calc(var(--pull) * -1));
+    transition-duration: 450ms;
+  }
+
+  &:not(:hover):not(:focus-within) a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & li:hover > a,
+  & li:focus-within > a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & li:hover ~ li > a {
+    transform: translateY(var(--pull));
+    transition-duration: 450ms;
+  }
+}
