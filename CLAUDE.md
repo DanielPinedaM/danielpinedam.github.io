@@ -24,3 +24,5 @@
 * Siempre usar import alias de tsconfig.json con ruta absoluta, está prohibido importar con ruta relativa
 
 * Usar etiquetas HTML semánticas
+
+* Todas las constantes usan UPPER_SNAKE_CASE
