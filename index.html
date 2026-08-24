@@ -1,11 +1,134 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de ingeniero de sistemas y desarrollador frontend en búsqueda de empleo"
+    />
+    <meta name="author" content="Daniel Pineda Mora" />
+    <meta
+      name="keywords"
+      content="UI UX, user interface, interfaz de usuario, diseño de interfaz de usuario, user experience, experiencia del usuario, experiencia de usuario, diseño web, diseñador web, responsive, responsive design, responsive web design, maquetador web, maquetación web, código, código fuente, desarrollador, desarrollador de software, software, desarrollador web, web, desarrollador frontend, desarrollador front end, desarrollador Front-end, desarrollador backend, desarrollador Back-End, desarrollador back end, desarrollador full stack, busco empleo, busco trabajo, remoto, presencial, híbrido, alternancia, Medellín, Colombia, LATAM, Latinoamérica, Técnico en Programación de Software, técnico, tecnológico, tecnólogo, universidad, ingeniería, ingeniero, ingeniero de sistemas, ingeniería de sistemas, ingeniero de software, ingeniería de software, experiencia, programación, programador, Git, GitHub, HTML 5, HTML, CSS 3, CSS, Sass, Tailwind, Tailwind CSS, JavaScript, javascript, java script, TypeScript, typescript, type script, Angular, NextJS, Next js, Next, React, ReactJS, React js, React Hook Form, React Router, Vite, ESLint, VS Code, Visual Studio Code, SQL, MySQL, MySQL Workbench, SQL Server, PostgreSQL, Oracle Database, Oracle DB, bases de datos, base de datos, bases de datos relacionales, base de datos relacional, bases de datos no relacionales, base de datos no relacional, NoSQL, Redux Toolkit NodeJS, node js, ExpressJS, express js, AWS S3, CRUD"
+    />
+
+    <!--
+        font-family: Mukta Google Fonts
+        https://fonts.google.com/specimen/Mukta
+        ExtraLight 200
+        Medium     500
+        Bold       700
+        ExtraBold  800
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+        Favicon
+        https://youtu.be/1KwfE5NrKU0
+        https://www.favicon-generator.org/
+        -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link rel="manifest" href="/assets/image/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/image/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
     <title>Portafolio</title>
+
+    <!--
+      Aplicar el tema guardado ANTES de pintar la pagina para que no se vea
+      un parpadeo del tema claro al recargar con el tema oscuro activo.
+      Lee la misma clave de localStorage que usa next-themes
+    -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (error) {
+        /* localStorage bloqueado - se usa el tema por defecto */
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

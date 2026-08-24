@@ -1,0 +1,40 @@
+/*
+Efecto "pull" de los enlaces del menu de navegacion
+
+Los enlaces se atenuan y se desplazan hacia arriba, el enlace que tiene el mouse
+encima vuelve a su sitio y los que estan despues de el bajan.
+
+Es lo unico del menu que NO se puede maquetar con Tailwind porque necesita
+el combinador de hermanos ~ y la pseudoclase :not(), que no existen como utilidad.
+
+Usa CSS Nesting */
+
+.menu {
+  --pull: 30%;
+
+  /* estado por defecto - atenuado y desplazado hacia arriba */
+  & a {
+    opacity: 0.25;
+    transform: translateY(calc(var(--pull) * -1));
+    transition-duration: 450ms;
+  }
+
+  /* sin mouse ni foco dentro del menu - todos los enlaces se ven por igual */
+  &:not(:hover):not(:focus-within) a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* enlace que tiene el mouse encima o el foco del teclado */
+  & li:hover > a,
+  & li:focus-within > a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* enlaces que estan despues del que tiene el mouse encima */
+  & li:hover ~ li > a {
+    transform: translateY(var(--pull));
+    transition-duration: 450ms;
+  }
+}
