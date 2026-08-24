@@ -35,7 +35,7 @@ const Header = () => {
 
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
-      <div className="absolute top-0 left-0 -z-10 block h-dvh w-full overflow-hidden bg-night">
+      <div className="absolute top-0 left-0 z-0 block h-dvh w-full overflow-hidden bg-night">
         <video
           autoPlay
           loop
