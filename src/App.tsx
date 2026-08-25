@@ -7,7 +7,7 @@ import Projects from "@/components/projects/Projects";
 import Skills from "@/components/skills/Skills";
 
 const App = () => (
-  <div className="mx-auto max-w-480 bg-day font-extralight leading-[1.2] dark:bg-night">
+  <div className="mx-auto max-w-480 bg-day font-normal leading-[1.2] dark:bg-night">
     <Header />
 
     <main className="mt-12.5">
