@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Menu from '@/components/menu/Menu';
 import MenuButton from '@/components/MenuButton';
-import ThemeToggle from '@/components/ThemeToggle';
+import ThemeToggle from '@/components/theme-toggle/ThemeToggle';
 import { HERO, HERO_VIDEO } from '@/constants/hero.const';
 import { useTypewriter } from '@/hooks/useTypewriter';
 
