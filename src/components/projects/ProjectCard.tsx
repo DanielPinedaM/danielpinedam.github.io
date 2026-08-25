@@ -13,7 +13,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => (
   >
     <span
       aria-hidden="true"
-      className="absolute inset-x-0 top-0 h-0.5 animate-project-bar bg-[var(--project-accent)] motion-reduce:animate-none"
+      className="absolute inset-x-0 top-0 h-0.5 animate-project-bar bg-[var(--project-fluor)] motion-reduce:animate-none"
     />
 
     <h3 className="mr-auto text-step-0 font-medium text-[var(--project-accent)]">
