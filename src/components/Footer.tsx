@@ -1,4 +1,7 @@
-import { FOOTER } from '@/constants/profile.const';
+import { FOOTER } from "@/constants/profile.const";
+
+const UNDERLINE: string =
+  "bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-size-[0%_1px] bg-no-repeat transition-[background-size] duration-300 ease-[ease] motion-reduce:transition-none";
 
 const Footer = () => (
   <footer className="mx-auto mb-4 flex max-w-420 flex-row flex-wrap items-center justify-center gap-y-2.5 bg-day-footer p-[1.5%] text-step-0 dark:bg-night-footer">
@@ -19,7 +22,9 @@ const Footer = () => (
             className="mx-auto max-w-25"
           />
 
-          <p className="text-center underline-offset-4 group-hover/footer:underline">
+          <p
+            className={`${UNDERLINE} mx-auto w-fit text-center group-hover/footer:bg-size-[100%_1px]`}
+          >
             {FOOTER.label}
           </p>
         </a>
