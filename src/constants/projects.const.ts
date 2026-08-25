@@ -8,8 +8,8 @@ export const PROJECTS: TProject[] = [
     description:
       'Base reutilizable para acelerar el desarrollo de aplicaciones empresariales',
     url: 'https://github.com/DanielPinedaM/arquitectura-base-Angular',
-    accentBorder: 'border-t-ink-red dark:border-t-neon-red',
-    accentText: 'text-ink-red dark:text-neon-red',
+    accent:
+      '[--project-accent:var(--color-ink-red)] [--project-accent-pulse:var(--color-ink-red-pulse)] dark:[--project-accent:var(--color-neon-red)] dark:[--project-accent-pulse:var(--color-neon-red-pulse)]',
   },
   {
     id: 2,
@@ -18,8 +18,8 @@ export const PROJECTS: TProject[] = [
     description:
       'Estructura lista para crear aplicaciones web modernas siguiendo estándares y buenas prácticas de desarrollo',
     url: 'https://github.com/DanielPinedaM/arquitectura-base-Next-JS',
-    accentBorder: 'border-t-ink-blue dark:border-t-neon-blue',
-    accentText: 'text-ink-blue dark:text-neon-blue',
+    accent:
+      '[--project-accent:var(--color-ink-blue)] [--project-accent-pulse:var(--color-ink-blue-pulse)] dark:[--project-accent:var(--color-neon-blue)] dark:[--project-accent-pulse:var(--color-neon-blue-pulse)]',
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ export const PROJECTS: TProject[] = [
     description:
       'Aplicación web que busca y muestra películas en tiempo real mientras el usuario escribe',
     url: 'https://danielpinedam.github.io/react-api-buscar-peliculas/',
-    accentBorder: 'border-t-ink-yellow dark:border-t-neon-yellow',
-    accentText: 'text-ink-yellow dark:text-neon-yellow',
+    accent:
+      '[--project-accent:var(--color-ink-yellow)] [--project-accent-pulse:var(--color-ink-yellow-pulse)] dark:[--project-accent:var(--color-neon-yellow)] dark:[--project-accent-pulse:var(--color-neon-yellow-pulse)]',
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const PROJECTS: TProject[] = [
     description:
       'Aplicación web que consulta y muestra información de personajes mediante el consumo de una API',
     url: 'https://danielpinedam.github.io/react-rick-and-morty-api/',
-    accentBorder: 'border-t-ink-green dark:border-t-neon-green',
-    accentText: 'text-ink-green dark:text-neon-green',
+    accent:
+      '[--project-accent:var(--color-ink-green)] [--project-accent-pulse:var(--color-ink-green-pulse)] dark:[--project-accent:var(--color-neon-green)] dark:[--project-accent-pulse:var(--color-neon-green-pulse)]',
   },
 ];

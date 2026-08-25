@@ -11,7 +11,7 @@ export type TSkill = Record<'logo' | 'alt' | 'url', string> &
   Record<'id', number>;
 
 export type TProject = Record<
-  'technology' | 'name' | 'description' | 'url' | 'accentBorder' | 'accentText',
+  'technology' | 'name' | 'description' | 'url' | 'accent',
   string
 > &
   Record<'id', number>;
