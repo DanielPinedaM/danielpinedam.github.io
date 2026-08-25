@@ -10,7 +10,7 @@ const ContactCard = ({ contact }: IContactCardProps) => (
       href={contact.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-block text-step-0 font-extrabold"
+      className="inline-block text-step-0 font-medium underline-offset-4 hover:underline"
     >
       <img
         src={contact.logo}

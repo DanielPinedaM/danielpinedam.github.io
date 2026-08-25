@@ -10,7 +10,7 @@ const Footer = () => (
           href={FOOTER.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-center"
+          className="group/footer text-center"
         >
           <img
             src={FOOTER.logo}
@@ -19,7 +19,9 @@ const Footer = () => (
             className="mx-auto max-w-25"
           />
 
-          <p className="text-center">{FOOTER.label}</p>
+          <p className="text-center underline-offset-4 group-hover/footer:underline">
+            {FOOTER.label}
+          </p>
         </a>
       </div>
     </div>
