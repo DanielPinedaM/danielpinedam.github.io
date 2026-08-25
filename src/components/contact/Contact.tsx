@@ -5,7 +5,7 @@ import type { TContact } from '@/types/portfolio.types';
 const Contact = () => (
   <section
     id="contactame"
-    className="mx-auto my-[3.125rem] flex min-h-dvh max-w-[105rem] flex-col flex-nowrap items-stretch justify-center bg-[url(/assets/image/fondo_transparente.png)] bg-[length:100%_100%] bg-fixed bg-center bg-no-repeat text-center"
+    className="mx-auto my-[3.125rem] flex min-h-dvh max-w-[105rem] flex-col flex-nowrap items-stretch justify-center text-center"
   >
     <div>
       <h2 className="mb-[0.9375rem] font-medium hyphens-auto">Contáctame</h2>
