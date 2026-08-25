@@ -4,7 +4,7 @@ interface IMenuButtonProps {
 }
 
 const LINE: string =
-  'absolute inset-0 z-999 m-auto h-1 w-[calc(100%-0.3125rem)] border border-solid border-ink-cyan bg-ink-cyan transition-transform duration-450 ease-menu dark:border-neon-cyan dark:bg-neon-cyan';
+  'absolute inset-0 z-999 m-auto h-1 w-[calc(100%-0.3125rem)] rounded-full bg-ink-cyan transition-transform duration-450 ease-menu dark:bg-neon-cyan';
 
 const MenuButton = ({ isOpen, onToggle }: IMenuButtonProps) => (
   <button
