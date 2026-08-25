@@ -116,16 +116,21 @@
 
     <!--
       Aplicar el tema guardado ANTES de pintar la pagina para que no se vea
-      un parpadeo del tema claro al recargar con el tema oscuro activo.
+      un parpadeo al recargar. El tema por defecto es el oscuro, por eso solo
+      el tema claro guardado de forma explicita quita la clase.
       Lee la misma clave de localStorage que usa next-themes
     -->
     <script>
+      var esTemaOscuro = true;
+
       try {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.classList.add('dark');
-        }
+        esTemaOscuro = localStorage.getItem('theme') !== 'light';
       } catch (error) {
-        /* localStorage bloqueado - se usa el tema por defecto */
+        /* localStorage bloqueado - se usa el tema oscuro por defecto */
+      }
+
+      if (esTemaOscuro) {
+        document.documentElement.classList.add('dark');
       }
     </script>
   </head>
