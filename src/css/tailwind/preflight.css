@@ -96,7 +96,7 @@ Tema oscuro y claro
   /* tema claro */
   color-scheme: light;
 
-  --background: oklch(100% 0 0);
+  --background: oklch(98.205% 0.0041 91.45);
   --foreground: oklch(0% 0 0);
 }
 

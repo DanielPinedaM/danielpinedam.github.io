@@ -10,24 +10,26 @@ custom propierties de Tailwind */
   /*
   Superficies del TEMA OSCURO - son los colores originales del portafolio en HTML, CSS y JavaScript */
   --color-night: oklch(21.604% 0.0037 228.98); /* #181a1b - fondo de la pagina */
-  --color-night-card: oklch(20.728% 0.0037 228.99); /* #161819 - card de proyectos y contactame */
+  --color-night-card: oklch(27.42% 0.0047 219.64); /* #252829 - card de proyectos - superficie elevada, mas clara que el fondo (1.18:1) */
+  --color-night-card-hover: oklch(33.034% 0.0045 219.61); /* #333637 - card de proyectos en hover (1.22:1 sobre --color-night-card) */
   --color-night-menu: oklch(20.989% 0.0039 286.06); /* #18181a - fondo del menu de navegacion */
   --color-night-footer: oklch(28.094% 0 89.88); /* #292929 - pie de pagina */
   --color-night-scrollbar: oklch(80.73% 0 0); /* #c0c0c0 - barra de scroll - 9.59:1 sobre --color-night */
 
   /*
   Superficies del TEMA CLARO - equivalen a las del tema oscuro pero invertidas */
-  --color-day: oklch(100% 0 89.88); /* #ffffff - fondo de la pagina */
-  --color-day-card: oklch(96.743% 0.0013 286.38); /* #f4f4f5 - card de proyectos y contactame */
-  --color-day-menu: oklch(98.51% 0 89.88); /* #fafafa - fondo del menu de navegacion */
-  --color-day-footer: oklch(93.705% 0 89.88); /* #eaeaea - pie de pagina */
+  --color-day: oklch(98.205% 0.0041 91.45); /* #faf9f6 - fondo de la pagina - blanco calido, no gris */
+  --color-day-card: oklch(94.324% 0.007 88.64); /* #eeece7 - card de proyectos - superficie diferenciada del fondo (1.12:1) */
+  --color-day-card-hover: oklch(89.159% 0.0071 88.65); /* #dddbd6 - card de proyectos en hover (1.17:1 sobre --color-day-card) */
+  --color-day-menu: oklch(97.28% 0.0054 95.1); /* #f7f6f2 - fondo del menu de navegacion */
+  --color-day-footer: oklch(93.418% 0.007 88.64); /* #ebe9e4 - pie de pagina */
   --color-day-scrollbar: oklch(40.87% 0 0); /* #4a4a4a - barra de scroll - 8.88:1 sobre --color-day */
 
   /*
   Acentos del TEMA OSCURO - neon sobre fondo oscuro */
   --color-neon-cyan: oklch(89.137% 0.16 178.41); /* #20fddc - menu, boton hamburguesa */
   --color-neon-teal: oklch(74.375% 0.1342 180.54); /* #02c7b0 - boton hoja de vida */
-  --color-neon-red: oklch(64.74% 0.2384 27.11); /* #ff3131 - proyecto Angular */
+  --color-neon-red: oklch(71.706% 0.1767 26.83); /* #ff7065 - proyecto Angular - 5.49:1 en reposo, 4.50:1 con la card en hover */
   --color-neon-blue: oklch(87.452% 0.1485 191.58); /* #15f4ee - proyecto React / Next.js */
   --color-neon-yellow: oklch(96.907% 0.2005 109.62); /* #ffff33 - proyecto Buscador de Peliculas */
   --color-neon-green: oklch(86.628% 0.2601 142.85); /* #48fb47 - proyecto Rick and Morty */
@@ -35,13 +37,27 @@ custom propierties de Tailwind */
 
   /*
   Acentos del TEMA CLARO - mismo tono que los neon pero con menor luminosidad
-  para que todos superen el minimo legible de 4.5:1 sobre fondo blanco */
-  --color-ink-cyan: oklch(53.527% 0.0955 180.63); /* #067f70 - 4.91:1 */
-  --color-ink-teal: oklch(51.696% 0.0923 180.99); /* #04796b - 5.31:1 */
-  --color-ink-red: oklch(52.743% 0.1991 27.54); /* #c41e1e - 5.91:1 */
-  --color-ink-blue: oklch(53.039% 0.0892 190.78); /* #0b7c78 - 5.04:1 */
-  --color-ink-yellow: oklch(52.353% 0.1084 98.81); /* #7a6a00 - 5.40:1 */
-  --color-ink-green: oklch(50.708% 0.1557 142.74); /* #1b7a1a - 5.46:1 */
+  para que todos superen el minimo legible de 4.5:1 sobre la superficie donde
+  realmente se pintan (fondo de la pagina, fondo del menu o fondo de la card) */
+  --color-ink-cyan: oklch(53.527% 0.0955 180.63); /* #067f70 - 4.91:1 sobre --color-day - 4.70:1 sobre --color-day-menu */
+  --color-ink-teal: oklch(51.696% 0.0923 180.99); /* #04796b - 5.31:1 sobre --color-day */
+  --color-ink-red: oklch(51.394% 0.1986 27.63); /* #bf1719 - 5.31:1 en reposo, 4.53:1 con la card en hover */
+  --color-ink-blue: oklch(47.986% 0.0825 191.41); /* #006c69 - 5.31:1 en reposo, 4.53:1 con la card en hover */
+  --color-ink-yellow: oklch(48.977% 0.1012 97.79); /* #706000 - 5.29:1 en reposo, 4.51:1 con la card en hover */
+  --color-ink-green: oklch(47.415% 0.1548 142.71); /* #0b700c - 5.33:1 en reposo, 4.55:1 con la card en hover */
+
+  /*
+  Tonos del LATIDO de las card de proyectos - el acento late hacia mas contraste,
+  nunca hacia el fondo, para que el movimiento se vea sin perder legibilidad */
+  --color-ink-red-pulse: oklch(35.941% 0.1386 27.67); /* #750a0b - 8.41:1 con la card en hover */
+  --color-ink-blue-pulse: oklch(33.551% 0.0577 191.27); /* #00403e - 8.42:1 con la card en hover */
+  --color-ink-yellow-pulse: oklch(34.217% 0.0705 96.81); /* #433800 - 8.41:1 con la card en hover */
+  --color-ink-green-pulse: oklch(33.303% 0.1088 142.64); /* #044304 - 8.39:1 con la card en hover */
+
+  --color-neon-red-pulse: oklch(83.807% 0.0893 27.59); /* #ffb4aa - 7.17:1 con la card en hover */
+  --color-neon-blue-pulse: oklch(93.046% 0.0816 192.04); /* #a6faf6 - 12.46:1 sobre --color-night-card */
+  --color-neon-yellow-pulse: oklch(97.993% 0.1081 108.8); /* #feffa8 - 14.20:1 sobre --color-night-card */
+  --color-neon-green-pulse: oklch(92.548% 0.1424 143.02); /* #acffa7 - 12.46:1 sobre --color-night-card */
 
   /*
   ***********************
@@ -51,7 +67,7 @@ custom propierties de Tailwind */
   /*
   font-family: Mukta Google Fonts
   https://fonts.google.com/specimen/Mukta
-  ExtraLight 200 - Medium 500 - Bold 700 - ExtraBold 800 */
+  ExtraLight 200 - Regular 400 - Medium 500 - Bold 700 - ExtraBold 800 */
   --font-mukta: 'Mukta', sans-serif;
 
   /* fuente monoespaciada de los enlaces del menu de navegacion */
@@ -95,21 +111,6 @@ custom propierties de Tailwind */
 
   /* enlaces del menu de navegacion */
   --text-menu: clamp(2.64rem, calc(1.93rem + 3.55dvw), 5.26rem);
-
-  /*
-  ***********************
-  * Sombras             *
-  *********************** */
-
-  /* foto del perfil, boton hoja de vida y botones de las card de conocimientos */
-  --shadow-card:
-    rgb(0 0 0 / 35%) 15px 15px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
-    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-
-  /* card de proyectos */
-  --shadow-project:
-    inset rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
-    rgb(0 0 0 / 12%) 0px 1px 10px 0px;
 
   /*
   ***********************
@@ -165,15 +166,38 @@ custom propierties de Tailwind */
     }
   }
 
-  /* latido del nombre de cada proyecto */
-  --animate-project-title: project-title 4s infinite;
+  /*
+  Latido de las card de proyectos.
+
+  Se anima el color y no la opacidad: al desvanecer, el texto se acerca al fondo de la card
+  y pierde contraste, mientras que al recorrer dos tonos del mismo acento el movimiento se ve
+  completo y los dos extremos del ciclo superan el minimo legible.
+
+  Cada card declara sus dos tonos en --project-accent y --project-accent-pulse */
+
+  /* nombre del proyecto */
+  --animate-project-title: project-title 3s ease-in-out infinite;
 
   @keyframes project-title {
-    50% {
-      opacity: 0.63;
-    }
+    0%,
     100% {
-      opacity: 1;
+      color: var(--project-accent);
+    }
+    50% {
+      color: var(--project-accent-pulse);
+    }
+  }
+
+  /* barra de acento del borde superior de la card */
+  --animate-project-bar: project-bar 3s ease-in-out infinite;
+
+  @keyframes project-bar {
+    0%,
+    100% {
+      background-color: var(--project-accent);
+    }
+    50% {
+      background-color: var(--project-accent-pulse);
     }
   }
 
