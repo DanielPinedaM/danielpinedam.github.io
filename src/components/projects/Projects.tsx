@@ -4,9 +4,9 @@ import type { TProject } from '@/types/portfolio.types';
 
 const Projects = () => (
   <section id="proyectos">
-    <h2 className="my-[3.125rem] text-center font-medium hyphens-auto">Proyectos</h2>
+    <h2 className="my-12.5 text-center font-medium hyphens-auto">Proyectos</h2>
 
-    <div className="flex flex-row flex-wrap items-center justify-center gap-x-[1.5625rem] gap-y-[3.125rem]">
+    <div className="flex flex-row flex-wrap items-center justify-center gap-x-6.25 gap-y-12.5">
       {PROJECTS.map((project: TProject) => (
         <ProjectCard key={project.id} project={project} />
       ))}

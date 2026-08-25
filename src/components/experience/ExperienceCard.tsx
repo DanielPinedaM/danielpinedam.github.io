@@ -9,7 +9,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => (
     href={experience.url}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex flex-[0_1_21.25rem] flex-row flex-nowrap items-center justify-center gap-x-[0.9375rem] text-left"
+    className="flex flex-[0_1_21.25rem] flex-row flex-nowrap items-center justify-center gap-x-3.75 text-left"
   >
     <div className={`flex items-center justify-center ${experience.logoWidth}`}>
       <picture>

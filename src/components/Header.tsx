@@ -55,7 +55,7 @@ const Header = () => {
         />
       </div>
 
-      <div className="absolute top-0 left-0 z-[1] flex h-dvh w-full flex-col flex-nowrap items-center justify-center bg-white/15 text-center">
+      <div className="absolute top-0 left-0 z-1 flex h-dvh w-full flex-col flex-nowrap items-center justify-center bg-white/15 text-center">
         <h1 className="text-hero font-extrabold opacity-100 xsm:opacity-70">
           {HERO.intro}{' '}
           <span className="block cursor-text text-hero leading-[1.9] text-white">
@@ -67,7 +67,7 @@ const Header = () => {
 
         <a
           href={HERO.ctaHref}
-          className="relative z-[999] mt-[5dvh] cursor-pointer rounded-[0.625rem] border-[0.1875rem] border-solid border-white px-[1.875rem] py-[0.9375rem] text-step-3 font-medium text-white opacity-100 active:top-[0.4688rem] xsm:text-black xsm:opacity-70"
+          className="relative z-999 mt-[5dvh] cursor-pointer rounded-[0.625rem] border-3 border-solid border-white px-7.5 py-3.75 text-step-3 font-medium text-white opacity-100 active:top-[0.4688rem] xsm:text-black xsm:opacity-70"
         >
           <span>{HERO.cta}</span>
         </a>

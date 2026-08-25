@@ -16,25 +16,25 @@ const Menu = ({ isOpen, onClose }: IMenuProps) => (
     id="main-navigation"
     aria-label="Menú de navegación"
     inert={!isOpen}
-    className={`fixed top-0 z-[2] flex min-h-dvh w-full items-center justify-center bg-day-menu dark:bg-night-menu ${
+    className={`fixed top-0 z-2 flex min-h-dvh w-full items-center justify-center bg-day-menu dark:bg-night-menu ${
       isOpen ? 'left-0 transition-none' : '-left-full transition-[left] delay-300 duration-0'
     }`}
   >
     <span
       aria-hidden="true"
       className={`${CURTAIN} top-0 ${
-        isOpen ? 'translate-x-0 delay-0' : '-translate-x-[110%] delay-150'
+        isOpen ? 'translate-x-0 delay-0' : 'translate-x-[-110%] delay-150'
       }`}
     />
 
     <span
       aria-hidden="true"
       className={`${CURTAIN} bottom-0 ${
-        isOpen ? 'translate-x-0 delay-[75ms]' : '-translate-x-[110%] delay-150'
+        isOpen ? 'translate-x-0 delay-75' : 'translate-x-[-110%] delay-150'
       }`}
     />
 
-    <menu className={`${styles.menu} relative z-[1] text-center`}>
+    <menu className={`${styles.menu} relative z-1 text-center`}>
       {MENU_ITEMS.map((item: TMenuItem) => (
         <MenuItem key={item.id} item={item} isOpen={isOpen} onClose={onClose} />
       ))}

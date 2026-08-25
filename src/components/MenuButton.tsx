@@ -4,7 +4,7 @@ interface IMenuButtonProps {
 }
 
 const LINE: string =
-  'absolute inset-0 z-[999] m-auto h-1 w-[calc(100%-0.3125rem)] border-[0.0625rem] border-solid border-ink-cyan bg-ink-cyan transition-transform duration-[450ms] ease-menu dark:border-neon-cyan dark:bg-neon-cyan';
+  'absolute inset-0 z-999 m-auto h-1 w-[calc(100%-0.3125rem)] border border-solid border-ink-cyan bg-ink-cyan transition-transform duration-450 ease-menu dark:border-neon-cyan dark:bg-neon-cyan';
 
 const MenuButton = ({ isOpen, onToggle }: IMenuButtonProps) => (
   <button
@@ -13,10 +13,10 @@ const MenuButton = ({ isOpen, onToggle }: IMenuButtonProps) => (
     aria-label={isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
     aria-expanded={isOpen}
     aria-controls="main-navigation"
-    className="fixed top-[1.6875rem] right-[2.1875rem] z-[999]"
+    className="fixed top-6.75 right-8.75 z-999"
   >
     <span
-      className={`relative block size-8 transition-transform duration-[450ms] ease-menu ${
+      className={`relative block size-8 transition-transform duration-450 ease-menu ${
         isOpen ? 'rotate-[5turn]' : 'rotate-0'
       }`}
     >

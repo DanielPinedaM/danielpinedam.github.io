@@ -15,7 +15,7 @@ const ContactCard = ({ contact }: IContactCardProps) => (
       <img
         src={contact.logo}
         alt={contact.alt}
-        className="mx-auto mb-4 h-[7.5rem] object-contain"
+        className="mx-auto mb-4 h-30 object-contain"
       />
 
       <address className="break-all not-italic">{contact.label}</address>

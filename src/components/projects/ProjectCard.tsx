@@ -9,7 +9,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => (
     href={project.url}
     target="_blank"
     rel="noopener noreferrer"
-    className={`flex min-h-[17.1875rem] flex-[0_0_100%] flex-col flex-nowrap items-center justify-start gap-y-[0.625rem] rounded-t-[0.625rem] border-t-2 border-r-[0.01px] border-b-[0.01px] border-l-[0.01px] border-solid border-black/20 bg-day-card px-[1.875rem] pt-[1.875rem] pb-[1.5625rem] shadow-project md:flex-[0_0_calc(50%-1.5625rem)] lg:flex-[0_0_calc(33.3333333333%-1.5625rem)] dark:bg-night-card ${project.accentBorder}`}
+    className={`flex min-h-68.75 flex-[0_0_100%] flex-col flex-nowrap items-center justify-start gap-y-2.5 rounded-t-[0.625rem] border-t-2 border-r-[0.01px] border-b-[0.01px] border-l-[0.01px] border-solid border-black/20 bg-day-card px-7.5 pt-7.5 pb-6.25 shadow-project md:flex-[0_0_calc(50%-1.5625rem)] lg:flex-[0_0_calc(33.3333333333%-1.5625rem)] dark:bg-night-card ${project.accentBorder}`}
   >
     <h3 className={`mr-auto text-step-0 font-extralight ${project.accentText}`}>
       {project.technology}

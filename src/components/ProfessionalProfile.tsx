@@ -24,15 +24,15 @@ const ProfessionalProfile = () => (
         href={PROFILE.resumeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative mx-auto mt-[1.2rem] flex h-20 max-w-[14.375rem] cursor-pointer items-center justify-center overflow-hidden rounded-[1.25rem] border-[5px] border-solid border-ink-teal text-center font-medium text-ink-teal shadow-card transition-all duration-300 ease-[ease] hover:bg-ink-teal hover:font-extrabold hover:text-white active:bg-ink-teal active:font-extrabold active:text-white dark:border-neon-teal dark:text-neon-teal dark:hover:bg-neon-teal dark:active:bg-neon-teal"
+        className="group relative mx-auto mt-[1.2rem] flex h-20 max-w-57.5 cursor-pointer items-center justify-center overflow-hidden rounded-[1.25rem] border-5 border-solid border-ink-teal text-center font-medium text-ink-teal shadow-card transition-all duration-300 ease-[ease] hover:bg-ink-teal hover:font-extrabold hover:text-white active:bg-ink-teal active:font-extrabold active:text-white dark:border-neon-teal dark:text-neon-teal dark:hover:bg-neon-teal dark:active:bg-neon-teal"
       >
-        <div className="absolute left-[-2.5rem] z-[1] flex items-center justify-center opacity-0 transition-all duration-200 ease-in-out group-hover:left-[calc(100%-3.125rem)] group-hover:opacity-100 group-active:left-[calc(100%-3.125rem)] group-active:opacity-100">
+        <div className="absolute -left-10 z-1 flex items-center justify-center opacity-0 transition-all duration-200 ease-in-out group-hover:left-[calc(100%-3.125rem)] group-hover:opacity-100 group-active:left-[calc(100%-3.125rem)] group-active:opacity-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             fill="currentColor"
             aria-hidden="true"
-            className="size-[2.1875rem] text-white"
+            className="size-8.75 text-white"
           >
             <path
               fillRule="evenodd"
@@ -41,7 +41,7 @@ const ProfessionalProfile = () => (
           </svg>
         </div>
 
-        <span className="absolute transition-all duration-[400ms] ease-in-out group-hover:left-5 group-active:left-5">
+        <span className="absolute transition-all duration-400 ease-in-out group-hover:left-5 group-active:left-5">
           {PROFILE.resumeLabel}
         </span>
       </a>

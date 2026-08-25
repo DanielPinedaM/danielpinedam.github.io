@@ -10,7 +10,7 @@ export const EXPERIENCE: TExperience[] = [
     logoDark: '/assets/image/logo/experiencia/TASS-COL/TASS-1.png',
     alt: 'logo de Telemetry And Security Systems (TASS COL)',
     url: 'https://www.tasstech.co/',
-    logoWidth: 'max-w-[5.625rem]',
+    logoWidth: 'max-w-22.5',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const EXPERIENCE: TExperience[] = [
     logoDark: '/assets/image/logo/experiencia/different_roads.png',
     alt: 'logo de Different Roads',
     url: 'https://www.differentroads.es/',
-    logoWidth: 'max-w-[5.625rem]',
+    logoWidth: 'max-w-22.5',
   },
   {
     id: 3,
@@ -32,6 +32,6 @@ export const EXPERIENCE: TExperience[] = [
     logoDark: '/assets/image/logo/experiencia/bancolombia.png',
     alt: 'logo de Bancolombia',
     url: 'https://www.bancolombia.com/personas',
-    logoWidth: 'max-w-[5.9375rem]',
+    logoWidth: 'max-w-23.75',
   },
 ];
