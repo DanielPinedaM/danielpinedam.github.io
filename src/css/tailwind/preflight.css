@@ -42,16 +42,16 @@ html,
     --default-font-family,
     -apple-system,
     BlinkMacSystemFont,
-    'Segoe UI',
+    "Segoe UI",
     Roboto,
-    'Helvetica Neue',
-    'Noto Sans',
+    "Helvetica Neue",
+    "Noto Sans",
     Arial,
     sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji'
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
   );
   font-feature-settings: --theme(--default-font-feature-settings, normal);
   font-variation-settings: --theme(--default-font-variation-settings, normal);
@@ -193,12 +193,15 @@ pre {
     Menlo,
     Monaco,
     Consolas,
-    'Liberation Mono',
-    'Courier New',
+    "Liberation Mono",
+    "Courier New",
     monospace
   );
   font-feature-settings: --theme(--default-mono-font-feature-settings, normal);
-  font-variation-settings: --theme(--default-mono-font-variation-settings, normal);
+  font-variation-settings: --theme(
+    --default-mono-font-variation-settings,
+    normal
+  );
 }
 
 /*
@@ -471,7 +474,7 @@ textarea {
 */
 
 button,
-input:where([type='button'], [type='reset'], [type='submit']),
+input:where([type="button"], [type="reset"], [type="submit"]),
 ::file-selector-button {
   appearance: button;
 }
@@ -489,7 +492,7 @@ input:where([type='button'], [type='reset'], [type='submit']),
   Mantener ocultos por defecto los elementos que tienen el atributo HTML hidden.
 */
 
-[hidden]:where(:not([hidden='until-found'])) {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none !important;
 }
 
@@ -580,14 +583,14 @@ cursor de elementos HTML activados
 */
 
 button:enabled,
-input[type='button']:enabled,
-input[type='submit']:enabled,
-input[type='reset']:enabled,
-input[type='image']:enabled,
-input[type='range']:enabled,
-input[type='color']:enabled,
-input[type='file']:enabled::file-selector-button,
-input[type='file']:enabled {
+input[type="button"]:enabled,
+input[type="submit"]:enabled,
+input[type="reset"]:enabled,
+input[type="image"]:enabled,
+input[type="range"]:enabled,
+input[type="color"]:enabled,
+input[type="file"]:enabled::file-selector-button,
+input[type="file"]:enabled {
   cursor: pointer;
 }
 
@@ -602,8 +605,8 @@ option:disabled,
 select:disabled,
 textarea:disabled,
 input:disabled,
-input[type='file']:disabled::file-selector-button,
-input[type='file']:disabled,
+input[type="file"]:disabled::file-selector-button,
+input[type="file"]:disabled,
 input:read-only,
 textarea:read-only {
   cursor: not-allowed;
