@@ -5,6 +5,9 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  /* -------------  GitHub Pages - user site servido en la raiz del dominio https://danielpinedam.github.io/ ------------- */
+  base: '/',
+
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

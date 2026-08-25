@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "pnpm build && gh-pages --dist dist --branch main --dest docs --dotfiles --message \"📦 build(deploy): publicar el sitio compilado en GitHub Pages\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -25,6 +26,7 @@
     "eslint": "^10.9.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.4",
+    "gh-pages": "^6.3.0",
     "globals": "^17.11.0",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
