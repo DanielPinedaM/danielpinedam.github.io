@@ -126,6 +126,45 @@ custom propierties de Tailwind */
     }
   }
 
+  /*
+  Cruce del icono del boton de tema (sol / luna).
+
+  Se usa @keyframes en vez de transition porque <ThemeProvider disableTransitionOnChange>
+  de next-themes desactiva todas las transiciones justo en el instante del cambio de tema,
+  pero NO afecta a las animaciones. */
+
+  /* icono que sale: gira, se encoge y se desvanece */
+  --animate-theme-icon-out: theme-icon-out 400ms var(--ease-menu) forwards;
+
+  @keyframes theme-icon-out {
+    from {
+      opacity: 1;
+      rotate: 0deg;
+      scale: 1;
+    }
+    to {
+      opacity: 0;
+      rotate: 90deg;
+      scale: 0;
+    }
+  }
+
+  /* icono que entra: gira en sentido contrario, crece y aparece */
+  --animate-theme-icon-in: theme-icon-in 400ms var(--ease-menu) forwards;
+
+  @keyframes theme-icon-in {
+    from {
+      opacity: 0;
+      rotate: -90deg;
+      scale: 0;
+    }
+    to {
+      opacity: 1;
+      rotate: 0deg;
+      scale: 1;
+    }
+  }
+
   /* latido del nombre de cada proyecto */
   --animate-project-title: project-title 4s infinite;
 
