@@ -25,3 +25,7 @@ dist-ssr
 
 # IA
 .playwright-cli
+# Pantazallos de playwright-cli
+/*.png
+/*.jpg
+/*.jpeg
