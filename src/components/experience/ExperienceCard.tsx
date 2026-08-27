@@ -19,23 +19,31 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => (
         <img
           src={experience.logoLight}
           alt={experience.alt}
+          width={experience.width}
+          height={experience.height}
+          loading="lazy"
+          decoding="async"
           className="mx-auto dark:hidden"
         />
 
         <img
           src={experience.logoDark}
           alt={experience.alt}
+          width={experience.width}
+          height={experience.height}
+          loading="lazy"
+          decoding="async"
           className="mx-auto hidden dark:block"
         />
       </picture>
     </div>
 
     <div className="w-full">
-      <h4
+      <h3
         className={`${UNDERLINE} w-fit text-step-1 font-bold group-hover/experience:bg-size-[100%_1px]`}
       >
         {experience.company}
-      </h4>
+      </h3>
 
       <p className="text-step-0 font-medium">{experience.role}</p>
 

@@ -10,6 +10,10 @@ const SkillCard = ({ skill }: ISkillCardProps) => (
       <img
         src={skill.logo}
         alt={skill.alt}
+        width={skill.width}
+        height={skill.height}
+        loading="lazy"
+        decoding="async"
         className="mx-auto mb-4 h-56 object-contain"
       />
     </picture>

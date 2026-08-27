@@ -11,6 +11,8 @@ export const EXPERIENCE: TExperience[] = [
     alt: 'logo de Telemetry And Security Systems (TASS COL)',
     url: 'https://www.tasstech.co/',
     logoWidth: 'max-w-22.5',
+    width: 740,
+    height: 846,
   },
   {
     id: 2,
@@ -22,6 +24,8 @@ export const EXPERIENCE: TExperience[] = [
     alt: 'logo de Different Roads',
     url: 'https://www.differentroads.es/',
     logoWidth: 'max-w-22.5',
+    width: 491,
+    height: 491,
   },
   {
     id: 3,
@@ -33,5 +37,7 @@ export const EXPERIENCE: TExperience[] = [
     alt: 'logo de Bancolombia',
     url: 'https://www.bancolombia.com/personas',
     logoWidth: 'max-w-23.75',
+    width: 1000,
+    height: 1000,
   },
 ];

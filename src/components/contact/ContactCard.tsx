@@ -1,11 +1,11 @@
-import type { TContact } from '@/types/portfolio.types';
+import type { TContact } from "@/types/portfolio.types";
 
 interface IContactCardProps {
   contact: TContact;
 }
 
 const UNDERLINE: string =
-  'bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-size-[0%_1px] bg-no-repeat transition-[background-size] duration-300 ease-[ease] motion-reduce:transition-none';
+  "bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-size-[0%_1px] bg-no-repeat transition-[background-size] duration-300 ease-[ease] motion-reduce:transition-none";
 
 const ContactCard = ({ contact }: IContactCardProps) => (
   <div className="flex-[0_1_100%]">
@@ -18,6 +18,8 @@ const ContactCard = ({ contact }: IContactCardProps) => (
       <img
         src={contact.logo}
         alt={contact.alt}
+        loading="lazy"
+        decoding="async"
         className="mx-auto mb-4 h-30 object-contain"
       />
 

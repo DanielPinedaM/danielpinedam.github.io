@@ -11,6 +11,10 @@ const ProfessionalProfile = () => (
       <img
         src={PROFILE.photo}
         alt={PROFILE.alt}
+        width={PROFILE.width}
+        height={PROFILE.height}
+        loading="lazy"
+        decoding="async"
         className="mx-auto max-w-[70%] rounded-xl outline-1 outline-black/10 outline-solid xsm:max-w-[50%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] xl:max-w-[45%] dark:outline-white/15"
       />
     </figure>

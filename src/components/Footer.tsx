@@ -18,7 +18,10 @@ const Footer = () => (
           <img
             src={FOOTER.logo}
             alt={FOOTER.alt}
+            width={FOOTER.width}
+            height={FOOTER.height}
             loading="lazy"
+            decoding="async"
             className="mx-auto max-w-25"
           />
 

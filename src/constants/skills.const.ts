@@ -6,6 +6,8 @@ export const SKILLS: TSkill[] = [
     names: ['Git'],
     logo: '/assets/image/logo/conocimientos/git.png',
     alt: 'logo de Git',
+    width: 431,
+    height: 431,
     url: 'https://www.udemy.com/course/git-github/',
   },
   {
@@ -13,6 +15,8 @@ export const SKILLS: TSkill[] = [
     names: ['GitHub'],
     logo: '/assets/image/logo/conocimientos/github.png',
     alt: 'logo de GitHub',
+    width: 522,
+    height: 503,
     url: 'https://github.com/DanielPinedaM/',
   },
   /* {
@@ -20,6 +24,8 @@ export const SKILLS: TSkill[] = [
     names: ['NodeJS'],
     logo: '/assets/image/logo/conocimientos/node_js.png',
     alt: 'logo de Node JS',
+    width: 454,
+    height: 512,
     url: 'https://www.udemy.com/course/nodejs-de-cero-a-experto/',
   }, */
   {
@@ -27,6 +33,8 @@ export const SKILLS: TSkill[] = [
     names: ['HTML 5'],
     logo: '/assets/image/logo/conocimientos/html.png',
     alt: 'logo de HTML',
+    width: 2048,
+    height: 2048,
     url: 'https://youtu.be/-oK6zL01fNM',
   },
   {
@@ -34,6 +42,8 @@ export const SKILLS: TSkill[] = [
     names: ['CSS 3'],
     logo: '/assets/image/logo/conocimientos/css.png',
     alt: 'logo de CSS',
+    width: 800,
+    height: 800,
     url: 'https://youtu.be/K3xmRF8ab1o?si=TnCSUFSA5nbuh4_a',
   },
   {
@@ -41,6 +51,8 @@ export const SKILLS: TSkill[] = [
     names: ['Sass', 'scss'],
     logo: '/assets/image/logo/conocimientos/sass.png',
     alt: 'logo de Sass',
+    width: 1280,
+    height: 960,
     url: 'https://sass-lang.com/documentation/',
   },
   {
@@ -48,6 +60,8 @@ export const SKILLS: TSkill[] = [
     names: ['Tailwind'],
     logo: '/assets/image/logo/conocimientos/tailwind.png',
     alt: 'logo de Tailwind',
+    width: 360,
+    height: 216,
     url: 'https://youtu.be/R5EXap3vNDA?si=PUKQuP89JsRNuL7c',
   },
   {
@@ -55,6 +69,8 @@ export const SKILLS: TSkill[] = [
     names: ['Bootstrap'],
     logo: '/assets/image/logo/conocimientos/bootstrap.webp',
     alt: 'logo de Bootstrap',
+    width: 960,
+    height: 765,
     url: 'https://youtu.be/ng8ur8KNrpU?si=s6HhfgqoDqi4qy6l',
   },
   {
@@ -62,6 +78,8 @@ export const SKILLS: TSkill[] = [
     names: ['UI / UX', 'Maquetación Web', 'Responsive'],
     logo: '/assets/image/logo/conocimientos/ui_ux.png',
     alt: 'logo de UI / UX',
+    width: 512,
+    height: 512,
     url: 'https://youtu.be/udGrXWeJp1Y?si=-mJYkp1ECQIWlFbA',
   },
   {
@@ -69,6 +87,8 @@ export const SKILLS: TSkill[] = [
     names: ['JavaScript'],
     logo: '/assets/image/logo/conocimientos/javascript.png',
     alt: 'logo de JavaScript',
+    width: 400,
+    height: 400,
     url: 'https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA',
   },
   {
@@ -76,6 +96,8 @@ export const SKILLS: TSkill[] = [
     names: ['TypeScript'],
     logo: '/assets/image/logo/conocimientos/typescript.png',
     alt: 'logo de TypeScript',
+    width: 512,
+    height: 512,
     url: 'https://www.udemy.com/course/typescript-guia-completa/',
   },
   {
@@ -83,6 +105,8 @@ export const SKILLS: TSkill[] = [
     names: ['Ionic'],
     logo: '/assets/image/logo/conocimientos/ionic.webp',
     alt: 'logo de Ionic',
+    width: 512,
+    height: 512,
     url: 'https://ionicframework.com/docs',
   },
   {
@@ -90,6 +114,8 @@ export const SKILLS: TSkill[] = [
     names: ['Capacitor'],
     logo: '/assets/image/logo/conocimientos/capacitor.png',
     alt: 'logo de Capacitor',
+    width: 300,
+    height: 300,
     url: 'https://capacitorjs.com/',
   },
   {
@@ -97,6 +123,8 @@ export const SKILLS: TSkill[] = [
     names: ['Cordova'],
     logo: '/assets/image/logo/conocimientos/cordova.png',
     alt: 'logo de Cordova',
+    width: 256,
+    height: 256,
     url: 'https://cordova.apache.org/',
   },
   {
@@ -104,6 +132,8 @@ export const SKILLS: TSkill[] = [
     names: ['Angular'],
     logo: '/assets/image/logo/conocimientos/angular.png',
     alt: 'logo de Angular',
+    width: 283,
+    height: 300,
     url: 'https://www.udemy.com/course/angular-fernando-herrera/',
   },
   {
@@ -111,6 +141,8 @@ export const SKILLS: TSkill[] = [
     names: ['RxJS'],
     logo: '/assets/image/logo/conocimientos/RxJS.png',
     alt: 'logo de RxJS',
+    width: 512,
+    height: 512,
     url: 'https://www.udemy.com/course/angular-fernando-herrera/',
   },
   {
@@ -118,6 +150,8 @@ export const SKILLS: TSkill[] = [
     names: ['React'],
     logo: '/assets/image/logo/conocimientos/react.png',
     alt: 'logo de React JS',
+    width: 2300,
+    height: 2000,
     url: 'https://www.udemy.com/course/react-cero-experto/',
   },
   {
@@ -125,6 +159,8 @@ export const SKILLS: TSkill[] = [
     names: ['Next JS'],
     logo: '/assets/image/logo/conocimientos/next.png',
     alt: 'logo de Next JS',
+    width: 300,
+    height: 300,
     url: 'https://www.udemy.com/course/nextjs-fh/',
   },
   {
@@ -132,6 +168,8 @@ export const SKILLS: TSkill[] = [
     names: ['Claude Code (IA)'],
     logo: '/assets/image/logo/conocimientos/claude_code.webp',
     alt: 'logo de Claude Code',
+    width: 3840,
+    height: 3840,
     url: 'https://www.udemy.com/course/claude-code-guia-completa/',
   },
   {
@@ -139,6 +177,8 @@ export const SKILLS: TSkill[] = [
     names: ['Consumo de APIs REST'],
     logo: '/assets/image/logo/conocimientos/API.png',
     alt: 'logo de API REST',
+    width: 512,
+    height: 512,
     url: 'https://youtu.be/i8sr--1D13Y?si=L4NEHHrhPZKD28nP',
   },
 ];
