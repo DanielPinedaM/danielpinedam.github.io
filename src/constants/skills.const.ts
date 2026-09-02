@@ -183,7 +183,7 @@ export const SKILLS: TSkill[] = [
   },
   {
     id: 20,
-    names: ["Claude Code (IA)"],
+    names: ["Claude Code"],
     logo: "/assets/image/logo/conocimientos/claude_code.webp",
     alt: "logo de Claude Code",
     width: 3840,
