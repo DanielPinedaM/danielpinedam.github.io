@@ -3,7 +3,7 @@ import type { ISkillCategory } from "@/interfaces/skills.interface";
 export const SKILL_CATEGORIES: ISkillCategory[] = [
   {
     id: 1,
-    category: "Maquetación",
+    category: "Maquetación Web",
     skills: [
       {
         id: 1,
@@ -52,7 +52,7 @@ export const SKILL_CATEGORIES: ISkillCategory[] = [
       },
       {
         id: 6,
-        names: ["UI / UX", "Maquetación Web", "Responsive"],
+        names: ["UI / UX", "Responsive Design"],
         logo: "/assets/image/logo/conocimientos/ui_ux.webp",
         alt: "logo de UI / UX",
         width: 336,
