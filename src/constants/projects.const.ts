@@ -23,21 +23,11 @@ export const PROJECTS: TProject[] = [
   },
   {
     id: 3,
-    technology: 'React',
-    name: 'Buscador de Películas',
+    technology: 'Nest.js',
+    name: 'Estructura Base Nest.js',
     description:
-      'Aplicación web que busca y muestra películas en tiempo real mientras el usuario escribe',
-    url: 'https://danielpinedam.github.io/react-api-buscar-peliculas/',
-    accent:
-      '[--project-accent:var(--color-ink-yellow)] [--project-accent-pulse:var(--color-ink-yellow-pulse)] [--project-fluor:var(--color-vivid-yellow)] [--project-fluor-pulse:var(--color-vivid-yellow-pulse)] dark:[--project-accent:var(--color-neon-yellow)] dark:[--project-fluor:var(--color-fluor-yellow)] dark:[--project-fluor-pulse:var(--color-fluor-yellow-pulse)] dark:[--project-accent-pulse:var(--color-neon-yellow-pulse)]',
-  },
-  {
-    id: 4,
-    technology: 'React',
-    name: 'Rick and Morty',
-    description:
-      'Aplicación web que consulta y muestra información de personajes mediante el consumo de una API',
-    url: 'https://danielpinedam.github.io/react-rick-and-morty-api/',
+      'Estructura preparada para construir APIs escalables aplicando estándares y buenas prácticas de desarrollo',
+    url: 'https://github.com/DanielPinedaM/arquitectura-base-Nest-JS',
     accent:
       '[--project-accent:var(--color-ink-green)] [--project-accent-pulse:var(--color-ink-green-pulse)] [--project-fluor:var(--color-vivid-green)] [--project-fluor-pulse:var(--color-vivid-green-pulse)] dark:[--project-accent:var(--color-neon-green)] dark:[--project-fluor:var(--color-fluor-green)] dark:[--project-fluor-pulse:var(--color-fluor-green-pulse)] dark:[--project-accent-pulse:var(--color-neon-green-pulse)]',
   },
