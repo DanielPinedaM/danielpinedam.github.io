@@ -1,9 +1,0 @@
-# https://danielpinedam.github.io/robots.txt
-# Portafolio de Daniel Pineda Mora
-# Sintaxis: https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt
-
-# El portafolio es publico: todos los rastreadores pueden indexar todo el sitio
-User-agent: *
-Allow: /
-
-Sitemap: https://danielpinedam.github.io/sitemap.xml
