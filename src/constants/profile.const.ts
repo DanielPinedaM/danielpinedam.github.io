@@ -13,7 +13,7 @@ export const PROFILE: Record<
 
   title: 'Perfil Profesional',
   description:
-    'Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías frontend (Angular, React, Next.js e Ionic). Trabajo en aplicaciones web y móviles desde su definición técnica hasta su construcción y publicación, con foco en la experiencia del usuario.',
+    'Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías frontend (React, Next.js, Ionic Angular). Trabajo en aplicaciones web y móviles desde su definición técnica hasta su construcción y publicación, con foco en la experiencia del usuario.',
   resumeLabel: 'HOJA DE VIDA',
   resumeUrl:
     '',
