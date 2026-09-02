@@ -1,4 +1,4 @@
-import type { IMenuItem } from '@/interfaces/menu.interface';
+import type { IMenuItem } from '@/components/menu/interfaces/menu.interface';
 
 export const MENU_ITEMS: IMenuItem[] = [
   {

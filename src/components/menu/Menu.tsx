@@ -1,7 +1,7 @@
 import styles from '@/components/menu/Menu.module.css';
 import MenuItem from '@/components/menu/MenuItem';
-import { MENU_ITEMS } from '@/constants/menu.const';
-import type { IMenuItem, IMenuProps } from '@/interfaces/menu.interface';
+import { MENU_ITEMS } from '@/components/menu/constants/menu.const';
+import type { IMenuItem, IMenuProps } from '@/components/menu/interfaces/menu.interface';
 
 const CURTAIN: string =
   'absolute left-0 block h-[50dvh] w-full origin-[0_50%] bg-day-menu transition-transform duration-300 ease-menu dark:bg-night-menu';

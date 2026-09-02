@@ -1,4 +1,4 @@
-import type { IProject } from "@/interfaces/projects.interface";
+import type { IProject } from "@/components/projects/interfaces/projects.interface";
 
 export const PROJECTS_HIGHLIGHTS: string[] = [
   "Arquitectura de software definida",

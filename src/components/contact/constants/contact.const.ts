@@ -1,4 +1,4 @@
-import type { IContact } from '@/interfaces/contact.interface';
+import type { IContact } from '@/components/contact/interfaces/contact.interface';
 
 export const CONTACT: IContact[] = [
   {

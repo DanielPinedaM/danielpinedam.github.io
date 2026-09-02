@@ -1,4 +1,4 @@
-import type { IExperience } from '@/interfaces/experience.interface';
+import type { IExperience } from '@/components/experience/interfaces/experience.interface';
 
 export const EXPERIENCE: IExperience[] = [
   {

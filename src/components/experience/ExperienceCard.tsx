@@ -1,4 +1,4 @@
-import type { IExperienceCardProps } from "@/interfaces/experience.interface";
+import type { IExperienceCardProps } from "@/components/experience/interfaces/experience.interface";
 
 const UNDERLINE: string =
   "bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-size-[0%_1px] bg-no-repeat transition-[background-size] duration-300 ease-[ease] motion-reduce:transition-none";

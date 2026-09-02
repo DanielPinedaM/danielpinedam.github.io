@@ -1,4 +1,4 @@
-import type { IMenuButtonProps } from '@/interfaces/menu.interface';
+import type { IMenuButtonProps } from '@/components/menu/interfaces/menu.interface';
 
 const LINE: string =
   'absolute inset-0 z-999 m-auto h-1 w-[calc(100%-0.3125rem)] rounded-full bg-ink-cyan transition-transform duration-450 ease-menu dark:bg-neon-cyan';

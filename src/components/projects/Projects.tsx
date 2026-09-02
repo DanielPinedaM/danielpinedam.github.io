@@ -1,6 +1,6 @@
 import ProjectCard from '@/components/projects/ProjectCard';
-import { PROJECTS, PROJECTS_HIGHLIGHTS } from '@/constants/projects.const';
-import type { IProject } from '@/interfaces/projects.interface';
+import { PROJECTS, PROJECTS_HIGHLIGHTS } from '@/components/projects/constants/projects.const';
+import type { IProject } from '@/components/projects/interfaces/projects.interface';
 
 const Projects = () => (
   <section id="proyectos">

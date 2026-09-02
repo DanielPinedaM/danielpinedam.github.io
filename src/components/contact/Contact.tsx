@@ -1,6 +1,6 @@
 import ContactCard from '@/components/contact/ContactCard';
-import { CONTACT } from '@/constants/contact.const';
-import type { IContact } from '@/interfaces/contact.interface';
+import { CONTACT } from '@/components/contact/constants/contact.const';
+import type { IContact } from '@/components/contact/interfaces/contact.interface';
 
 const Contact = () => (
   <section

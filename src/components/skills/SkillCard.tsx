@@ -1,4 +1,4 @@
-import type { ISkillCardProps } from '@/interfaces/skills.interface';
+import type { ISkillCardProps } from '@/components/skills/interfaces/skills.interface';
 
 const SkillCard = ({ skill }: ISkillCardProps) => (
   <div className="flex-[0_0_calc(50%-0.625rem)] rounded-[0.625rem] px-[1%] py-4 transition-colors duration-200 ease-[ease] hover:bg-black/5 xsm:flex-[0_0_calc(33.3333333333%-0.625rem)] sm:flex-[0_0_calc(25%-0.625rem)] md:flex-[0_0_calc(20%-0.625rem)] lg:flex-[0_0_calc(14.2857142857%-0.625rem)] dark:hover:bg-white/9">

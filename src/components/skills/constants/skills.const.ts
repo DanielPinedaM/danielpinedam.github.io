@@ -1,4 +1,4 @@
-import type { ISkillCategory } from "@/interfaces/skills.interface";
+import type { ISkillCategory } from "@/components/skills/interfaces/skills.interface";
 
 export const SKILL_CATEGORIES: ISkillCategory[] = [
   {

@@ -1,4 +1,4 @@
-import type { IProjectCardProps } from "@/interfaces/projects.interface";
+import type { IProjectCardProps } from "@/components/projects/interfaces/projects.interface";
 
 const ProjectCard = ({ project }: IProjectCardProps) => (
   <a

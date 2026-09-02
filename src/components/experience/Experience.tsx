@@ -1,6 +1,6 @@
 import ExperienceCard from '@/components/experience/ExperienceCard';
-import { EXPERIENCE } from '@/constants/experience.const';
-import type { IExperience } from '@/interfaces/experience.interface';
+import { EXPERIENCE } from '@/components/experience/constants/experience.const';
+import type { IExperience } from '@/components/experience/interfaces/experience.interface';
 
 const Experience = () => (
   <section id="experiencia">

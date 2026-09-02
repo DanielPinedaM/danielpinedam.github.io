@@ -1,6 +1,6 @@
 import SkillCard from '@/components/skills/SkillCard';
-import { SKILL_CATEGORIES } from '@/constants/skills.const';
-import type { ISkill, ISkillCategory } from '@/interfaces/skills.interface';
+import { SKILL_CATEGORIES } from '@/components/skills/constants/skills.const';
+import type { ISkill, ISkillCategory } from '@/components/skills/interfaces/skills.interface';
 
 const Skills = () => (
   <section id="conocimientos">

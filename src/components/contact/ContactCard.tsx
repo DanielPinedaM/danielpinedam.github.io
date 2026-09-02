@@ -1,4 +1,4 @@
-import type { IContactCardProps } from "@/interfaces/contact.interface";
+import type { IContactCardProps } from "@/components/contact/interfaces/contact.interface";
 
 const UNDERLINE: string =
   "bg-[linear-gradient(currentColor,currentColor)] bg-position-[0_100%] bg-size-[0%_1px] bg-no-repeat transition-[background-size] duration-300 ease-[ease] motion-reduce:transition-none";
