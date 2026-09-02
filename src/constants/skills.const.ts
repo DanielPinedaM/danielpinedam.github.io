@@ -17,10 +17,10 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
       {
         id: 2,
         names: ["CSS 3"],
-        logo: "/assets/image/logo/conocimientos/css.png",
+        logo: "/assets/image/logo/conocimientos/css.webp",
         alt: "logo de CSS",
-        width: 800,
-        height: 800,
+        width: 3840,
+        height: 3840,
         url: "https://youtu.be/K3xmRF8ab1o?si=TnCSUFSA5nbuh4_a",
       },
       {
