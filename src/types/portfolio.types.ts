@@ -1,19 +1,6 @@
 export type TMenuItem = Record<"label" | "href" | "delay", string> &
   Record<"id", number>;
 
-/*
-logoWidth de TExperience -> clase de Tailwind que limita el ancho visual del logo (max-w-*)
-
-En TExperience y TSkill:
-
-width y height -> tamano REAL del archivo de imagen en px. Se pintan como
-atributos width y height del <img> para que el navegador calcule la relacion
-de aspecto y reserve el espacio ANTES de descargar la imagen, en vez de
-empujar el contenido cuando termina de cargar (Cumulative Layout Shift)
-https://web.dev/articles/optimize-cls
-
-TContact NO los lleva */
-
 export type TExperience = Record<
   | "company"
   | "role"
