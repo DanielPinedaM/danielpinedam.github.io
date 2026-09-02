@@ -16,7 +16,9 @@ export type TExperience = Record<
 
 export type TSkill = Record<"logo" | "alt" | "url", string> &
   Record<"names", string[]> &
-  Record<"id" | "width" | "height", number>;
+  Record<"id" | "width" | "height", number> &
+  Partial<Record<"logoDark", string>> &
+  Partial<Record<"widthDark" | "heightDark", number>>;
 
 export type TSkillCategory = Record<"category", string> &
   Record<"skills", TSkill[]> &

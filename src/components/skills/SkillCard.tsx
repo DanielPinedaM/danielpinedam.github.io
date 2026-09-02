@@ -14,8 +14,20 @@ const SkillCard = ({ skill }: ISkillCardProps) => (
         height={skill.height}
         loading="lazy"
         decoding="async"
-        className="mx-auto h-42 object-contain"
+        className={`mx-auto h-42 object-contain${skill.logoDark ? ' dark:hidden' : ''}`}
       />
+
+      {skill.logoDark && (
+        <img
+          src={skill.logoDark}
+          alt={skill.alt}
+          width={skill.widthDark}
+          height={skill.heightDark}
+          loading="lazy"
+          decoding="async"
+          className="mx-auto hidden h-42 object-contain dark:block"
+        />
+      )}
     </picture>
 
     <a
