@@ -9,7 +9,7 @@ const ProfessionalProfile = () => (
       </figcaption>
 
       <img
-        src="/assets/image/icono_programador.png"
+        src="/assets/image/icono_programador.webp"
         alt="icono de prorgamador"
         width={512}
         height={512}
