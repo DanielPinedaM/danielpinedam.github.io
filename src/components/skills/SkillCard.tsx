@@ -25,9 +25,9 @@ const SkillCard = ({ skill }: ISkillCardProps) => (
       className="mx-auto flex max-w-57.5 flex-col items-center justify-center rounded-[0.625rem] border border-solid border-black/20 px-3 py-2 text-center transition-colors duration-200 ease-[ease] hover:border-night hover:bg-night hover:text-white active:border-night active:bg-night active:text-white dark:border-white/25 dark:hover:border-white dark:hover:bg-white dark:hover:text-night dark:active:border-white dark:active:bg-white dark:active:text-night"
     >
       {skill.names.map((name: string) => (
-        <h3 key={name} className="text-step-0">
+        <h4 key={name} className="text-step-0">
           {name}
-        </h3>
+        </h4>
       ))}
     </a>
   </div>

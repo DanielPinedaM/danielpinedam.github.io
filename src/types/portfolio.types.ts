@@ -1,9 +1,10 @@
-export type TMenuItem = Record<'label' | 'href' | 'delay', string> & Record<'id', number>;
+export type TMenuItem = Record<"label" | "href" | "delay", string> &
+  Record<"id", number>;
 
 /*
-En TExperience y TSkill:
+logoWidth de TExperience -> clase de Tailwind que limita el ancho visual del logo (max-w-*)
 
-logoWidth -> clase de Tailwind que limita el ancho visual del logo (max-w-*)
+En TExperience y TSkill:
 
 width y height -> tamano REAL del archivo de imagen en px. Se pintan como
 atributos width y height del <img> para que el navegador calcule la relacion
@@ -14,17 +15,31 @@ https://web.dev/articles/optimize-cls
 TContact NO los lleva */
 
 export type TExperience = Record<
-  'company' | 'role' | 'date' | 'logoLight' | 'logoDark' | 'alt' | 'url' | 'logoWidth',
+  | "company"
+  | "role"
+  | "date"
+  | "logoLight"
+  | "logoDark"
+  | "alt"
+  | "url"
+  | "logoWidth",
   string
 > &
-  Record<'id' | 'width' | 'height', number>;
+  Record<"id" | "width" | "height", number>;
 
-export type TSkill = Record<'logo' | 'alt' | 'url', string> &
-  Record<'names', string[]> &
-  Record<'id' | 'width' | 'height', number>;
+export type TSkill = Record<"logo" | "alt" | "url", string> &
+  Record<"names", string[]> &
+  Record<"id" | "width" | "height", number>;
 
-export type TProject = Record<'technology' | 'category' | 'url' | 'accent', string> &
-  Record<'id', number>;
+export type TSkillCategory = Record<"category", string> &
+  Record<"skills", TSkill[]> &
+  Record<"id", number>;
 
-export type TContact = Record<'label' | 'logo' | 'alt' | 'url', string> &
-  Record<'id', number>;
+export type TProject = Record<
+  "technology" | "category" | "url" | "accent",
+  string
+> &
+  Record<"id", number>;
+
+export type TContact = Record<"label" | "logo" | "alt" | "url", string> &
+  Record<"id", number>;
