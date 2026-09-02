@@ -5,8 +5,8 @@ interface ISkillCardProps {
 }
 
 const SkillCard = ({ skill }: ISkillCardProps) => (
-  <div className="flex-[0_0_calc(50%-0.625rem)] rounded-[0.625rem] px-[1%] py-[2%] transition-colors duration-200 ease-[ease] hover:bg-black/5 xsm:flex-[0_0_calc(33.3333333333%-0.625rem)] sm:flex-[0_0_calc(25%-0.625rem)] md:flex-[0_0_calc(20%-0.625rem)] lg:flex-[0_0_calc(14.2857142857%-0.625rem)] dark:hover:bg-white/9">
-    <picture className="block h-56">
+  <div className="flex-[0_0_calc(50%-0.625rem)] rounded-[0.625rem] px-[1%] py-4 transition-colors duration-200 ease-[ease] hover:bg-black/5 xsm:flex-[0_0_calc(33.3333333333%-0.625rem)] sm:flex-[0_0_calc(25%-0.625rem)] md:flex-[0_0_calc(20%-0.625rem)] lg:flex-[0_0_calc(14.2857142857%-0.625rem)] dark:hover:bg-white/9">
+    <picture className="mb-4 block h-42">
       <img
         src={skill.logo}
         alt={skill.alt}
@@ -14,7 +14,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => (
         height={skill.height}
         loading="lazy"
         decoding="async"
-        className="mx-auto mb-4 h-56 object-contain"
+        className="mx-auto h-42 object-contain"
       />
     </picture>
 

@@ -7,7 +7,7 @@ const Skills = () => (
     <h2 className="my-12.5 text-center font-medium hyphens-auto">Conocimientos</h2>
 
     {SKILL_CATEGORIES.map((skillCategory: TSkillCategory) => (
-      <article key={skillCategory.id} className="mb-20 last:mb-0">
+      <article key={skillCategory.id} className="mb-12 last:mb-0">
         <h3 className="mb-2.5 text-center text-step-1 font-medium hyphens-auto">
           {skillCategory.category}
         </h3>
