@@ -1,10 +1,4 @@
-import type { TMenuItem } from '@/types/portfolio.types';
-
-interface IMenuItemProps {
-  item: TMenuItem;
-  isOpen: boolean;
-  onClose: () => void;
-}
+import type { IMenuItemProps } from '@/interfaces/menu.interface';
 
 const BAR: string =
   'absolute left-0 -z-1 h-1/2 w-full origin-[0_50%] translate-x-[-110%] bg-night-menu transition-transform duration-0 ease-menu group-hover/item:translate-x-[calc(100%-0.5rem)] group-hover/item:animate-blink group-hover/item:duration-450 dark:bg-neon-bar';

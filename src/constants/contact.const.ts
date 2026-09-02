@@ -1,6 +1,6 @@
-import type { TContact } from '@/types/portfolio.types';
+import type { IContact } from '@/interfaces/contact.interface';
 
-export const CONTACT: TContact[] = [
+export const CONTACT: IContact[] = [
   {
     id: 1,
     label: 'pineda.daniel700@gmail.com',

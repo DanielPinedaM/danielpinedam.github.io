@@ -1,6 +1,6 @@
-import type { TMenuItem } from '@/types/portfolio.types';
+import type { IMenuItem } from '@/interfaces/menu.interface';
 
-export const MENU_ITEMS: TMenuItem[] = [
+export const MENU_ITEMS: IMenuItem[] = [
   {
     id: 1,
     label: 'Perfil Profesional',

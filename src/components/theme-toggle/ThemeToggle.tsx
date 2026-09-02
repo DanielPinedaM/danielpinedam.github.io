@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import MoonIcon from '@/components/theme-toggle/MoonIcon';
 import SunIcon from '@/components/theme-toggle/SunIcon';
+import type { Theme } from '@/types/theme.type';
 
 const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
@@ -13,7 +14,10 @@ const ThemeToggle = () => {
 
   const toggleTheme = (): void => {
     setIsAnimated(true);
-    setTheme(isDark ? 'light' : 'dark');
+
+    const nextTheme: Theme = isDark ? 'light' : 'dark';
+
+    setTheme(nextTheme);
   };
 
   return (

@@ -1,6 +1,6 @@
-import type { TExperience } from '@/types/portfolio.types';
+import type { IExperience } from '@/interfaces/experience.interface';
 
-export const EXPERIENCE: TExperience[] = [
+export const EXPERIENCE: IExperience[] = [
   {
     id: 1,
     company: 'TASS COL',

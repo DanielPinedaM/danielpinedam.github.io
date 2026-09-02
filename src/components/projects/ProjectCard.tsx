@@ -1,8 +1,4 @@
-import type { TProject } from "@/types/portfolio.types";
-
-interface IProjectCardProps {
-  project: TProject;
-}
+import type { IProjectCardProps } from "@/interfaces/projects.interface";
 
 const ProjectCard = ({ project }: IProjectCardProps) => (
   <a

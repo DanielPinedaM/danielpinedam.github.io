@@ -1,15 +1,12 @@
-import type { TProject } from "@/types/portfolio.types";
+import type { IProject } from "@/interfaces/projects.interface";
 
-export const PROJECTS_INTRO =
-  "Estructuras base para empezar un proyecto en cada framework / tecnología";
-
-export const PROJECTS_HIGHLIGHTS = [
+export const PROJECTS_HIGHLIGHTS: string[] = [
   "Arquitectura de software definida",
   "Configuración de IA: skills y MCP",
   "Se descargan y se empieza a programar de inmediato",
 ];
 
-export const PROJECTS: TProject[] = [
+export const PROJECTS: IProject[] = [
   {
     id: 1,
     technology: "Angular",

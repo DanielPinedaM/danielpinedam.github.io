@@ -1,12 +1,7 @@
 import styles from '@/components/menu/Menu.module.css';
 import MenuItem from '@/components/menu/MenuItem';
 import { MENU_ITEMS } from '@/constants/menu.const';
-import type { TMenuItem } from '@/types/portfolio.types';
-
-interface IMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import type { IMenuItem, IMenuProps } from '@/interfaces/menu.interface';
 
 const CURTAIN: string =
   'absolute left-0 block h-[50dvh] w-full origin-[0_50%] bg-day-menu transition-transform duration-300 ease-menu dark:bg-night-menu';
@@ -35,7 +30,7 @@ const Menu = ({ isOpen, onClose }: IMenuProps) => (
     />
 
     <menu className={`${styles.menu} relative z-1 text-center`}>
-      {MENU_ITEMS.map((item: TMenuItem) => (
+      {MENU_ITEMS.map((item: IMenuItem) => (
         <MenuItem key={item.id} item={item} isOpen={isOpen} onClose={onClose} />
       ))}
     </menu>
