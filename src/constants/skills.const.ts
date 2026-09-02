@@ -63,7 +63,7 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
   },
   {
     id: 2,
-    category: "Desarrollo web",
+    category: "Desarrollo Web",
     skills: [
       {
         id: 7,
@@ -114,7 +114,7 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
   },
   {
     id: 3,
-    category: "Desarrollo móvil",
+    category: "Desarrollo Móvil",
     skills: [
       {
         id: 12,
@@ -165,7 +165,7 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
   },
   {
     id: 4,
-    category: "Lenguajes de programación",
+    category: "Lenguajes de Programación",
     skills: [
       {
         id: 17,
@@ -189,7 +189,7 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
   },
   {
     id: 5,
-    category: "Inteligencia artificial",
+    category: "Inteligencia Artificial",
     skills: [
       {
         id: 19,
@@ -204,7 +204,7 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
   },
   {
     id: 6,
-    category: "Control de versiones",
+    category: "Control de Versiones",
     skills: [
       {
         id: 20,
