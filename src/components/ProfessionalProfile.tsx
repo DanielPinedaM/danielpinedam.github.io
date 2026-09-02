@@ -26,8 +26,8 @@ const ProfessionalProfile = () => (
 
       <a
         href={PROFILE.resumeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        /* target="_blank"
+        rel="noopener noreferrer" */
         className="group relative mx-auto mt-6 flex h-14 max-w-57.5 cursor-pointer items-center justify-center overflow-hidden rounded-[0.625rem] border-2 border-solid border-ink-teal text-center font-medium text-ink-teal transition-colors duration-200 ease-[ease] hover:bg-ink-teal hover:text-white active:bg-ink-teal active:text-white dark:border-neon-teal dark:text-neon-teal dark:hover:bg-neon-teal dark:hover:text-night dark:active:bg-neon-teal dark:active:text-night"
       >
         <div className="absolute -left-10 z-1 flex items-center justify-center opacity-0 transition-all duration-200 ease-in-out group-hover:left-[calc(100%-2.5rem)] group-hover:opacity-100 group-active:left-[calc(100%-2.5rem)] group-active:opacity-100 motion-reduce:transition-none">

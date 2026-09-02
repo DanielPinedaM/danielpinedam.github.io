@@ -16,7 +16,7 @@ export const PROFILE: Record<
     'Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías frontend (Angular, React, Next.js e Ionic). Trabajo en aplicaciones web y móviles desde su definición técnica hasta su construcción y publicación, con foco en la experiencia del usuario.',
   resumeLabel: 'HOJA DE VIDA',
   resumeUrl:
-    'https://drive.google.com/file/d/1NuBATwtw34FaLn5wAGfHLMFo9xbdu9he/view?usp=drive_link',
+    '',
 };
 
 export const FOOTER: Record<'madeWith' | 'label' | 'logo' | 'alt' | 'url', string> &
