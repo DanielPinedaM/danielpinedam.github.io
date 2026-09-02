@@ -25,10 +25,7 @@ const ProfessionalProfile = () => (
       </h2>
 
       <p className="leading-[1.55]">
-        Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías
-        frontend (React, React Native, Next.js, Ionic y Angular). Trabajo en
-        aplicaciones web y móviles desde su definición técnica hasta su
-        construcción y publicación, con foco en la experiencia del usuario.
+        Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías frontend. Trabajo en aplicaciones web (React, Next.js, Angular) y móviles (React Native, Ionic) desde su definición técnica hasta su construcción y publicación (AWS, Vercel), con foco en la experiencia del usuario.
       </p>
 
       <a
