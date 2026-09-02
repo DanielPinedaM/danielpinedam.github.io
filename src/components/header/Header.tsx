@@ -3,10 +3,14 @@ import HeaderSkeleton from "@/components/header/HeaderSkeleton";
 import Menu from "@/components/menu/Menu";
 import MenuButton from "@/components/MenuButton";
 import ThemeToggle from "@/components/theme-toggle/ThemeToggle";
-import { HERO, HERO_VIDEO } from "@/constants/hero.const";
 import { useTypewriter } from "@/hooks/useTypewriter";
 
 const VIDEO: string = "absolute top-0 left-0 h-dvh w-full object-cover";
+
+const WORDS: string[] = [
+  "ingeniero de sistemas",
+  "desarrollador frontend y móvil",
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -15,7 +19,7 @@ const Header = () => {
 
   const isVideoLoading: boolean = isDesktopViewport === null || !isVideoReady;
 
-  const typedText: string = useTypewriter(HERO.words, HERO.period);
+  const typedText: string = useTypewriter(WORDS, 2000);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent): void => {
@@ -28,9 +32,8 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const mediaQuery: MediaQueryList = window.matchMedia(
-      HERO_VIDEO.desktopMediaQuery,
-    );
+    /** mismo breakpoint xsm que esta en src/css/tailwind/theme.css */
+    const mediaQuery: MediaQueryList = window.matchMedia("(min-width: 30rem)");
 
     const syncViewport = (): void => {
       setIsVideoReady(false);
@@ -70,7 +73,11 @@ const Header = () => {
             playsInline
             muted
             aria-hidden="true"
-            src={isDesktopViewport ? HERO_VIDEO.desktop : HERO_VIDEO.mobile}
+            src={
+              isDesktopViewport
+                ? "/assets/video/background_video_desktop.mp4"
+                : "/assets/video/background_video_mobile.mp4"
+            }
             onLoadedData={() => setIsVideoReady(true)}
             onError={() => setIsVideoReady(true)}
             className={VIDEO}
@@ -82,7 +89,7 @@ const Header = () => {
 
       <div className="absolute top-0 left-0 z-1 flex h-dvh w-full flex-col flex-nowrap items-center justify-center bg-white/15 text-center">
         <h1 className="text-hero font-extrabold">
-          {HERO.intro}{" "}
+          Yo soy...{" "}
           <span className="block cursor-text text-hero leading-[1.9] text-white">
             <span className="border-r-[0.08em] border-solid border-white pr-px text-hero">
               {typedText}
@@ -91,10 +98,10 @@ const Header = () => {
         </h1>
 
         <a
-          href={HERO.ctaHref}
-          className="relative z-999 mt-[5dvh] inline-flex cursor-pointer items-center justify-center rounded-[0.625rem] border-2 border-solid border-white px-7 py-3 text-step-1 font-medium text-white transition-[background-color,color,scale] duration-200 ease-[ease] hover:bg-white hover:text-night active:scale-[0.97] active:bg-white active:text-night motion-reduce:transition-none motion-reduce:active:scale-100"
+          href="#contactame"
+          className="relative z-999 mt-[5dvh] inline-flex cursor-pointer items-center justify-center rounded-[0.625rem] border-2 border-solid border-white px-7 py-3 text-step-1 font-medium text-white transition-[background-color,color,scale] duration-200 ease-[ease] hover:bg-white hover:text-night active:scale-[0.97] active:bg-white active:text-night motion-reduce:transition-none"
         >
-          <span>{HERO.cta}</span>
+          <span>Contáctame</span>
         </a>
       </div>
     </header>

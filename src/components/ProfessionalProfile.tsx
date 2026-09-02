@@ -1,18 +1,18 @@
-import { PROFILE } from '@/constants/profile.const';
-
 const ProfessionalProfile = () => (
   <article
     id="perfil_profesional"
     className="flex flex-row flex-wrap items-center text-step-0"
   >
     <figure className="flex flex-[0_0_100%] flex-col flex-nowrap items-center justify-center text-center sm:flex-[0_0_50%]">
-      <figcaption className="mb-4 text-step-3 font-medium">{PROFILE.name}</figcaption>
+      <figcaption className="mb-4 text-step-3 font-medium">
+        Daniel Pineda Mora
+      </figcaption>
 
       <img
-        src={PROFILE.photo}
-        alt={PROFILE.alt}
-        width={PROFILE.width}
-        height={PROFILE.height}
+        src="/assets/image/icono_programador.png"
+        alt="icono de prorgamador"
+        width={512}
+        height={512}
         loading="lazy"
         decoding="async"
         className="mx-auto max-w-[70%] rounded-xl outline-1 outline-black/10 outline-solid xsm:max-w-[50%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%] xl:max-w-[45%] dark:outline-white/15"
@@ -20,13 +20,21 @@ const ProfessionalProfile = () => (
     </figure>
 
     <section className="flex-[0_0_100%] sm:flex-[0_0_50%]">
-      <h2 className="my-4 text-center font-medium hyphens-auto">{PROFILE.title}</h2>
+      <h2 className="my-4 text-center font-medium hyphens-auto">
+        Perfil Profesional
+      </h2>
 
-      <p className="leading-[1.55]">{PROFILE.description}</p>
+      <p className="leading-[1.55]">
+        Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías
+        frontend (React, React Native, Next.js, Ionic y Angular). Trabajo en
+        aplicaciones web y móviles desde su definición técnica hasta su
+        construcción y publicación, con foco en la experiencia del usuario.
+      </p>
 
       <a
-        href={PROFILE.resumeUrl}
-        /* target="_blank"
+        href="#perfil_profesional"
+        /* PROHIBIDO borrar este codigo comentado
+        target="_blank"
         rel="noopener noreferrer" */
         className="group relative mx-auto mt-6 flex h-14 max-w-57.5 cursor-pointer items-center justify-center overflow-hidden rounded-[0.625rem] border-2 border-solid border-ink-teal text-center font-medium text-ink-teal transition-colors duration-200 ease-[ease] hover:bg-ink-teal hover:text-white active:bg-ink-teal active:text-white dark:border-neon-teal dark:text-neon-teal dark:hover:bg-neon-teal dark:hover:text-night dark:active:bg-neon-teal dark:active:text-night"
       >
@@ -46,7 +54,7 @@ const ProfessionalProfile = () => (
         </div>
 
         <span className="absolute transition-all duration-400 ease-in-out group-hover:left-5 group-active:left-5 motion-reduce:transition-none">
-          {PROFILE.resumeLabel}
+          HOJA DE VIDA
         </span>
       </a>
     </section>
