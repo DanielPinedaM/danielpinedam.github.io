@@ -23,10 +23,7 @@ export type TSkill = Record<'logo' | 'alt' | 'url', string> &
   Record<'names', string[]> &
   Record<'id' | 'width' | 'height', number>;
 
-export type TProject = Record<
-  'technology' | 'name' | 'description' | 'url' | 'accent',
-  string
-> &
+export type TProject = Record<'technology' | 'category' | 'url' | 'accent', string> &
   Record<'id', number>;
 
 export type TContact = Record<'label' | 'logo' | 'alt' | 'url', string> &
