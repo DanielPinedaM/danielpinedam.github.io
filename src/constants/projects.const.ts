@@ -1,7 +1,7 @@
 import type { TProject } from "@/types/portfolio.types";
 
 export const PROJECTS_INTRO =
-  "Estructuras base para empezar un proyecto en cada framework / tecnología.";
+  "Estructuras base para empezar un proyecto en cada framework / tecnología";
 
 export const PROJECTS_HIGHLIGHTS = [
   "Arquitectura de software definida",
