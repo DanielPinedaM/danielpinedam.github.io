@@ -204,10 +204,37 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
   },
   {
     id: 6,
-    category: "Control de Versiones",
+    category: "Nube y Despliegue",
     skills: [
       {
         id: 20,
+        names: ["Vercel"],
+        logo: "/assets/image/logo/conocimientos/vercel.webp",
+        alt: "logo de Vercel",
+        width: 360,
+        height: 360,
+        url: "https://vercel.com/docs",
+      },
+      {
+        id: 21,
+        names: ["Amazon Web Services"],
+        logo: "/assets/image/logo/conocimientos/aws_light.webp",
+        logoDark: "/assets/image/logo/conocimientos/aws_dark.png",
+        alt: "logo de AWS",
+        width: 960,
+        height: 575,
+        widthDark: 640,
+        heightDark: 397,
+        url: "https://youtu.be/zQyrhjEAqLs?si=plYsshR_1zXqN5YH",
+      },
+    ],
+  },
+  {
+    id: 7,
+    category: "Control de Versiones",
+    skills: [
+      {
+        id: 22,
         names: ["Git"],
         logo: "/assets/image/logo/conocimientos/git.png",
         alt: "logo de Git",
@@ -216,7 +243,7 @@ export const SKILL_CATEGORIES: TSkillCategory[] = [
         url: "https://www.udemy.com/course/git-github/",
       },
       {
-        id: 21,
+        id: 23,
         names: ["GitHub"],
         logo: "/assets/image/logo/conocimientos/github.png",
         alt: "logo de GitHub",
