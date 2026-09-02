@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import MoonIcon from '@/components/theme-toggle/MoonIcon';
 import SunIcon from '@/components/theme-toggle/SunIcon';
-import type { Theme } from '@/types/theme.type';
+import type { Theme } from '@/components/theme-toggle/types/theme.type';
 
-const ThemeToggle = () => {
+const ButtonThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   const [isAnimated, setIsAnimated] = useState(false);
@@ -35,4 +35,4 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle;
+export default ButtonThemeToggle;

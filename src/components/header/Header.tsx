@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HeaderSkeleton from "@/components/header/HeaderSkeleton";
 import Menu from "@/components/menu/Menu";
 import MenuButton from "@/components/MenuButton";
-import ThemeToggle from "@/components/theme-toggle/ThemeToggle";
+import ButtonThemeToggle from "@/components/theme-toggle/ButtonThemeToggle";
 import { useTypewriter } from "@/hooks/useTypewriter";
 
 const VIDEO: string = "absolute top-0 left-0 h-dvh w-full object-cover";
@@ -60,7 +60,7 @@ const Header = () => {
         }
       />
 
-      <ThemeToggle />
+      <ButtonThemeToggle />
 
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
