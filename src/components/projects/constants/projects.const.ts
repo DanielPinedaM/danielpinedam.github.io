@@ -34,7 +34,7 @@ export const PROJECTS: IProject[] = [
   {
     id: 4,
     technology: "Expo / React Native",
-    category: "Móvil",
+    category: "App Móvil",
     url: "https://github.com/DanielPinedaM/arquitectura-base-expo-react-native",
     accent:
       "[--project-accent:var(--color-ink-violet)] [--project-accent-pulse:var(--color-ink-violet-pulse)] [--project-fluor:var(--color-vivid-violet)] [--project-fluor-pulse:var(--color-vivid-violet-pulse)] dark:[--project-accent:var(--color-neon-violet)] dark:[--project-fluor:var(--color-fluor-violet)] dark:[--project-fluor-pulse:var(--color-fluor-violet-pulse)] dark:[--project-accent-pulse:var(--color-neon-violet-pulse)]",
