@@ -10,7 +10,7 @@ export const PROJECTS: IProject[] = [
   {
     id: 1,
     technology: "Angular",
-    category: "Frontend",
+    category: "Frontend Web",
     url: "https://github.com/DanielPinedaM/arquitectura-base-Angular",
     accent:
       "[--project-accent:var(--color-ink-red)] [--project-accent-pulse:var(--color-ink-red-pulse)] [--project-fluor:var(--color-vivid-red)] [--project-fluor-pulse:var(--color-vivid-red-pulse)] dark:[--project-accent:var(--color-neon-red)] dark:[--project-fluor:var(--color-fluor-red)] dark:[--project-fluor-pulse:var(--color-fluor-red-pulse)] dark:[--project-accent-pulse:var(--color-neon-red-pulse)]",
@@ -18,7 +18,7 @@ export const PROJECTS: IProject[] = [
   {
     id: 2,
     technology: "React / Next.js",
-    category: "Frontend",
+    category: "Frontend Web",
     url: "https://github.com/DanielPinedaM/arquitectura-base-Next-JS",
     accent:
       "[--project-accent:var(--color-ink-blue)] [--project-accent-pulse:var(--color-ink-blue-pulse)] [--project-fluor:var(--color-vivid-blue)] [--project-fluor-pulse:var(--color-vivid-blue-pulse)] dark:[--project-accent:var(--color-neon-blue)] dark:[--project-fluor:var(--color-fluor-blue)] dark:[--project-fluor-pulse:var(--color-fluor-blue-pulse)] dark:[--project-accent-pulse:var(--color-neon-blue-pulse)]",
