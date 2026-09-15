@@ -272,3 +272,17 @@ custom propierties de Tailwind */
   --breakpoint-2xl: 96rem; /* @media (min-width: 1536px) { ... } */
   --breakpoint-3xl: 120rem; /* @media (min-width: 1920px) { ... } */
 }
+
+/*
+Las variables que cada card de proyectos declara en su clase accent, expuestas como
+utilidades de Tailwind (text-project-accent, bg-project-fluor) para no tener que
+consumirlas con var() desde el className.
+
+Se usa @theme inline y no @theme normal porque el valor no es un color fijo: cada card
+resuelve --project-accent y --project-fluor a su propio tono. Con inline la utilidad
+apunta a esa variable, mientras que sin inline copiaria el valor que tenga en :root,
+donde todavia no existe. */
+@theme inline {
+  --color-project-accent: var(--project-accent);
+  --color-project-fluor: var(--project-fluor);
+}

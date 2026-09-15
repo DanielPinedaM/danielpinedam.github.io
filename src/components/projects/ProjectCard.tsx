@@ -9,14 +9,14 @@ const ProjectCard = ({ project }: IProjectCardProps) => (
   >
     <span
       aria-hidden="true"
-      className="absolute inset-x-0 top-0 h-0.5 animate-project-bar bg-[var(--project-fluor)] motion-reduce:animate-none"
+      className="absolute inset-x-0 top-0 h-0.5 animate-project-bar bg-project-fluor motion-reduce:animate-none"
     />
 
     <p className="text-meta text-black/64 dark:text-white/56">
       {project.category}
     </p>
 
-    <h3 className="animate-project-title text-step-1 font-semibold text-[var(--project-accent)] motion-reduce:animate-none">
+    <h3 className="animate-project-title text-step-1 font-semibold text-project-accent motion-reduce:animate-none">
       {project.technology}
     </h3>
 
