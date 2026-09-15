@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Daniel Pineda Mora | Desarrollador Frontend y Móvil</title>
+
+    <meta
+      name="description"
+      content="Portafolio de Daniel Pineda Mora, Ingeniero de Sistemas con más de 4 años creando aplicaciones web y móviles con Angular, React, Next.js e Ionic en Medellín."
+    />
+    <meta name="author" content="Daniel Pineda Mora" />
+    <meta
+      name="keywords"
+      content="Daniel Pineda Mora, desarrollador frontend, desarrollador móvil, ingeniero de sistemas, Angular, React, Next.js, Ionic, TypeScript, JavaScript, Tailwind CSS, portafolio, Medellín, Colombia"
+    />
+
+    <!--
+        Indexacion
+        max-image-preview:large   -> Google puede mostrar la imagen grande en los resultados
+        max-snippet:-1            -> sin limite de caracteres en el fragmento de texto
+        max-video-preview:-1      -> sin limite de duracion en la vista previa de video
+        https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
+        -->
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!--
+        URL canonica - evita contenido duplicado entre las variantes de la misma URL
+        (con y sin www, con y sin barra final, http y https)
+        https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+        -->
+    <link rel="canonical" href="https://danielpinedam.github.io/" />
+
+    <!--
+        Open Graph - tarjeta que se ve al compartir el enlace
+        en WhatsApp, LinkedIn, Facebook, Slack y Telegram
+        https://ogp.me/
+        -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Daniel Pineda Mora" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content="https://danielpinedam.github.io/" />
+    <meta
+      property="og:title"
+      content="Daniel Pineda Mora | Desarrollador Frontend y Móvil"
+    />
+    <meta
+      property="og:description"
+      content="Portafolio de Daniel Pineda Mora, Ingeniero de Sistemas con más de 4 años creando aplicaciones web y móviles con Angular, React, Next.js e Ionic en Medellín."
+    />
+    <meta
+      property="og:image"
+      content="https://danielpinedam.github.io/assets/image/icono_progrmador.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta
+      property="og:image:alt"
+      content="Daniel Pineda Mora - Desarrollador Frontend y Móvil"
+    />
+    <meta property="profile:first_name" content="Daniel" />
+    <meta property="profile:last_name" content="Pineda Mora" />
+    <meta property="profile:username" content="DanielPinedaM" />
+
+    <!--
+        Twitter Card - la imagen es cuadrada de 512x512,
+        por eso se usa "summary" y no "summary_large_image"
+        https://developer.x.com/en/docs/x-for-websites/cards/overview/abouts-cards
+        -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Daniel Pineda Mora | Desarrollador Frontend y Móvil"
+    />
+    <meta
+      name="twitter:description"
+      content="Portafolio de Daniel Pineda Mora, Ingeniero de Sistemas con más de 4 años creando aplicaciones web y móviles con Angular, React, Next.js e Ionic en Medellín."
+    />
+    <meta
+      name="twitter:image"
+      content="https://danielpinedam.github.io/assets/image/icono_progrmador.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Daniel Pineda Mora - Desarrollador Frontend y Móvil"
+    />
+
+    <!--
+        Datos estructurados JSON-LD - le explican a Google y a los buscadores con IA
+        quien es la persona, que hace y como contactarla.
+        Es HTML estatico, NO se renderiza con JavaScript, por eso cualquier
+        rastreador lo lee sin ejecutar la aplicacion de React
+        https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+        Validar en https://search.google.com/test/rich-results
+        -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://danielpinedam.github.io/#daniel-pineda-mora",
+            "name": "Daniel Pineda Mora",
+            "givenName": "Daniel",
+            "familyName": "Pineda Mora",
+            "url": "https://danielpinedam.github.io/",
+            "image": "https://danielpinedam.github.io/assets/image/icono_progrmador.png",
+            "jobTitle": "Desarrollador Frontend y Móvil",
+            "description": "Ingeniero de Sistemas con más de 4 años de experiencia en tecnologías frontend (Angular, React, Next.js e Ionic). Trabajo en aplicaciones web y móviles desde su definición técnica hasta su construcción y publicación, con foco en la experiencia del usuario.",
+            "email": "mailto:pineda.daniel700@gmail.com",
+            "telephone": "+573053145758",
+            "knowsLanguage": ["es"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Medellín",
+              "addressRegion": "Antioquia",
+              "addressCountry": "CO"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "TASS COL",
+              "url": "https://www.tasstech.co/"
+            },
+            "knowsAbout": [
+              "Angular",
+              "React",
+              "Next.js",
+              "Ionic",
+              "Capacitor",
+              "Cordova",
+              "TypeScript",
+              "JavaScript",
+              "HTML",
+              "CSS",
+              "Sass",
+              "Tailwind CSS",
+              "Bootstrap",
+              "RxJS",
+              "Git",
+              "GitHub",
+              "UI/UX",
+              "Maquetación web responsive",
+              "Consumo de APIs REST"
+            ],
+            "sameAs": ["https://github.com/DanielPinedaM"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://danielpinedam.github.io/#website",
+            "url": "https://danielpinedam.github.io/",
+            "name": "Portafolio de Daniel Pineda Mora",
+            "inLanguage": "es",
+            "publisher": { "@id": "https://danielpinedam.github.io/#daniel-pineda-mora" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://danielpinedam.github.io/#profilepage",
+            "url": "https://danielpinedam.github.io/",
+            "name": "Daniel Pineda Mora | Desarrollador Frontend y Móvil",
+            "inLanguage": "es",
+            "isPartOf": { "@id": "https://danielpinedam.github.io/#website" },
+            "about": { "@id": "https://danielpinedam.github.io/#daniel-pineda-mora" },
+            "mainEntity": { "@id": "https://danielpinedam.github.io/#daniel-pineda-mora" }
+          }
+        ]
+      }
+    </script>
+
+    <!--
+        font-family: Mukta Google Fonts
+        https://fonts.google.com/specimen/Mukta
+        ExtraLight 200
+        Regular    400
+        Medium     500
+        Bold       700
+        ExtraBold  800
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+        Favicon
+        https://youtu.be/1KwfE5NrKU0
+        https://www.favicon-generator.org/
+
+        Cada <link> apunta al archivo del tamano que declara.
+        Google necesita un favicon cuadrado y multiplo de 48px para mostrarlo
+        en los resultados de busqueda en celular, por eso se declara el de 192x192
+        https://developers.google.com/search/docs/appearance/favicon-in-search
+        -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/assets/image/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/assets/image/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/assets/image/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/assets/image/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/assets/image/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/assets/image/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/assets/image/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/assets/image/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/image/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/image/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/assets/image/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/image/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/image/favicon/favicon-16x16.png"
+    />
+    <link rel="icon" href="/assets/image/favicon/favicon.ico" sizes="any" />
+    <link rel="manifest" href="/assets/image/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/image/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!--
+      Aplicar el tema guardado ANTES de pintar la pagina para que no se vea
+      un parpadeo al recargar. El tema por defecto es el oscuro, por eso solo
+      el tema claro guardado de forma explicita quita la clase.
+      Lee la misma clave de localStorage que usa next-themes
+    -->
+    <script>
+      var esTemaOscuro = true;
+
+      try {
+        esTemaOscuro = localStorage.getItem('theme') !== 'light';
+      } catch (error) {
+        /* localStorage bloqueado - se usa el tema oscuro por defecto */
+      }
+
+      if (esTemaOscuro) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-BEfq0bSE.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-M2V_GSpv.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
