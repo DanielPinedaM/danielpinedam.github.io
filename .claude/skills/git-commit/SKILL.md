@@ -35,7 +35,7 @@ Elementos obligatorios en todo commit:
 
 * `<type>`: tomado de la tabla y escrito en inglés.
 
-* El único elemento opcional es `<scope>`, regido por la sección "Reglas para el Scope".
+* El único elemento opcional es `<scope>`, regido por la sección [Reglas para el Scope](#reglas-para-el-scope).
 
 * `<mensaje en español>`: resumen conciso de lo que se hizo (`subject`), redactado en español.
 
@@ -44,7 +44,7 @@ Elementos obligatorios en todo commit:
 * El `body` nunca debe ser idéntico al `<mensaje en español>`. El `<mensaje en español>` resume el cambio, mientras que el `body` lo detalla punto por punto. Aunque el cambio sea muy pequeño y ambos puedan parecer similares, desarrollar el `body` con los puntos concretos del cambio en lugar de repetir el `<mensaje en español>`.
 
 ## Fuente Única de Verdad para los Commits
-* La tabla de la sección "Emojis por Tipo de Commit" es la única fuente de verdad para construir cualquier commit. El tipo y el emoji deben seleccionarse exclusivamente desde sus filas.
+* La tabla de la sección [Emojis por Tipo de Commit](#emojis-por-tipo-de-commit) es la única fuente de verdad para construir cualquier commit. El tipo y el emoji deben seleccionarse exclusivamente desde sus filas.
 
 * Antes de crear un commit, dar prioridad absoluta a la tabla: tomar siempre el tipo y el emoji desde ella.
 
@@ -54,7 +54,7 @@ Elementos obligatorios en todo commit:
 
 * Si los cambios no encajan exactamente con ninguna fila de la tabla, está prohibido crear un tipo o un emoji nuevo. En ese caso, utilizar el tipo y el emoji existentes que más se aproximen a la intención real del cambio.
 
-* Está prohibido eliminar, agregar, editar o alterar la tabla de la sección "Emojis por Tipo de Commit".
+* Está prohibido eliminar, agregar, editar o alterar la tabla de la sección [Emojis por Tipo de Commit](#emojis-por-tipo-de-commit).
 
 ## Emojis por Tipo de Commit
 
