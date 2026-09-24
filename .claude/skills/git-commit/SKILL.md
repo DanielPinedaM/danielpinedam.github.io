@@ -132,7 +132,15 @@ git config user.name
 git config user.email
 ```
 
-Usar esos dos valores, tal como los devuelve git, para construir la bandera `--author "<nombre> <correo>"` del comando de commit (ver [Cómo Ejecutar el Commit](#cómo-ejecutar-el-commit)). Reemplazar `<nombre>` y `<correo>` con el texto literal obtenido de cada comando, sin interpolación ni sustitución de comandos del shell (`$()`, `` `n ``, backticks, etc.): el mismo motivo detallado en el [Bug Real que Origina Estas Reglas](#bug-real-que-origina-estas-reglas) aplica aquí, ya que cada shell interpreta esa sintaxis de forma distinta y una interpolación fallida puede colar texto sobrante dentro del autor del commit.
+Usar esos dos valores, tal como los devuelve git, para construir la bandera `--author "<nombre> <correo>"` del comando de commit (ver [Cómo Ejecutar el Commit](#cómo-ejecutar-el-commit)). Reemplazar `<nombre>` y `<correo>` con el texto literal obtenido de cada comando, sin interpolación ni sustitución de comandos del shell (`$()`, `` `n ``, backticks, etc.): el mismo motivo detallado en el [Bugs Reales que Originan Estas Reglas](#bugs-reales-que-originan-estas-reglas) aplica aquí, ya que cada shell interpreta esa sintaxis de forma distinta y una interpolación fallida puede colar texto sobrante dentro del autor del commit.
+
+El formato que exige `git` para `--author` es literalmente `Nombre <correo>`: los signos `<` y `>` no son parte de la notación de placeholder que usa el resto de este documento (donde `<nombre>` y `<correo>` solo marcan "reemplazar por el valor real"), sino caracteres literales que deben rodear el correo en el comando final. Con `git config user.name` devolviendo `JuanPerez` y `git config user.email` devolviendo `juan.perez@example.com`, la bandera correcta se ve así:
+
+```bash
+--author "JuanPerez <juan.perez@example.com>"
+```
+
+PROHIBIDO omitir los signos `< >` alrededor del correo. Git espera que un autor nuevo tenga el formato `Nombre <correo>`. Si se omiten (por ejemplo `--author "JuanPerez juan.perez@example.com"`), Git no reconoce el argumento como una identidad de autor con formato válido y puede interpretarlo como un patrón para buscar un autor existente en el historial. Si no encuentra coincidencia, el commit falla con `fatal: --author '...' is not 'Name <email>' and matches no existing author`.
 
 # Cómo Ejecutar el Commit
 El mensaje de commit siempre es multilínea (encabezado + línea en blanco + `body`). Pasar ese texto directamente como argumento en la línea de comandos es la causa de que se filtren caracteres sobrantes dentro del mensaje, por eso existe **un único método permitido**:
@@ -165,8 +173,10 @@ Motivo de eliminar el archivo: es un archivo temporal cuya única función es tr
 
 En PowerShell, el comando equivalente para eliminarlo es `Remove-Item -Force .claude/skills/git-commit/COMMIT_MSG_TEMP.txt`.
 
-## Bug Real que Origina Estas Reglas
+## Bugs Reales que Originan Estas Reglas
 Ejecutar `git commit -m @'...'@` (here-string de PowerShell) dentro de un shell POSIX/Bash creó un commit cuyo mensaje empezaba con `@`, porque Bash no interpreta `@'` como here-string: lo lee como el carácter literal `@` concatenado con la cadena entre comillas simples. El comando terminó con éxito y el `@` sobrante quedó dentro del historial. Usar `git commit -F` evita por completo esta clase de bug.
+
+Ejecutar `git commit --author "JuanPerez juan.perez@example.com" -F ...` (sin los signos `< >` alrededor del correo) hizo fallar el commit con `fatal: --author 'JuanPerez juan.perez@example.com' is not 'Name <email>' and matches no existing author`, porque git exige el formato literal `Nombre <correo>` y, sin los corchetes angulares, trató todo el texto como un patrón de búsqueda entre autores existentes en vez de como un autor nuevo a asignar. Seguir el ejemplo literal de la sección [Autoría del Commit](#autoría-del-commit) evita esta clase de bug.
 
 # Mostrar el Commit Después de Realizarlo
 Cuando se solicite hacer un commit desde un prompt, después de crearlo mostrar en la respuesta el encabezado con el formato `<emoji>` `<type>`(`<scope>`): `<mensaje en español>` y el `body` correspondiente al commit realizado.
