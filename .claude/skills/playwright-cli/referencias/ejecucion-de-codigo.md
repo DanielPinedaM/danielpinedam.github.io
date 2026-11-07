@@ -1,51 +1,55 @@
-# Running Custom Playwright Code
+# Ejecutar código personalizado de Playwright
 
-Use `run-code` to execute arbitrary Playwright code for advanced scenarios not covered by CLI commands.
+Usa `run-code` para ejecutar código arbitrario de Playwright en escenarios avanzados que los comandos CLI no cubren.
 
-## Syntax
+## Sintaxis
 
 ```bash
 playwright-cli run-code "async page => {
-  // Your Playwright code here
-  // Access page.context() for browser context operations
+  // Tu código de Playwright aquí
+  // Accede a page.context() para las operaciones del contexto del navegador
 }"
 ```
 
-You can also load the function from a file:
+También puedes cargar la función desde un archivo:
 
 ```bash
 playwright-cli run-code --filename=./my-script.js
 ```
 
 
-The code must be a single function expression, it is wrapped in `(...)` and evaluated.
-import/export/require syntax is not supported.
+El código debe ser una única expresión de función, se envuelve en `(...)` y se evalúa.
+La sintaxis import/export/require no es compatible.
 
-## Geolocation
+El código se ejecuta en un contexto aislado, no en un entorno completo de Node.js. `require`, `process` y los módulos de Node no están
+disponibles. Los timers (`setTimeout`, `setInterval`), `fetch`, `URL`, `Buffer`, `crypto`, `AbortController`, `TextEncoder`
+y `TextDecoder` sí están disponibles.
+
+## Geolocalización
 
 ```bash
-# Grant geolocation permission and set location
+# Conceder el permiso de geolocalización y establecer la ubicación
 playwright-cli run-code "async page => {
   await page.context().grantPermissions(['geolocation']);
   await page.context().setGeolocation({ latitude: 37.7749, longitude: -122.4194 });
 }"
 
-# Set location to London
+# Establecer la ubicación en Londres
 playwright-cli run-code "async page => {
   await page.context().grantPermissions(['geolocation']);
   await page.context().setGeolocation({ latitude: 51.5074, longitude: -0.1278 });
 }"
 
-# Clear geolocation override
+# Limpiar la anulación (override) de la geolocalización
 playwright-cli run-code "async page => {
   await page.context().clearPermissions();
 }"
 ```
 
-## Permissions
+## Permisos
 
 ```bash
-# Grant multiple permissions
+# Conceder varios permisos
 playwright-cli run-code "async page => {
   await page.context().grantPermissions([
     'geolocation',
@@ -55,7 +59,7 @@ playwright-cli run-code "async page => {
   ]);
 }"
 
-# Grant permissions for specific origin
+# Conceder permisos para un origen específico
 playwright-cli run-code "async page => {
   await page.context().grantPermissions(['clipboard-read'], {
     origin: 'https://example.com'
@@ -63,74 +67,74 @@ playwright-cli run-code "async page => {
 }"
 ```
 
-## Media Emulation
+## Emulación de medios
 
 ```bash
-# Emulate dark color scheme
+# Emular el esquema de color oscuro
 playwright-cli run-code "async page => {
   await page.emulateMedia({ colorScheme: 'dark' });
 }"
 
-# Emulate light color scheme
+# Emular el esquema de color claro
 playwright-cli run-code "async page => {
   await page.emulateMedia({ colorScheme: 'light' });
 }"
 
-# Emulate reduced motion
+# Emular movimiento reducido
 playwright-cli run-code "async page => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
 }"
 
-# Emulate print media
+# Emular el medio de impresión
 playwright-cli run-code "async page => {
   await page.emulateMedia({ media: 'print' });
 }"
 ```
 
-## Wait Strategies
+## Estrategias de espera
 
 ```bash
-# Wait for network idle
+# Esperar a que la red esté inactiva
 playwright-cli run-code "async page => {
   await page.waitForLoadState('networkidle');
 }"
 
-# Wait for specific element
+# Esperar a un elemento específico
 playwright-cli run-code "async page => {
   await page.locator('.loading').waitFor({ state: 'hidden' });
 }"
 
-# Wait for function to return true
+# Esperar a que una función devuelva true
 playwright-cli run-code "async page => {
   await page.waitForFunction(() => window.appReady === true);
 }"
 
-# Wait with timeout
+# Esperar con timeout
 playwright-cli run-code "async page => {
   await page.locator('.result').waitFor({ timeout: 10000 });
 }"
 ```
 
-## Frames and Iframes
+## Frames e iframes
 
 ```bash
-# Work with iframe
+# Trabajar con un iframe
 playwright-cli run-code "async page => {
   const frame = page.locator('iframe#my-iframe').contentFrame();
   await frame.locator('button').click();
 }"
 
-# Get all frames
+# Obtener todos los frames
 playwright-cli run-code "async page => {
   const frames = page.frames();
   return frames.map(f => f.url());
 }"
 ```
 
-## File Downloads
+## Descargas de archivos
 
 ```bash
-# Handle file download
+# Manejar la descarga de un archivo
 playwright-cli run-code "async page => {
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('link', { name: 'Download' }).click();
@@ -140,49 +144,49 @@ playwright-cli run-code "async page => {
 }"
 ```
 
-## Clipboard
+## Portapapeles
 
 ```bash
-# Read clipboard (requires permission)
+# Leer el portapapeles (requiere permiso)
 playwright-cli run-code "async page => {
   await page.context().grantPermissions(['clipboard-read']);
   return await page.evaluate(() => navigator.clipboard.readText());
 }"
 
-# Write to clipboard
+# Escribir en el portapapeles
 playwright-cli run-code "async page => {
   await page.evaluate(text => navigator.clipboard.writeText(text), 'Hello clipboard!');
 }"
 ```
 
-## Page Information
+## Información de la página
 
 ```bash
-# Get page title
+# Obtener el título de la página
 playwright-cli run-code "async page => {
   return await page.title();
 }"
 
-# Get current URL
+# Obtener la URL actual
 playwright-cli run-code "async page => {
   return page.url();
 }"
 
-# Get page content
+# Obtener el contenido de la página
 playwright-cli run-code "async page => {
   return await page.content();
 }"
 
-# Get viewport size
+# Obtener el tamaño del viewport
 playwright-cli run-code "async page => {
   return page.viewportSize();
 }"
 ```
 
-## JavaScript Execution
+## Ejecución de JavaScript
 
 ```bash
-# Execute JavaScript and return result
+# Ejecutar JavaScript y devolver el resultado
 playwright-cli run-code "async page => {
   return await page.evaluate(() => {
     return {
@@ -193,17 +197,17 @@ playwright-cli run-code "async page => {
   });
 }"
 
-# Pass arguments to evaluate
+# Pasar argumentos a evaluate
 playwright-cli run-code "async page => {
   const multiplier = 5;
   return await page.evaluate(m => document.querySelectorAll('li').length * m, multiplier);
 }"
 ```
 
-## Error Handling
+## Manejo de errores
 
 ```bash
-# Try-catch in run-code
+# Try-catch en run-code
 playwright-cli run-code "async page => {
   try {
     await page.getByRole('button', { name: 'Submit' }).click({ timeout: 1000 });
@@ -214,10 +218,10 @@ playwright-cli run-code "async page => {
 }"
 ```
 
-## Complex Workflows
+## Flujos de trabajo complejos
 
 ```bash
-# Login and save state
+# Iniciar sesión y guardar el estado
 playwright-cli run-code "async page => {
   await page.goto('https://example.com/login');
   await page.getByRole('textbox', { name: 'Email' }).fill('user@example.com');
@@ -228,7 +232,7 @@ playwright-cli run-code "async page => {
   return 'Login successful';
 }"
 
-# Scrape data from multiple pages
+# Extraer datos (scraping) de varias páginas
 playwright-cli run-code "async page => {
   const results = [];
   for (let i = 1; i <= 3; i++) {

@@ -1,44 +1,44 @@
-# Request Mocking
+# Mocking de peticiones
 
-Intercept, mock, modify, and block network requests.
+Intercepta, simula (mock), modifica y bloquea peticiones de red.
 
-## CLI Route Commands
+## Comandos CLI de route
 
 ```bash
-# Mock with custom status
+# Simular con un status personalizado
 playwright-cli route "**/*.jpg" --status=404
 
-# Mock with JSON body
+# Simular con un body JSON
 playwright-cli route "**/api/users" --body='[{"id":1,"name":"Alice"}]' --content-type=application/json
 
-# Mock with custom headers
+# Simular con headers personalizados
 playwright-cli route "**/api/data" --body='{"ok":true}' --header="X-Custom: value"
 
-# Remove headers from requests
+# Quitar headers de las peticiones
 playwright-cli route "**/*" --remove-header=cookie,authorization
 
-# List active routes
+# Listar las rutas activas
 playwright-cli route-list
 
-# Remove a route or all routes
+# Eliminar una ruta o todas las rutas
 playwright-cli unroute "**/*.jpg"
 playwright-cli unroute
 ```
 
-## URL Patterns
+## Patrones de URL
 
 ```
-**/api/users           - Exact path match
-**/api/*/details       - Wildcard in path
-**/*.{png,jpg,jpeg}    - Match file extensions
-**/search?q=*          - Match query parameters
+**/api/users           - Coincidencia exacta de la ruta
+**/api/*/details       - Comodín en la ruta
+**/*.{png,jpg,jpeg}    - Coincidir con extensiones de archivo
+**/search?q=*          - Coincidir con parámetros de consulta
 ```
 
-## Advanced Mocking with run-code
+## Mocking avanzado con run-code
 
-For conditional responses, request body inspection, response modification, or delays:
+Para respuestas condicionales, inspección del body de la petición, modificación de la respuesta o retrasos:
 
-### Conditional Response Based on Request
+### Respuesta condicional según la petición
 
 ```bash
 playwright-cli run-code "async page => {
@@ -53,7 +53,7 @@ playwright-cli run-code "async page => {
 }"
 ```
 
-### Modify Real Response
+### Modificar la respuesta real
 
 ```bash
 playwright-cli run-code "async page => {
@@ -66,16 +66,16 @@ playwright-cli run-code "async page => {
 }"
 ```
 
-### Simulate Network Failures
+### Simular fallos de red
 
 ```bash
 playwright-cli run-code "async page => {
   await page.route('**/api/offline', route => route.abort('internetdisconnected'));
 }"
-# Options: connectionrefused, timedout, connectionreset, internetdisconnected
+# Opciones: connectionrefused, timedout, connectionreset, internetdisconnected
 ```
 
-### Delayed Response
+### Respuesta retrasada
 
 ```bash
 playwright-cli run-code "async page => {
